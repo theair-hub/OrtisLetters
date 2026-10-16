@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model
+    href="https://vault.tei-c.org/P5/current/xml/tei/custom/schema/relaxng/tei_all.rng"
+    schematypens="http://relaxng.org/ns/structure/1.0"
+    type="application/xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader xml:lang="en">
+        <fileDesc>
+            <titleStmt>
+                <title>Ultime Lettere di Jacopo Ortis [Prima edizione bolognese] [1798] tratto dall'EN di Giovanni Gambarin, 1970.</title>
+                <author>
+                    <persName ref="#UF">
+                        <forename>Ugo</forename>
+                        <surname>Foscolo</surname>
+                    </persName>
+                </author>
+            </titleStmt>
+            <editionStmt>
+                <edition>Prototype digital edition - <date when="2026">2026</date>
+                </edition>
+                <respStmt>
+                    <resp>Annotated by</resp>
+                    <persName ref="#IDD">
+                        <forename>Ilaria</forename>
+                        <surname>De Dominicis</surname>
+                    </persName>
+                </respStmt>
+            </editionStmt>
+            <extent>
+                <measure unit="kB" quantity="20">About 20 kB</measure>
+            </extent>
+            <publicationStmt>
+                <publisher>
+                    <foreign xml:lang="la">Alma Mater Studiorum</foreign> - <foreign xml:lang="it">Università
+                    di Bologna</foreign></publisher>
+                <pubPlace>
+                    <placeName key="Bologna" sameAs="https://www.geonames.org/3181928">Bologna</placeName>
+                    <date when="2026">2026</date>
+                </pubPlace>
+                <availability status="free">
+                    <licence target="https://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC </licence>
+                    <p>OpenOrtis is a project created for the course of
+
+                Digital Scholarly Editing: Theory, Methods and Practice
+
+            at the Alma Mater Studiorum - Università di Bologna. Any use beyond this academic context requires prior
+            authorization.</p>
+                </availability>
+            </publicationStmt>
+            <notesStmt>
+                <note>This is an XML/TEI document made for the exam of Digital Scholarly Editing:
+                    Theory, Methods and Practice. It transcribes the Bolognese edition of the
+                    novel (witnesses A, B, C), limited to letters I-V of the first part.
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <bibl type="printed_source">
+                    <title>Vera storia di due amanti infelici ossia Ultime lettere di Jacopo Ortis</title>
+                    <author ref="#UF">Foscolo, Ugo</author>
+                    <pubPlace>Bologna</pubPlace>
+                    <date>1799-1801</date>
+                </bibl>
+
+                <listWit>
+                    <witness xml:id="A"> <!-- prima edizione bolognese 1799 censurata per l'arrivo degli austriaci, pubblicata-->
+                        <date>1799</date>
+                        <msDesc type="print">
+                            <msIdentifier><settlement>Bologna</settlement><idno>Foscolo, U. 1799. Vera Storia di Due Amanti Infelici ossia Ultime Lettere di Jacopo Ortis. First edition.</idno>
+                            </msIdentifier>
+                        </msDesc>
+                    </witness>
+                    <witness xml:id="B"> <!-- seconda edizione 1799, in realtà pubblicata nel 1800, con stesso frontespizio della A e stessa data -->
+                        <date>1799</date>
+                        <msDesc type="print">
+                            <msIdentifier><settlement>Bologna</settlement><idno>Foscolo, U. 1799. Vera Storia di Due Amanti Infelici ossia Ultime Lettere di Jacopo Ortis. Second edition.</idno>
+                            </msIdentifier>
+                        </msDesc>
+                    </witness>
+                    <witness xml:id="C"> <!-- terza edizione datata 1801 -->
+                        <date>1801</date>
+                        <msDesc type="print">
+                            <msIdentifier><settlement>Bologna</settlement><idno>Foscolo, U. 1801. Vera Storia di Due Amanti Infelici ossia Ultime Lettere di Jacopo Ortis. Third edition.</idno>
+                            </msIdentifier>
+                        </msDesc>
+                    </witness>
+                </listWit>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <samplingDecl>
+                <p>Only letters I-V are transcribed.</p>
+            </samplingDecl>
+            <editorialDecl>
+                <correction method="silent" status="medium">
+                    <p>Medium level: on-screen check; original spellings (e.g. "jeri",
+                        "sdrajo") have been retained.</p>
+                </correction>
+                <quotation marks="all">
+                    <p>Quotation marks and direct speech symbols present in the printed source have
+                        been retained in the digital version</p>
+                </quotation>
+                <hyphenation eol="none">
+                    <p>End-of-line hyphens have been removed and words rejoined; the page breaks
+                        marked "|" in the source have been not retained.</p>
+                </hyphenation>
+                <p>The type of each variation in the apparatus is recorded in app/@type, with the nature of the change taken from the lemma to the other readings: punctuation, capitalisation, orthographic, morphological, lexical, syntactic (word order), addition (a reading has text that the lemma lacks), omission (a reading lacks text that the lemma has), rewriting (extended reformulation), layout (line breaks), paratext (title-page material) or mixed (the components are listed in app/@subtype).</p>
+            </editorialDecl>
+        </encodingDesc>
+        <profileDesc>
+            <textDesc>
+                <channel mode="w" />
+                <constitution type="composite" />
+                <derivation type="original" />
+                <domain type="literary" />
+                <factuality type="mixed" />
+                <interaction type="partial" active="singular" passive="many" />
+                <preparedness type="revised" />
+                <purpose type="entertain" degree="high" />
+            </textDesc>
+
+            <particDesc>
+                <listPerson type="contributors">
+                    <person xml:id="UF" sameAs="http://viaf.org/viaf/36929008"
+                        source="https://www.treccani.it/enciclopedia/ugo-foscolo_(Dizionario-Biografico)/">
+                        <persName xml:lang="it">Ugo Foscolo</persName>
+                        <occupation>author</occupation>
+                        <birth when="1778" />
+                    </person>
+                    <person xml:id="IDD" source="https://github.com/theair-hub">
+                        <persName xml:lang="it">Ilaria De Dominicis</persName>
+                        <occupation>student, annotator</occupation>
+                    </person>
+                </listPerson>
+
+                <listPerson type="characters">
+                    <person xml:id="JO">
+                        <persName xml:lang="it">Jacopo Ortis</persName>
+                        <note>The protagonist and letter writer.</note>
+                    </person>
+                    <person xml:id="LA">
+                        <persName xml:lang="it">Lorenzo Alderani</persName>
+                        <note>The recipient of the letters.</note>
+                    </person>
+                    <person xml:id="TE">
+                        <persName xml:lang="it">Teresa</persName>
+                        <note>Young woman loved by Jacopo; in this edition she is first introduced as the friend of the young man met by the lake.</note>
+                    </person>
+                    <person xml:id="OD">
+                        <persName xml:lang="it">Odoardo</persName>
+                        <note>Teresa's companion; in this edition letter V traces his life story as a painter born in Rome.</note>
+                    </person>
+                    <person xml:id="GI">
+                        <persName xml:lang="it">Giovannina</persName>
+                        <note>Teresa's little daughter, the only child left to her from her marriage; she is mentioned only in witness A.</note>
+                    </person>
+                    <person xml:id="MO">
+                        <persName xml:lang="it">Madre di Jacopo</persName>
+                        <note>Jacopo's mother, whose tears persuade him to leave.</note>
+                    </person>
+                    <person xml:id="MI">
+                        <persName xml:lang="it">Michele</persName>
+                        <note>Jacopo's servant and messenger, who carries the letters to the post office in Padua.</note>
+                    </person>
+                    <person xml:id="PL" sameAs="https://viaf.org/viaf/268955446/"
+                        source="https://en.wikipedia.org/wiki/Plutarch">
+                        <persName xml:lang="el">Plutarco</persName>
+                        <occupation>Greek author, whose works Jacopo reads</occupation>
+                    </person>
+
+                    <listRelation>
+                        <relation name="friend" active="#JO" passive="#LA" />
+                        <relation name="parent" active="#MO" passive="#JO" />
+                        <relation name="parent" active="#TE" passive="#GI" />
+                    </listRelation>
+                </listPerson>
+            </particDesc>
+
+            <settingDesc>
+                <listPlace type="real">
+                    <place xml:id="CE" sameAs="https://www.geonames.org/3177329/colli-euganei.html"
+                        source="https://en.wikipedia.org/wiki/Euganean_Hills">
+                        <placeName xml:lang="it">Colli Euganei</placeName>
+                        <note>The Euganean Hills near Padua, where Jacopo retreats; the five streams and the small lake of letter III are located here.</note>
+                    </place>
+                    <place xml:id="PD" sameAs="https://www.geonames.org/3171728/padova.html"
+                        source="https://en.wikipedia.org/wiki/Padua">
+                        <placeName xml:lang="it">Padova</placeName>
+                        <note>The city whose post office is used by Michele to send Jacopo's letters.</note>
+                    </place>
+                    <place xml:id="RO" sameAs="https://www.geonames.org/3169070/rome.html"
+                        source="https://en.wikipedia.org/wiki/Rome">
+                        <placeName xml:lang="it">Roma</placeName>
+                        <note>Odoardo's native city, where he could become a great painter.</note>
+                    </place>
+                </listPlace>
+            </settingDesc>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+                        <div1 type="dedica">
+                <head>AVVISO A CHI LEGGE</head>
+                <note resp="#IDD">In this version of the book, this dedication is substituted with the AVVISO A CHI LEGGE, followed by the dedication LORENZO F. AL SENSIBILE LETTORE and the ANNOTAZIONI ALLA PRIMA PARTE DELLE ULTIME LETTERE DI JACOPO ORTIS, that are not reported in this prototype edition. For more information, please consult the source (Gambarin 1970, 3) .</note>
+            </div1>
+            <div1 type="part">
+                <div2 type="epistola" n="1">
+                <head>
+                    <hi>LETTERA I.</hi>
+                </head>
+                    <opener>
+                        <dateline>Dai <placeName ref="#CE">colli Euganei</placeName>, 3 Settembre 1797</dateline>
+                    </opener>
+                    <p>Sia dunque cos&#xEC;<app type="addition"><lem wit="B C"></lem><rdg wit="A">, mio Lorenzo</rdg></app>! io vivr&#xF2; lontano da quanto m'avea di pi&#xF9; caro, poich&#xE8; non ho saputo resistere a' tuoi consigli, <app type="rewriting"><lem wit="B C">e alle lagrime di <persName ref="#MO">mia madre</persName> che tremava per la mia vita in un paese ov'io caldo della divina passione di libert&#xE0; ho senza mia colpa congiurato con i ministri de' conquistatori. -</lem><rdg wit="A">ed alle lagrime di mia madre.</rdg></app> Eccovi dunque ubbiditi: ma da questo momento io m'avvolgo nella oscurit&#xE0; della mia solitudine, e nel manto della mia innocenza. L'uomo dabbene <app type="rewriting"><lem wit="B C">imbarazzandosi ne' pubblici affari non ritrarrebbe che danno per la sua patria, ed infamia per s&#xE8;. Quando e doveri e diritti stanno su la punta della spada, il forte scrive le leggi col sangue, ed esige il sacrificio della virt&#xF9;.</lem><rdg wit="A">a che deve imbarazzarsi nel tumulto delle societ&#xE0; rumorose? Non basta egli l'attendere alle pacifiche cure del domestico albergo? Qui almeno nessuno esige il sagrifizio della virt&#xF9;!</rdg></app> Se tu potessi volare su queste colline! Tu non se gi&#xE0; di quelli, o <persName ref="#LA">Lorenzo</persName>, che mirano <app type="lexical"><lem wit="B C">oro patria schiava, denudata, venduta,</lem><rdg wit="A">i loro amici denudati ed oppressi,</rdg></app> e non piangono d'ira Involati all'aspetto <app type="lexical"><lem wit="B C">della scelleraggine, e</lem><rdg wit="A">di tanti mali, ed</rdg></app>  alle persecuzioni di coloro che <app type="rewriting"><lem wit="B C">mercanteggiano i popoli: t'&#xE8;</lem><rdg wit="A">si fan gioco.... io fremo!- T'&#xE8;</rdg></app> caro l'ozio solitario della campagna: <app type="punctuation"><lem wit="B C">qui riderem della gloria : infelice</lem><rdg wit="A">qui riderem della gloria. Infelice</rdg></app> colui che non ha per oggetto delle sue azioni che quest'idolo vano! <app type="capitalisation"><lem wit="B C">egli</lem><rdg wit="A">Egli</rdg></app> non gusta il piacere <app type="orthographic"><lem wit="B C">di una</lem><rdg wit="A">d'una</rdg></app> vita mediocre e <app type="lexical"><lem wit="B C">pacifica,</lem><rdg wit="A">tranquilla;</rdg></app> non ringrazia i consigli dell'amico, non sente la soavit&#xE0; del pianto <app type="mixed" subtype="orthographic-punctuation"><lem wit="B C">secreto sparso su le disgrazie dell'uomo onesto, o sul sepolcro di due amanti fedeli. Vieni-</lem><rdg wit="A">segreto sparso sulle disgrazie dell'uomo onesto, o sul sepolcro di due amanti fedeli! Vieni:</rdg></app> oh! ch'io desidero l'impossibile. - Addio: saluta <app type="addition"><lem wit="B C"><persName ref="#MO">mia madre</persName>.</lem><rdg wit="A"><persName ref="#MO">mia madre....</persName> ah dio! mi pare ancora di essere presente alle sue lagrime in quell'istante crudele che mi divise da lei.... Tanti affanni! tanta tenerezza per me!.... povera <persName ref="#MO">mia madre</persName> - Addio di nuovo.</rdg></app></p>
+                </div2>
+                <div2 type="epistola" n="2">
+                    <head>
+                        <hi>LETTERA II.</hi>
+                    </head>
+                    <opener>
+                        <dateline>7, Settembre.</dateline>
+                    </opener>
+                    <p>Quand'io dopo un lungo passeggio mi bagno la fronte al rio pi&#xF9; vicino mi sdrajo all'ombra d'un gelso gustando del piacere di far nulla&#x2026;. io medito su' miei giorni passati e li piango quasi perduti; e in verit&#xE0; che di poche mie azioni non posso dire: avrei potuto far meglio.</p>
+                    <p>Ma il passato &#xE8; perduto; e il futuro ? forse non giunger&#xE0; sino a me: a che dunque divorare il presente rattristandomi di mali irreparabili ignoti?</p>
+                    <p>Ti ringrazio delle tue cure per <persName ref="#MO">mia madre</persName>: ella mi scrive che le sei necessario; e certo che ha d'uopo di consolazione. - Puoi tu scordare quand'ella baciandomi e bagnandomi il volto di lagrime, mi benedisse, mi strinse al suo petto, mi abbandon&#xF2;, e mi ristrinse? gi&#xE0; consigliavami di partire, e proferiva l'ultimo addio.... e allora pur afferrava il lembo della mia veste, e s'abbandonava fra le mie braccia gemendo.</p>
+                    <p>O mio <persName ref="#LA">Lorenzo</persName>! io non ho la pace che sperava dalla solitudine.</p>
+                </div2>
+                <div2 type="epistola" n="3">
+                                        <head>
+                        <hi>LETTERA III.</hi>
+                    </head>
+                    <opener>
+                        <dateline>8, Settembre.</dateline>
+                    </opener>
+                    <p>Ti giuro che non ho dimenticato la tua lettera in tasca per bizzarria di dimenticarla, o per fare a mio modo, ma perch&#xE8; infatti non me ne sono pi&#xF9; ricordato. La casa della tua amica alla quale &#xE8; diretta &#xE8; discosta due miglia; la stagione non s'&#xE8; rinfrescata; a che dunque prendersi tanta briga? una nuova conoscenza con una donna alla quale non dovrei fare che delle visite non &#xE8; poi l'affare di s&#xEC; grande importanza da non potersi differire a due giorni.</p>
+                    <p>Questa mattina mi sono alzato per salutare l'aurora. Arrampicava a fatica per trovarmi su la cima della montagnetta che domina queste campagne, quando mi distolse un lontano fremito d'acque. Mi fu guida l'orecchio, e dopo una discesa difficile verso la parte opposta al mio romitorio ho veduto cinque fonticelli che s'affrettavano a unirsi tutti in un limpido lago. Come fresche erano quell' acque ombreggiate da folti salici, i quali non poteano per&#xF2; impedire al sole di rompere i furtivi suoi raggi su le onde riscintillanti, e agitate pel continuo cascar de' ruscelli! Ad onta che questo mese non sia amico ai bagni, ho voluto spogliarmi ed immergermi in quel laghetto che pareva accogliermi con volutt&#xE0;. Il mio cuore cantava un inno alla natura, e la mia fantasia s'illudeva invocando le ninfe amabili custodi delle fontane. Illusioni! grida il filosofo. E non &#xE8; tutto illusione? tutto! - Beati gli antichi che si credevano degni de' baci di Venere, che sacrificavano alla bellezza e alle grazie, che diffondevano lo splendore della divinit&#xE0; su le imperfezioni dell'uomo, e che trovavano il bello ed il vero accarezzando gl'idoli della loro immaginazione! La religione greca e romana ha educato gli artisti e gli eroi, e a questa dobbiamo i capi d'opera che il caso ha rapito alla inclemenza de' secoli. - Cos&#xEC; io riflettea diguazzandomi. Mi son rivestito e con due grappoli colti di fresco son ritornato a passare il resto della mattina in compagnia del mio <persName ref="#PL">Plutarco</persName>.</p>
+    <div3 type="continuazione">
+                        <opener>
+                            <dateline>9, Settembre.</dateline>
+                        </opener>
+                        <p>Non avendo per tutto jeri veduto <persName ref="#MI">Michele</persName> non mi fu possibile d'inviare questa lettera alla posta di <placeName ref="#PD">Padova</placeName>. La riapro per raccontarti un avvenimento che porr&#xE0; termine alle nostre contese. -</p>
+                        <p>S'avvicinava la sera: innamorato della mia nuova tempe ho diretto il mio passeggio verso i cinque ruscelli. Giunto appena al laghetto mi pare di scorgere sul pendio della montagnetta una persona che meditava; cosa veramente comune alla quale non avrei badato in tutt'altro luogo fuori che in questo ritiro da me creduto deserto. I solitarj, simili agl'infelici, s'amano scambievolmente. Per potere osservar non veduto m'avvicino.... fra i salici: temea di turbarlo.... ma l'opacit&#xE0; delle frondi, e le tenebre che pi&#xF9; e pi&#xF9; s'addensavano mi vietavano di distinguere: - m'avanzo un po' pi&#xF9;. Quest'era un giovane seduto sul tronco d'un albero tagliato. Tenea sopra un ginocchio un pezzo di carta che andava di tratto in tratto segnando con la matita. S'avvede ch'io lo sto osservando, gira l'occhio sopra di me, e prosiegue il suo lavoro. La notte &#xE8; imminente. Egli s'alza, scende al laghetto, e passando mi guarda e si leva il cappello. Io rispondendo al saluto gli domando se abitava molto discosto. - &#xAB; Poco pi&#xF9; di un miglio; appunto presso la villa di.... &#xBB;. Al nome della villa mi ricordo della tua lettera: la traggo dal portafoglio. - &#xAB; Conoscete questo nome ? &#xBB; Ei sorride.... &#xAB; Davvero, io prosieguo, voi potrete insegnarmi dov'abita &#xBB;. &#xAB; Seguitate, ei mi dice, questo ramo d'acqua ch'esce dal lago per renderlo pi&#xF9; capace ad accogliere le onde de' cinque rivi: questo ramo vi guider&#xE0; diritto alla sua casa: a rivederci &#xBB;. Tutto ci&#xF2; &#xE8; avvenuto jer sera.</p>
+                        <p>Immagina di avermi veduto questa mattina sdrajato sul margine di uno de' cinque rivi a due ore di sole attendendo l'ora d'indirizzarmi a far la mia visita. Una voce che pronunzia il mio nome quasi chiamandomi mi scuote da certe vane meditazioni ch'io ruminava guardando stupidamente il corso dell'acque. Mi volgo; ed eccomi innanzi il giovane di jer sera: - in verit&#xE0; non &#xE8; bello, ma di una fisonomia cos&#xEC; liberale, ch'io mi sono sentito in vederlo una delle mie solite simpatie: - m'alzo per abbracciarlo come se l'avessi conosciuto da molto tempo.... &#xAB; Volete avviarvi meco, ei mi dice, per recare la lettera che mi avete mostrato? &#xBB; Io lo seguo. Parlando delle belle arti lungo il cammino ci &#xE8; mancato poco che non si svegliasse una contesa fra noi. Egli credeva indegno dell'immortalit&#xE0; quell'artista che non si studiasse di perfezionar la natura.... io mi sentiva un certo dispetto, e una smania d'interromperlo.... - Per buona fortuna ci siamo trovati, senza avvedercene, alla villa. Addio.</p>
+                    </div3>
+                </div2>
+                <div2 type="epistola" n="4">
+                                        <head>
+                        <hi>LETTERA IV.</hi>
+                    </head>
+                    <opener>
+                        <dateline>16, Settembre.</dateline>
+                    </opener>
+                    <p><app type="rewriting"><lem wit="B C">Sai tu chi &#xE8; il giovane del quale ti ho gi&#xE0; parlato ? l'amico di <persName ref="#TE">Teresa</persName>. I venti</lem><rdg wit="A">Ho recapitato la tua lettera a Teresa N.... vedova di.... e ne ho fatta la conoscenza. Quante bellezze, o Lorenzo! quanta virt&#xF9;! Direbbesi ch'ella rinnova a queste colline lo spettacolo dell'et&#xE0; beata dell'oro. L'amabile Giovannina, l'unico pegno restatole del suo matrimonio, l'era dappresso.... oh! ch'egli &#xE8; dolce il vedersi pargoleggiare teneramente i figli d'intorno! - <lb /> ma tu sai chi &#xE8; il giovane del quale ti ho gi&#xE0; parlato? E' Odoardo, l'amico e il confidente di Teresa. I venti....</rdg></app> e le pioggie incominciano a vietare i passeggi, ed io passo le intere mezze giornate con <persName ref="#TE">Teresa</persName> e con <persName ref="#OD">Odoardo</persName>. - Beato colui che sente per tempo i danni della gran societa! egli si libera dal tumulto e dalla schiavit&#xF9; degli affari, e rinunzia di buon grado alle ricchezze e alla gloria. Io son debitore alla perfidia degli uomini del paradiso che mi sto preparando.</p>
+                </div2>
+                <div2 type="epistola" n="5">
+                    <head>
+                        <hi>LETTERA V.</hi>
+                    </head>
+                    <opener>
+                        <dateline>19, Settembre.</dateline>
+                    </opener>
+                    <p><persName ref="#OD">Odoardo</persName> nacque pittore. Unico figlio di ricca famiglia perd&#xE8; suo padre prima di poterlo suo conoscere. La divota sua mamma volle consecrarlo al Signore educandolo fra certi <app type="rewriting"><lem wit="B C">frati aspiranti alla eredit&#xE0; del nuovo servo di Dio.</lem><rdg wit="A">frati che aspiravano a formare di lui un nuovo servo di Dio.</rdg></app> Il giovanetto disgustato ed ozioso si mise a disegnare: mor&#xEC; frattanto sua madre: un frate malcontento lo persuase a cogliere questa opportunit&#xE0; per abbandonare la solitudine del monastero: <placeName ref="#RO">Roma</placeName> sua patria gli somministrava i mezzi di divenir grande nella pittura: dapprima si dedic&#xF2; tutto a quest'arte:- ma alcun passeggi di brigata, qualche cenetta, l'opera e mille distrazioni innocenti avevano rapito il giovane alla prima assiduit&#xE0;.<app type="addition"><lem wit="B C">Per buona sorte conobbe <persName ref="#TE">Teresa</persName>; ed eccolo pi&#xF9; applicato, e meno stanco di prima.</lem><rdg wit="A">Si cambiarono intanto le sue circostanze , ed ei dovette viaggiare per mille luoghi a vicenda magnifici e barbari. - Per buona sorte conobbe a tempo Teresa; ed eccolo fermo, pi&#xF9; applicato....</rdg></app> </p>
+                    <p>Osservo che <persName ref="#TE">Teresa</persName> lo guarda come una sua creatura; e lo ama di pi&#xF9; perch&#xE9; ella ha il merito di averlo ricondotto a retto sentiero dond'egli senz'avvedersene deviava.</p>
+                    <p>Quand'io penso agli ostacoli che frappone la societ&#xE0; al genio ed al cuore dell'uomo, quand'io penso a mille accidenti che mi hanno pi&#xF9; volte gettato quasi in braccio al delitto.... io guardo il passato tremando, e mi rassicuro vedendomi in porto. Sovente mi prostro a ringraziar la natura che ci fa vincere la prepotenza delle circostanze, e c'insegna ad alzarci sopra la nostra educazione. Ma pochi nondimeno son gli uomini prediletti a questa fortuna.- O quanti si sono appressati al sepolcro sdegnando la vita, nella quale seguendo un corso opposto a quello che loro ha segnato la natura, hanno sentito tutti i mali dell'esistenza senza godere d'un solo bene! Quanti altri costretti a mascherare la loro anima generosa sotto governi licenziosi o tirannici, si sono abituati a cercare la gloria anche per mezzo della scelleraggine, simili que' conquistatori che s'innalzano un trofeo di cadaveri, e a que' principi che nuotano al trono per un mare di sangue.</p>
+                </div2>
+            </div1>
+        </body>
+    </text>
+</TEI>

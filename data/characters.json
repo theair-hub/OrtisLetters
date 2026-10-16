@@ -1,0 +1,476 @@
+{
+  "editions": {
+    "bolo-1798": {
+      "label": "Bologna 1798",
+      "image": "img/ed-bolo-1798.png",
+      "url": null
+    },
+    "mil-1802": {
+      "label": "Milan 1802",
+      "image": "img/ed-mil-1802.png",
+      "url": null
+    },
+    "lon-1817": {
+      "label": "London 1817",
+      "image": "img/lon-1817.png",
+      "url": null
+    }
+  },
+  "characters": [
+    {
+      "id": "JO",
+      "name": "Jacopo Ortis",
+      "type": "character",
+      "role": "Protagonist and letter writer",
+      "description": "A young Venetian who leaves his native city and retreats to the Euganean Hills. He writes the letters that make up the book and gives it its title in every edition. In the Milan 1802 editor's notice he is the 'Ortis' whose life, the editor claims, earlier editions had turned into a novel.",
+      "appearances": [
+        {
+          "edition": "bolo-1798",
+          "sections": [
+            "Letters I–V (as writer)"
+          ]
+        },
+        {
+          "edition": "mil-1802",
+          "sections": [
+            "Editor's notice",
+            "Letters I–V (as writer)"
+          ]
+        },
+        {
+          "edition": "lon-1817",
+          "sections": [
+            "Title page",
+            "Letters I–V (as writer)"
+          ]
+        }
+      ],
+      "related_places": [
+        "VE",
+        "CE",
+        "IT"
+      ],
+      "links": []
+    },
+    {
+      "id": "LA",
+      "name": "Lorenzo Alderani",
+      "type": "character",
+      "role": "Recipient of the letters; fictional editor",
+      "description": "Jacopo's friend and the addressee of his letters. In the 1802 and 1817 editions he also speaks as editor: he signs the address to the reader, as 'Lorenzo A***' in 1802, and he is the one who met Signor T. in Padua.",
+      "appearances": [
+        {
+          "edition": "bolo-1798",
+          "sections": [
+            "Avviso a chi legge",
+            "Letters I, II, IV (addressed by name)"
+          ]
+        },
+        {
+          "edition": "mil-1802",
+          "sections": [
+            "Al lettore (signature)",
+            "Letters I, II, III, V"
+          ]
+        },
+        {
+          "edition": "lon-1817",
+          "sections": [
+            "Al lettore (signature)",
+            "Letters I, II, III, V"
+          ]
+        }
+      ],
+      "related_places": [
+        "PD"
+      ],
+      "links": []
+    },
+    {
+      "id": "TE",
+      "name": "Teresa",
+      "type": "character",
+      "role": "Young woman loved by Jacopo",
+      "description": "The young woman Jacopo loves. In the Bolognese edition she is first introduced, in letter IV, as the friend of the young man met by the lake, and she appears with Odoardo and her little daughter Giovannina. She is not named in the transcribed sections of the 1802 and 1817 editions, where her father, Signor T., appears instead.",
+      "appearances": [
+        {
+          "edition": "bolo-1798",
+          "sections": [
+            "Letters IV, V"
+          ]
+        }
+      ],
+      "related_places": [],
+      "links": []
+    },
+    {
+      "id": "OD",
+      "name": "Odoardo",
+      "type": "character",
+      "role": "Teresa's companion; a painter",
+      "description": "Teresa's companion. Letter V of the Bolognese edition traces his life story: the only son of a rich family, destined by his devout mother for a religious education, he turns instead to drawing and could have become a great painter in Rome, his native city.",
+      "appearances": [
+        {
+          "edition": "bolo-1798",
+          "sections": [
+            "Letters IV, V"
+          ]
+        }
+      ],
+      "related_places": [
+        "RO"
+      ],
+      "links": []
+    },
+    {
+      "id": "GI",
+      "name": "Giovannina",
+      "type": "character",
+      "role": "Teresa's little daughter",
+      "description": "Teresa's little daughter, the only child left to her from her marriage. She is mentioned only in one reading of the Bolognese edition (witness A), in letter IV.",
+      "appearances": [
+        {
+          "edition": "bolo-1798",
+          "sections": [
+            "Letter IV (witness A only)"
+          ]
+        }
+      ],
+      "related_places": [],
+      "links": []
+    },
+    {
+      "id": "ST",
+      "name": "Signor T.",
+      "type": "character",
+      "role": "Teresa's father",
+      "description": "Teresa's father, described by Lorenzo as a man of cultured mind and great honesty, whom he met in Padua. His name is abbreviated 'T***' in 1802 and 'T.' in 1817.",
+      "appearances": [
+        {
+          "edition": "mil-1802",
+          "sections": [
+            "Letter V"
+          ]
+        },
+        {
+          "edition": "lon-1817",
+          "sections": [
+            "Letter V"
+          ]
+        }
+      ],
+      "related_places": [
+        "PD"
+      ],
+      "links": []
+    },
+    {
+      "id": "MO",
+      "name": "Madre di Jacopo",
+      "type": "character",
+      "role": "Jacopo's mother",
+      "description": "Jacopo's mother, never named, who is referred to as 'mia madre'. He leaves Venice for the Euganean Hills out of love for her, and her tears are what persuade him to go.",
+      "appearances": [
+        {
+          "edition": "bolo-1798",
+          "sections": [
+            "Letters I, II"
+          ]
+        },
+        {
+          "edition": "mil-1802",
+          "sections": [
+            "Letters I, II"
+          ]
+        },
+        {
+          "edition": "lon-1817",
+          "sections": [
+            "Letters I, II"
+          ]
+        }
+      ],
+      "related_places": [
+        "VE"
+      ],
+      "links": []
+    },
+    {
+      "id": "LR",
+      "name": "Lauretta",
+      "type": "character",
+      "role": "Young woman grieving Eugenio",
+      "description": "A young woman acquainted with Jacopo, grieving the death of Eugenio.",
+      "appearances": [
+        {
+          "edition": "mil-1802",
+          "sections": [
+            "Letter III"
+          ]
+        },
+        {
+          "edition": "lon-1817",
+          "sections": [
+            "Letter III"
+          ]
+        }
+      ],
+      "related_places": [],
+      "links": []
+    },
+    {
+      "id": "EU",
+      "name": "Eugenio",
+      "type": "character",
+      "role": "Lauretta's beloved",
+      "description": "Lauretta's beloved, who died in her arms.",
+      "appearances": [
+        {
+          "edition": "mil-1802",
+          "sections": [
+            "Letter III"
+          ]
+        },
+        {
+          "edition": "lon-1817",
+          "sections": [
+            "Letter III"
+          ]
+        }
+      ],
+      "related_places": [],
+      "links": []
+    },
+    {
+      "id": "MI",
+      "name": "Michele",
+      "type": "character",
+      "role": "Jacopo's servant and messenger",
+      "description": "Jacopo's servant and messenger. In the Bolognese edition he carries the letters to the post office in Padua; in 1802 and 1817 he appears in letter IV.",
+      "appearances": [
+        {
+          "edition": "bolo-1798",
+          "sections": [
+            "Letter III"
+          ]
+        },
+        {
+          "edition": "mil-1802",
+          "sections": [
+            "Letter IV"
+          ]
+        },
+        {
+          "edition": "lon-1817",
+          "sections": [
+            "Letter IV"
+          ]
+        }
+      ],
+      "related_places": [
+        "PD"
+      ],
+      "links": []
+    },
+    {
+      "id": "PL",
+      "name": "Plutarco",
+      "type": "mentioned",
+      "role": "Greek author whose works Jacopo reads",
+      "description": "Plutarch, the Greek author. Jacopo spends his mornings with 'il mio Plutarco' and reads him.",
+      "appearances": [
+        {
+          "edition": "bolo-1798",
+          "sections": [
+            "Letter III"
+          ]
+        },
+        {
+          "edition": "mil-1802",
+          "sections": [
+            "Letter IV"
+          ]
+        },
+        {
+          "edition": "lon-1817",
+          "sections": [
+            "Letter IV"
+          ]
+        }
+      ],
+      "related_places": [],
+      "links": [
+        {
+          "label": "VIAF",
+          "url": "https://viaf.org/viaf/268955446/"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Plutarch"
+        }
+      ]
+    },
+    {
+      "id": "LC",
+      "name": "Licurgo",
+      "type": "mentioned",
+      "role": "Ancient historical figure",
+      "description": "Lycurgus of Sparta, one of the ancient figures Jacopo reads aloud to the villagers.",
+      "appearances": [
+        {
+          "edition": "mil-1802",
+          "sections": [
+            "Letter V"
+          ]
+        },
+        {
+          "edition": "lon-1817",
+          "sections": [
+            "Letter V"
+          ]
+        }
+      ],
+      "related_places": [],
+      "links": [
+        {
+          "label": "VIAF",
+          "url": "https://viaf.org/viaf/268971267/"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Lycurgus_of_Sparta"
+        }
+      ]
+    },
+    {
+      "id": "TM",
+      "name": "Timoleone",
+      "type": "mentioned",
+      "role": "Ancient historical figure",
+      "description": "Timoleon of Corinth, another of the ancient figures Jacopo reads aloud to the villagers.",
+      "appearances": [
+        {
+          "edition": "mil-1802",
+          "sections": [
+            "Letter V"
+          ]
+        },
+        {
+          "edition": "lon-1817",
+          "sections": [
+            "Letter V"
+          ]
+        }
+      ],
+      "related_places": [],
+      "links": [
+        {
+          "label": "VIAF",
+          "url": "https://viaf.org/viaf/45099481/"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Timoleon"
+        }
+      ]
+    },
+    {
+      "id": "DA",
+      "name": "Dante",
+      "type": "mentioned",
+      "role": "Poet, author of an epigraph",
+      "description": "Dante Alighieri is named as the author of an epigraph that appears only in one reading of the 1817 edition (witness Z), in letter I.",
+      "appearances": [
+        {
+          "edition": "lon-1817",
+          "sections": [
+            "Letter I (witness Z only)"
+          ]
+        }
+      ],
+      "related_places": [],
+      "links": [
+        {
+          "label": "VIAF",
+          "url": "https://viaf.org/viaf/97105654/"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Dante_Alighieri"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "source": "JO",
+      "target": "LA",
+      "label": "friend and correspondent"
+    },
+    {
+      "source": "JO",
+      "target": "MO",
+      "label": "son of"
+    },
+    {
+      "source": "JO",
+      "target": "TE",
+      "label": "loves"
+    },
+    {
+      "source": "TE",
+      "target": "OD",
+      "label": "companion of"
+    },
+    {
+      "source": "TE",
+      "target": "GI",
+      "label": "mother of"
+    },
+    {
+      "source": "TE",
+      "target": "ST",
+      "label": "daughter of"
+    },
+    {
+      "source": "LA",
+      "target": "ST",
+      "label": "met in Padua"
+    },
+    {
+      "source": "JO",
+      "target": "MI",
+      "label": "servant"
+    },
+    {
+      "source": "JO",
+      "target": "PL",
+      "label": "reads"
+    },
+    {
+      "source": "JO",
+      "target": "LC",
+      "label": "reads aloud"
+    },
+    {
+      "source": "JO",
+      "target": "TM",
+      "label": "reads aloud"
+    },
+    {
+      "source": "JO",
+      "target": "LR",
+      "label": "acquainted with"
+    },
+    {
+      "source": "LR",
+      "target": "EU",
+      "label": "beloved"
+    },
+    {
+      "source": "JO",
+      "target": "DA",
+      "label": "epigraph (witness Z)"
+    }
+  ]
+}

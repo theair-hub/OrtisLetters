@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model
+    href="https://vault.tei-c.org/P5/current/xml/tei/custom/schema/relaxng/tei_all.rng"
+    schematypens="http://relaxng.org/ns/structure/1.0"
+    type="application/xml"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader xml:lang="en">
+        <fileDesc>
+            <titleStmt>
+                <title>Ultime lettere di Jacopo Ortis (Edizione milanese, 1802)</title>
+                <author>
+                    <persName ref="#UF">
+                        <forename>Ugo</forename>
+                        <surname>Foscolo</surname>
+                    </persName>
+                </author>
+            </titleStmt>
+            <editionStmt>
+                <edition>Prototype digital edition - <date when="2026-10">October, 2026</date>
+                </edition>
+                <respStmt>
+                    <resp>Annotated by</resp>
+                    <persName ref="#IDD">
+                        <forename>Ilaria</forename>
+                        <surname>De Dominicis</surname>
+                    </persName>
+                </respStmt>
+            </editionStmt>
+            <extent>
+                <measure unit="kB" quantity="15">About 15 kB</measure>
+            </extent>
+            <publicationStmt>
+                <publisher>
+                    <foreign xml:lang="la">Alma Mater Studiorum</foreign> - <foreign xml:lang="it">Università
+                    di Bologna</foreign></publisher>
+                <pubPlace>
+                    <placeName key="Bologna" sameAs="https://www.geonames.org/3181928">Bologna</placeName>
+                    <date when="2026-10">October, 2026</date>
+                </pubPlace>
+                <availability status="free">
+                    <licence target="https://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC </licence>
+                    <p>OpenOrtis is a project created for the course of
+
+                Digital Scholarly Editing: Theory, Methods and Practice
+
+            at the Alma Mater Studiorum - Università di Bologna. Any use beyond this academic context requires prior
+            authorization.</p>
+                </availability>
+            </publicationStmt>
+            <notesStmt>
+                <note>This is an XML/TEI document made for the exam of Digital Scholarly Editing:
+                    Theory, Methods and Practice. It transcribes the Milanese edition of 1802
+                    (witness M), limited to the editor's notice, the dedication and letters 1-5 of
+                    the first part.
+                </note>
+            </notesStmt>
+            <sourceDesc>
+                <bibl type="printed_source">
+                    <title>Ultime lettere di Jacopo Ortis</title>
+                    <author ref="#UF">Foscolo, Ugo</author>
+                    <publisher>Genio Tipografico</publisher>
+                    <pubPlace>Milan</pubPlace>
+                    <date>1802</date>
+                </bibl>
+
+                <listWit>
+                    <witness xml:id="M"> <!-- Edizione milanese 1802: testo trascritto -->
+                        <date>1802</date>
+                        <msDesc type="print">
+                            <msIdentifier><settlement>Milan</settlement><idno> Edizione Mainardi.</idno>
+                            </msIdentifier>
+                        </msDesc>
+                    </witness>
+                    <witness xml:id="I"> <!-- Genio Tipografico? -->
+                        <date>1802</date>
+                        <msDesc type="print">
+                            <msIdentifier><settlement>Milano</settlement><idno>Genio Tipografico.</idno>
+                            </msIdentifier>
+                        </msDesc>
+                    </witness>
+                    <witness xml:id="II"> <!-- edizione mantovana -->
+                        <date></date>
+                        <msDesc type="print">
+                            <msIdentifier><settlement></settlement><idno>Mantovana.</idno>
+                            </msIdentifier>
+                        </msDesc>
+                    </witness>
+                    <witness xml:id="III"> <!-- terza edizione milanese di Angello Nobile -->
+                        <date></date>
+                        <msDesc type="print">
+                            <msIdentifier><idno>Milanese di Agnello Nobile.</idno>
+                            </msIdentifier>
+                        </msDesc>
+                    </witness>
+                                        <witness xml:id="Z"> <!-- Edizione Zurighese-->
+                        <date>1816</date>
+                        <msDesc type="print">
+                            <msIdentifier><settlement>Zurich</settlement><idno>Foscolo, U. 1816. Ultime Lettere di Jacopo Ortis. Orell and Füssli. Zurich.</idno>
+                            </msIdentifier>
+                        </msDesc>
+                    </witness> <!--
+            Edizione Londinese.-->
+                    <witness xml:id="L">
+                        <date>1817</date>
+                        <msDesc type="print">
+                            <msIdentifier><settlement>London</settlement><idno>Foscolo, U. 1817. Ultime Lettere di Jacopo Ortis.John Murray. London. </idno>
+                            </msIdentifier>
+                        </msDesc>
+                    </witness>
+                </listWit>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <samplingDecl>
+                <p>Only the editor's notice, the dedication and letters 1-5 of the first part are
+                    transcribed. Variants of witnesses I, II and III have been recorded in the
+                    apparatus with the parallel segmentation method (app/lem/rdg wit="#M #I #II #III").</p>
+            </samplingDecl>
+            <editorialDecl>
+                <correction method="silent" status="medium">
+                    <p>Medium level: on-screen check; original spellings (e.g. "culto", "volontieri")
+                        have been retained.</p>
+                </correction>
+                <quotation marks="all">
+                    <p>Quotation marks and direct speech symbols present in the printed source have
+                        been retained in the digital version</p>
+                </quotation>
+                <hyphenation eol="none">
+                    <p>End-of-line hyphens have been removed and words rejoined; the page breaks
+                        have also been removed</p>
+                </hyphenation>
+                <p>The type of each variation in the apparatus is recorded in app/@type, with the nature of the change taken from the lemma to the other readings: punctuation, capitalisation, orthographic, morphological, lexical, syntactic (word order), addition (a reading has text that the lemma lacks), omission (a reading lacks text that the lemma has), rewriting (extended reformulation), layout (line breaks), paratext (title-page material) or mixed (the components are listed in app/@subtype).</p>
+            </editorialDecl>
+        </encodingDesc>
+        <profileDesc>
+            <textDesc>
+                <channel mode="w" />
+                <constitution type="composite" />
+                <derivation type="original" />
+                <domain type="literary" />
+                <factuality type="mixed" />
+                <interaction type="partial" active="singular" passive="many" />
+                <preparedness type="revised" />
+                <purpose type="entertain" degree="high" />
+            </textDesc>
+
+            <particDesc>
+                <listPerson type="contributors">
+                    <person xml:id="UF" sameAs="http://viaf.org/viaf/36929008"
+                        source="https://www.treccani.it/enciclopedia/ugo-foscolo_(Dizionario-Biografico)/">
+                        <persName xml:lang="it">Ugo Foscolo</persName>
+                        <occupation>author</occupation>
+                        <birth when="1778" />
+                    </person>
+                    <person xml:id="IDD" source="https://github.com/theair-hub">
+                        <persName xml:lang="it">Ilaria De Dominicis</persName>
+                        <occupation>student, annotator</occupation>
+                    </person>
+                </listPerson>
+
+                <listPerson type="characters">
+                    <person xml:id="JO">
+                        <persName xml:lang="it">Jacopo Ortis</persName>
+                        <note>The protagonist and letter writer.</note>
+                    </person>
+                    <person xml:id="LA">
+                        <persName xml:lang="it">Lorenzo Alderani</persName>
+                        <note>The fictional editor and recipient of the letters; in this edition he signs "Lorenzo A***".</note>
+                    </person>
+                    <person xml:id="ST">
+                        <persName xml:lang="it">Signor T***</persName>
+                        <note>Teresa's father, honourable man of cultured mind whom Lorenzo met in Padua.</note>
+                    </person>
+                    <person xml:id="MO">
+                        <persName xml:lang="it">Madre di Jacopo</persName>
+                        <note>Jacopo's mother, whose tears made him leave Venice.</note>
+                    </person>
+                    <person xml:id="LR">
+                        <persName xml:lang="it">Lauretta</persName>
+                        <note>Young woman acquainted with Jacopo, grieving the death of Eugenio.</note>
+                    </person>
+                    <person xml:id="EU">
+                        <persName xml:lang="it">Eugenio</persName>
+                        <note>Lauretta's beloved, died in her arms.</note>
+                    </person>
+                    <person xml:id="MI">
+                        <persName xml:lang="it">Michele</persName>
+                        <note>Jacopo's servant and messenger.</note>
+                    </person>
+                    <person xml:id="PL" sameAs="https://viaf.org/viaf/268955446/"
+                        source="https://en.wikipedia.org/wiki/Plutarch">
+                        <persName xml:lang="el">Plutarco</persName>
+                        <occupation>Greek author, whose works Jacopo reads</occupation>
+                    </person>
+                    <person xml:id="LC" sameAs="https://viaf.org/viaf/268971267/"
+                        source="https://en.wikipedia.org/wiki/Lycurgus_of_Sparta">
+                        <persName xml:lang="el">Licurgo</persName>
+                        <occupation>Ancient historical figure, read aloud by Jacopo to the villagers</occupation>
+                    </person>
+                    <person xml:id="TM" sameAs="https://viaf.org/viaf/45099481/"
+                        source="https://en.wikipedia.org/wiki/Timoleon">
+                        <persName xml:lang="el">Timoleone</persName>
+                        <occupation>Ancient historical figure, read aloud by Jacopo to the villagers</occupation>
+                    </person>
+
+                    <listRelation>
+                        <relation name="friend" active="#JO" passive="#LA" />
+                        <relation name="parent" active="#MO" passive="#JO" />
+                    </listRelation>
+                </listPerson>
+            </particDesc>
+
+            <settingDesc>
+                <listPlace type="real">
+                    <place xml:id="CE" sameAs="https://www.geonames.org/3177329/colli-euganei.html"
+                        source="https://en.wikipedia.org/wiki/Euganean_Hills">
+                        <placeName xml:lang="it">Colli Euganei</placeName>
+                        <note>The Euganean Hills near Padua, where Jacopo retreats after leaving Venice.</note>
+                    </place>
+                    <place xml:id="VE" sameAs="https://www.geonames.org/3164603/venice.html"
+                        source="https://en.wikipedia.org/wiki/Venice">
+                        <placeName xml:lang="it">Venezia</placeName>
+                        <note>Jacopo's native city, which he leaves to avoid the first persecutions.</note>
+                    </place>
+                    <place xml:id="IT" sameAs="https://www.geonames.org/3175395/italian-republic.html"
+                        source="https://en.wikipedia.org/wiki/Italy">
+                        <placeName xml:lang="it">Italia</placeName>
+                        <note>Jacopo's homeland.</note>
+                    </place>
+                    <place xml:id="PD" sameAs="https://www.geonames.org/3171728/padova.html"
+                        source="https://en.wikipedia.org/wiki/Padua">
+                        <placeName xml:lang="it">Padova</placeName>
+                        <note>The city where Lorenzo met signor T***.</note>
+                    </place>
+                    <place xml:id="TO" sameAs="https://www.geonames.org/3165524/turin.html"
+                        source="https://en.wikipedia.org/wiki/Turin">
+                        <placeName xml:lang="it">Torino</placeName>
+                        <note>City where, according to the editor's notice, the most recent of the earlier editions was printed.</note>
+                    </place>
+                    <place xml:id="BO" sameAs="https://www.geonames.org/3181928/bologna.html"
+                        source="https://en.wikipedia.org/wiki/Bologna">
+                        <placeName xml:lang="it">Bologna</placeName>
+                        <note>City where, according to the editor's notice, the first of the earlier editions (in two small volumes) was printed.</note>
+                    </place>
+                    <place xml:id="MIL" sameAs="https://www.geonames.org/3173435/milan.html"
+                        source="https://en.wikipedia.org/wiki/Milan">
+                        <placeName xml:lang="it">Milano</placeName>
+                        <note>The place given in the dateline of the editor's notice ("Milano, ottobre 1802").</note>
+                    </place>
+                </listPlace>
+            </settingDesc>
+        </profileDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div1 type="avviso">
+                <p>L'Editore, depositario degli autografi, smentisce ogni edizione dissimile a questa, e segnatamente le tre <app type="mixed" subtype="lexical-addition-punctuation"><lem wit="II III Z L">anteriori al 1802; la prima, in due volumetti con un profilo in fronte, impressa in</lem><rdg wit="M">anteriori al 1801 la prima in  due volumetti impressa a </rdg></app><placeName key="Bologna">Bologna</placeName>, l'altra recentemente <app type="mixed" subtype="lexical-omission"><lem wit="II III Z L">in <placeName ref="#TO">Torino</placeName>, e la terza in un solo volume</lem><rdg wit="M"> a <placeName ref="#TO">Torino</placeName>, la terza in un volume</rdg></app> senza data di <app type="punctuation"><lem wit="II III Z L">paese;</lem><rdg wit="M">paese,</rdg></app> perch&#xE8; derivanti tutte da una edizione da lui <app type="punctuation"><lem wit="II III Z L">intrapresa</lem><rdg wit="M">intrapresa,</rdg></app> e per fieri casi interrotta, e abbandonata a uno <app type="punctuation"><lem wit="II III Z L">stampatore, il quale</lem><rdg wit="M">stampatore il quale</rdg></app> fece mercantilmente continuare il libro e la stampa ; ond'&#xE8; che in quelle edizioni la vita dell'<app type="capitalisation"><lem wit="II M Z L"><persName ref="#JO">Ortis</persName></lem><rdg wit="III"><persName ref="#JO">ORTIS</persName></rdg></app> s'&#xE8; convertita in romanzo, contaminando anche le sue poche vere lettere con barbare <app type="punctuation"><lem wit="II III Z L">frasi, e</lem><rdg wit="M">frasi e</rdg></app> con note servili. <app type="omission"><lem wit="II III Z L">Ed a scanso di nuove frodi il rame del frontespizio attester&#xE0; l'autenticit&#xE0; di questa edizione. <lb /> Milano, ottobre 1802.
+                </lem><rdg wit="M"></rdg></app></p>
+            </div1>
+            <div1 type="dedica">
+                <head>AL LETTORE</head>
+                <p>Pubblicando queste <app type="punctuation"><lem wit="II M Z L">lettere, io</lem><rdg wit="III">lettere io</rdg></app> tento di erigere un monumento alla virt&#xF9; sconosciuta, e di consecrare su le memorie del mio solo amico quel pianto <app type="omission"><lem wit="II M Z L">che ora mi</lem><rdg wit="III">che mi</rdg></app> si vieta di spargere su la sua sepoltura.</p>
+                <p>E tu, o Lettore, se uno non sei di coloro che esigono dagli altri quell'eroismo di cui non sono eglino stessi capaci, darai, spero, <app type="lexical"><lem wit="II M Z L">la tua compassione</lem><rdg wit="III">le tue lagrime</rdg></app> al giovine infelice dal quale potrai forse trarre esempio e conforto.</p>
+                <closer>
+                    <signed>
+                        <persName ref="#LA">LORENZO A***</persName>
+                    </signed>
+                </closer>
+            </div1>
+            <div1 type="part">
+                <div2 type="epistola" n="1">
+                    <opener>
+                        <dateline>Da' <placeName ref="#CE">colli Euganei</placeName>, 11 ottobre 1797.</dateline>
+                    </opener>
+                    <p>IL <app type="orthographic"><lem wit="II M Z L">sacrificio</lem><rdg wit="III">sagrificio</rdg></app> della nostra patria &#xE8; consumato: tutto &#xE8; perduto, e la vita, seppure ne verr&#xE0; concessa, non ci rester&#xE0; che per piangere le nostre <app type="punctuation"><lem wit="II M Z L">sciagure, e</lem><rdg wit="III">sciagure e</rdg></app> <app type="morphological"><lem wit="II M Z L">le nostre infamie</lem><rdg wit="III">la nostra infamia</rdg></app>. Il mio nome &#xE8; nella lista di proscrizione, lo so: ma vuoi tu ch'io per salvarmi da chi <app type="mixed" subtype="punctuation-lexical"><lem wit="II III Z L">m'opprime mi commetta</lem><rdg wit="M">m'opprime, m'affidi</rdg></app> a chi mi ha tradito ? Consola <persName ref="#MO">mia madre</persName>: vinto dalle sue lagrime l'ho ubbidita, e ho lasciato <placeName ref="#VE">Venezia</placeName> per evitare le prime persecuzioni, e le pi&#xF9; feroci. Ma dovr&#xF2; io abbandonare anche questa mia solitudine <app type="punctuation"><lem wit="II III Z L">antica, dove,</lem><rdg wit="M">antica dove,</rdg></app>senza perdere per sempre il mio sciagurato paese, posso ancora sperare qualche giorno di pace? Tu mi fai raccapricciare, <persName ref="#LA">Lorenzo</persName>.... quanti infelici! <app type="capitalisation"><lem wit="II III Z L">E noi,</lem><rdg wit="M">e noi,</rdg></app> pur troppo, noi stessi <app type="capitalisation"><lem wit="III M Z L">italiani</lem><rdg wit="II">Italiani</rdg></app> ci laviamo le mani nel sangue degl'<app type="capitalisation"><lem wit="III M Z L">italiani</lem><rdg wit="II">Italiani</rdg></app>. Per me segua che pu&#xF2;. Poich&#xE8; ho disperato e della mia patria e di me stesso, aspetto tranquillamente la prigione e la morte. Il mio cadavere almeno non cadr&#xE0; fra braccia straniere; il mio nome sar&#xE0; sommessamente compianto da pochi uomini buoni, compagni <app type="orthographic"><lem wit="Z L">de le</lem><rdg wit="M II III">delle</rdg></app> nostre miserie; e le mie ossa poseranno su la terra de' miei padri.</p>
+                </div2>
+                <div2 type="epistola" n="2">
+                    <opener>
+                        <dateline>13 ottobre.</dateline>
+                    </opener>
+                    <p>TI scongiuro, <app type="punctuation"><lem wit="II III Z L"><persName ref="#LA">Lorenzo</persName>;</lem><rdg wit="M"><persName ref="#LA">Lorenzo</persName>,</rdg></app> non insistere pi&#xF9;. Ho deliberato di non allontanarmi da questi colli. &#xC8; vero ch'io aveva promesso a <persName ref="#MO">mia madre</persName> di <app type="orthographic"><lem wit="II III Z L">rifuggirmi</lem><rdg wit="M">rifuggiarmi</rdg></app> in qualche altro paese; ma non mi &#xE8; bastato il cuore: e mi perdoner&#xE0;, spero. Merita poi questa vita di essere conservata con la vilt&#xE0;, e con l'<app type="orthographic"><lem wit="II M Z L">esilio ?</lem><rdg wit="III">esiglio ?</rdg></app> <app type="capitalisation"><lem wit="II III Z L">Oh quanti</lem><rdg wit="M">oh quanti</rdg></app> de' nostri concittadini gemeranno pentiti, lontani dalle loro case!... perch&#xE8;.... e che potremo <app type="morphological"><lem wit="II M Z L">aspettarci</lem><rdg wit="III">aspettarsi</rdg></app> noi fuorch&#xE8; indigenza e disprezzo, o <app type="punctuation"><lem wit="II III Z L">al pi&#xF9;, breve</lem><rdg wit="M">al pi&#xF9; breve</rdg></app> e sterile compassione, solo conforto che le nazioni <app type="lexical"><lem wit="II III Z L">incivilite</lem><rdg wit="M">civilizzate</rdg></app> offrono al profugo straniero? Ma dove cercher&#xF2; asilo? in <placeName ref="#IT">Italia</placeName>? infelice <app type="punctuation"><lem wit="II III Z L">terra! premio</lem><rdg wit="M">terra premio</rdg></app> sempre della <app type="punctuation"><lem wit="II III Z L">vittoria.</lem><rdg wit="M">vittoria!</rdg></app> Potr&#xF2; io vedermi <app type="orthographic"><lem wit="II III Z L">dinanzi</lem><rdg wit="M">d'innanzi</rdg></app> gli occhi coloro che ci hanno spogliati, derisi venduti, e non piangere d'ira ? Devastatori de' <app type="punctuation"><lem wit="II III Z L">popoli, si servono</lem><rdg wit="M">popoli si servono</rdg></app> della libert&#xE0; come i papi si serviano delle <app type="orthographic"><lem wit="II III Z L">crociate</lem><rdg wit="M">crocciate</rdg></app>. Ahi! sovente disperando di vendicarmi mi <app type="orthographic"><lem wit="II III Z L">caccerei</lem><rdg wit="M">caccierei</rdg></app> un coltello nel cuore per versare tutto il mio sangue fra le ultime strida della mia patria.</p>
+                    <p>E questi altri ?... hanno comperato la nostra schiavit&#xF9;, racquistando con loro quello che stolidamente e vilmente hanno perduto con le armi. - Davvero ch'io somiglio un di <app type="orthographic"><lem wit="II III Z L">quegli infelici</lem><rdg wit="III">quegl'infelici</rdg></app> che spacciati morti furono sepolti vivi, e che poi rinvenuti, si sono trovati nel sepolcro fra le tenebre e gli scheletri, certi di vivere, ma disperati del dolce lume della vita, e costretti a morire fra le bestemmie e la fame. E perch&#xE8; farci vedere sentire la libert&#xE0;, e poi ritorcela per sempre.... e infamemente?</p>
+                </div2>
+                <div2 type="epistola" n="3">
+                    <opener>
+                        <dateline>16 ottobre</dateline>
+                    </opener>
+                    <p>OR <app type="punctuation"><lem wit="II III Z L">via, non</lem><rdg wit="M">via non</rdg></app> se ne parli pi&#xF9;: la burrasca pare acquetata; se torner&#xE0; il pericolo, rassicurati, tenter&#xF2; ogni via di scamparne. Del resto io vivo <app type="punctuation"><lem wit="II III Z L">tranquillo per</lem><rdg wit="M">tranquillo, per</rdg></app> quanto si pu&#xF2;.... tranquillo. Non vedo persona del mondo: <app type="orthographic"><lem wit="II III Z L">vo</lem><rdg wit="M">v&#xF2;</rdg></app> sempre vagando per la campagna; ma a dirti il vero <app type="punctuation"><lem wit="II III Z L">penso, e</lem><rdg wit="M">penso e</rdg></app> mi rodo. Mandami qualche libro.</p>
+                    <p>Che fa <persName ref="#LR">Lauretta</persName>? la povera fanciulla!... io l'ho lasciata fuori di s&#xE8;. Bella e giovine ancora ella ha inferma la ragione, e il cuore infelice.... infelicissimo. Io non l'ho <app type="punctuation"><lem wit="II III Z L">amata; ma</lem><rdg wit="M">amata, ma</rdg></app> fosse compassione o riconoscenza per avere ella scelto me solo consolatore del suo <app type="punctuation"><lem wit="II III Z L">stato, versandomi</lem><rdg wit="M">stato versandomi</rdg></app> nel petto tutta la sua anima e i suoi errori e i suoi martirj.... davvero ch'io l'avrei fatta volontieri compagna di tutta la mia vita. La sorte non ha voluto; meglio cos&#xEC;, forse. Ella amava <persName ref="#EU">Eugenio</persName>, e l'&#xE8; morto fra le braccia. Suo padre e i suoi fratelli hanno dovuto fuggire la loro patria, e quella povera famiglia destituta di ogni umano soccorso &#xE8; restata a vivere, chi sa come!... di pianto. Eccoti, o rivoluzione, un'altra vittima. Sai, ch'io ti scrivo, o <persName ref="#LA">Lorenzo</persName>, piangendo come un ragazzo?... - pur troppo! ho avuto sempre a che fare con <app type="orthographic"><lem wit="II III Z L">degli scellerati,</lem><rdg wit="M">de' scellerati,</rdg></app> e le poche volte che ho <app type="morphological"><lem wit="II III Z L">incontrata</lem><rdg wit="M">incontrato</rdg></app> la virt&#xF9; ho dovuto sempre compiangerla. Addio addio.</p>
+                </div2>
+                <div2 type="epistola" n="4">
+                    <opener>
+                        <dateline>18 ottobre</dateline>
+                    </opener>
+                    <p><persName ref="#MI">MICHELE</persName> mi ha recato il <app type="punctuation"><lem wit="II III Z L"><persName ref="#PL">Plutarco</persName>, e te ne</lem><rdg wit="M"><persName ref="#PL">Plutarco</persName>; te ne</rdg></app><persName ref="#PL">Plutarco</persName> ringrazio. Mi disse che con altra occasione m'invierai qualche altro libro; per ora basta. Col divino <persName ref="#PL">Plutarco</persName> potr&#xF2; consolarmi de' delitti e delle sciagure <app type="orthographic"><lem wit="II III Z L">dell'umanit&#xE0;</lem><rdg wit="M">della umanit&#xE0;</rdg></app> volgendo gli occhi ai pochi illustri che quasi primati dell'<app type="orthographic"><lem wit="II M Z L">uman</lem><rdg wit="III">umano</rdg></app> genere sovrastano a tanti secoli e a tante genti. Temo per altro che spogliandoli della magnificenza storica e della riverenza per l'antichit&#xE0;, non avr&#xF2; molto a lodarmi n&#xE8; degli antichi, n&#xE8; de' moderni, n&#xE8; di me stesso.... umana razza!</p>
+                </div2>
+                <div2 type="epistola" n="5">
+                    <opener>
+                        <dateline>23 ottobre.</dateline>
+                    </opener>
+                    <p>SE m'&#xE8; dato lo sperare mai pace, l'ho trovata, o <persName ref="#LA">Lorenzo</persName>. Il parroco, il <app type="punctuation"><lem wit="II III Z L">medico, e</lem><rdg wit="M">medico e</rdg></app> a tutti gli oscuri mortali di questo cantuccio della terra mi conoscono sin da fanciullo e mi amano. Quantunque io viva fuggiasco, mi vengono tutti d'intorno quasi volessero mansuefare una fiera generosa e selvatica. Per ora io lascio correre. Veramente non ho avuto tanto bene dagli uomini da fidarmene cos&#xEC; a un tratto: ma quel menare la vita del tiranno che freme e trema d'essere scannato a ogni minuto mi pare un agonizzare in una morte lenta, obbrobriosa. Io siedo con essi a mezzod&#xEC; sotto il platano della chiesa leggendo loro le vite di <persName ref="#LC">Licurgo</persName> e di <persName ref="#TM">Timoleone</persName>. Domenica mi s'erano affollati intorno tutti i contadini che, quantunque non comprendessero affatto, stavano ascoltandomi a bocca aperta. Credo che il desiderio di sapere la storia de' tempi andati sia figlio del nostro amor proprio che vorrebbe illudersi prolungare <app type="lexical"><lem wit="II III Z L">la vita</lem><rdg wit="M">l'esistenza</rdg></app> unendoci agli uomini e alle cose che non <app type="lexical"><lem wit="II III Z L">sono</lem><rdg wit="M">esistono</rdg></app> pi&#xF9;, e <app type="morphological"><lem wit="II III Z L">facendole</lem><rdg wit="M">facendoli</rdg></app>, sto per dire, di nostra propriet&#xE0;. Ama la immaginazione di spaziare fra i secoli e di possedere un altro universo. Con quanta passione un vecchio lavoratore mi narrava stamattina la vita de' parrochi della villa viventi nella sua fanciullezza, e mi descriveva i danni della tempesta di trentasett'anni addietro e i tempi dell'abbondanza e quei della fame, interrompendosi ad ogni tratto, ripigliando il racconto ed accusandosi d'infedelt&#xE0;! Cos&#xEC; mi riesce di dimenticarmi ch'io vivo.</p>
+                    <p>E venuto a trovarmi il <persName ref="#ST">signore T***</persName> che tu conoscesti a <placeName ref="#PD">Padova</placeName>. Mi disse che spesso gli parlavi di me, e che jer l'altro glien'hai scritto. Anche egli s'&#xE8; ritirato in campagna per evitare i primi furori del volgo, quantunque a dir vero non siasi molto intricato ne' pubblici affari. Io <app type="morphological"><lem wit="II M Z L">n'avea</lem><rdg wit="III">n' aveva</rdg></app> sentito parlare come d'uomo di culto ingegno e di somma onest&#xE0;; doti <app type="lexical"><lem wit="II III Z L">temute</lem><rdg wit="M">dileggiate</rdg></app> in passato, ma adesso non possedute impunemente. Ha tratto cortese, fisonomia liberale, e parla col cuore. V'era con lui un tale; credo, lo sposo promesso di sua figlia. Sar&#xE0; forse un bravo e buono giovine, ma la sua faccia non dice nulla. Buona notte.</p>
+                </div2>
+            </div1>
+        </body>
+    </text>
+</TEI>

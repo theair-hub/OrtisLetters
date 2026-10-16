@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="DC.title" content="OpenOrtis" />
+  <meta name="DC.creator" content="Ilaria De Dominicis" />
+  <meta name="DC.subject" content="Digital Humanities, Cultural Heritage, Digital Edition" />
+  <meta name="DC.description" content="A digital edition about The Last Letters of Jacopo Ortis by Ugo Foscolo" />
+  <meta name="DC.publisher" content="Alma Mater Studiorum- University of Bologna" />
+  <meta name="DC.rights"
+    content="All the images and resources taken from external sources are solely used for study purposes. No commercial use is intended. OpenOrtis © 2026" />
+  <meta name="DC.identifier" content="" />
+  <meta name="DC.type" scheme="DCTERMS.DCMIType" content="InteractiveResource" />
+  <meta name="DC.language" scheme="DCTERMS.RFC3066" content="en" />
+  <meta name="DCTERMS.created" content="2026" />
+  <meta name="DCTERMS.issued" content="2026" />
+  <title>Places – Ortis LettersDigital Edition</title>
+  <link rel="icon" type="image/png" href="img/Logo-Ortis.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Karla:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css\style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+</head>
+
+<body>
+  <header class="hero small">
+    <div class="hero-inner">
+      <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="#">Edition</a><a
+          href="characters.html">People</a><a href="places.html" aria-current="page">Places</a><a
+          href="documentation.html">Documentation</a></nav>
+      <h1>Places</h1>
+      <p class="sub">Places named in the editions</p>
+    </div>
+  </header>
+  <main class="explore">
+    <section id="mapwrap">
+      <div class="filters" id="filters" role="group" aria-label="Filter by edition"></div>
+      <div class="viz">
+        <div id="map" role="region" aria-label="Interactive map of the places named in the editions"></div>
+      </div>
+      <p class="legend"><span><i class="sage"></i>City</span><span><i class="dashed"></i>Area (approximate centre
+          shown)</span><span>Select a marker or a name below.</span></p>
+    </section>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </main>
+  <section class="roster">
+    <h2>All places</h2>
+    <div class="roster-grid" id="roster"></div>
+  </section>
+  <footer>&copy; 2026 Ortis Letters Digital Edition. <br> Project developed for the course of <a
+      href=https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti/insegnamento/2025/478841>Digital
+      scholarly editing: theory, methods and practice</a> at the University of Bologna.</footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="js/explore.js"></script>
+  <script>
+    (async () => {
+      const { el, loadJSON, showError, editionFilter, appearances, section, linkList } = Explore;
+      const wrap = document.getElementById('mapwrap'), panel = document.getElementById('panel');
+      let data; const chars = {};
+      try { data = await loadJSON('data/places.json'); } catch (e) { showError(wrap, e); return; }
+      try { (await loadJSON('data/characters.json')).characters.forEach(c => chars[c.id] = c); } catch (e) { }
+
+      const byId = Object.fromEntries(data.places.map(p => [p.id, p]));
+      const TYPE = { city: 'City', hills: 'Hills', country: 'Country' };
+      const SAGE = '#8FA69B', SLATE = '#6D8794', INK = '#2E3A3F';
+      const map = L.map('map', { zoomControl: true, scrollWheelZoom: false });
+      map.on('click', () => { });
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      const style = (p, sel) => ({ radius: sel ? 13 : 9, color: sel ? INK : SLATE, weight: sel ? 2.5 : 1.5, fillColor: sel ? SLATE : SAGE, fillOpacity: p.type === 'city' ? .9 : .35, dashArray: p.type === 'city' ? null : '4 3' });
+      const markers = {}; let selected = null, activeEd = null;
+      data.places.forEach(p => {
+        const m = L.circleMarker([p.lat, p.lon], style(p, false)).bindTooltip(p.name, { direction: 'top', offset: [0, -8] }).addTo(map);
+        m.on('click', () => select(p.id)); markers[p.id] = m;
+      });
+      const inEd = p => !activeEd || p.appearances.some(a => a.edition === activeEd);
+      const refit = () => {
+        const vis = data.places.filter(inEd).map(p => [p.lat, p.lon]);
+        if (vis.length > 1) map.fitBounds(vis, { padding: [50, 50] }); else if (vis.length) map.setView(vis[0], 9);
+      };
+      const paint = () => {
+        data.places.forEach(p => {
+          const on = inEd(p);
+          if (on && !map.hasLayer(markers[p.id])) markers[p.id].addTo(map);
+          if (!on && map.hasLayer(markers[p.id])) map.removeLayer(markers[p.id]);
+          markers[p.id].setStyle(style(p, p.id === selected));
+        });
+        if (selected && markers[selected] && map.hasLayer(markers[selected])) markers[selected].bringToFront();
+      };
+
+      function select(id, pan) {
+        const p = byId[id]; if (!p) return; selected = id;
+        history.replaceState(null, '', '#' + id);
+        const rel = (p.related_characters || []).filter(c => chars[c]);
+        panel.replaceChildren(
+          ...[
+            el('h2', {}, p.name),
+            el('div', { class: 'chips' },
+              el('span', { class: 'chip' }, TYPE[p.type] || p.type),
+              el('span', { class: 'chip' }, p.role)
+            ),
+            el('p', {}, p.description),
+            section('Where it appears', appearances(p.appearances, data.editions)),
+            rel.length
+              ? section('Related people', el('ul', {}, rel.map(c =>
+                el('li', {}, el('a', {
+                  href: 'characters.html#' + c
+                }, chars[c].name))
+              )))
+              : null,
+            (p.links && p.links.length)
+              ? section('Authority records', linkList(p.links))
+              : null
+          ].filter(Boolean)
+        );
+        paint();
+        if (pan && map.hasLayer(markers[id])) map.panTo([p.lat, p.lon]);
+      }
+
+      editionFilter(document.getElementById('filters'), data.editions, id => { activeEd = id; paint(); refit(); });
+      const roster = document.getElementById('roster');
+      data.places.forEach(p => roster.append(el('button', { type: 'button', onclick: () => { select(p.id, true); panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); } }, p.name, el('small', {}, TYPE[p.type] || p.type))));
+      refit();
+      const start = location.hash.slice(1);
+      select(byId[start] ? start : data.places[0].id);
+    })();
+  </script>
+</body>
+
+</html>

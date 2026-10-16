@@ -1,0 +1,294 @@
+{
+  "editions": {
+    "bolo-1798": {
+      "label": "Bologna 1798",
+      "image": "img/ed-bolo-1798.png",
+      "url": null
+    },
+    "mil-1802": {
+      "label": "Milan 1802",
+      "image": "img/ed-mil-1802.png",
+      "url": null
+    },
+    "lon-1817": {
+      "label": "London 1817",
+      "image": "img/lon-1817.png",
+      "url": null
+    }
+  },
+  "places": [
+    {
+      "id": "VE",
+      "name": "Venezia",
+      "type": "city",
+      "lat": 45.4408,
+      "lon": 12.3155,
+      "role": "Jacopo's native city",
+      "description": "Jacopo's native city, which he leaves to escape the first persecutions. In the background of the story is the Treaty of Campoformio, which handed Venice over to Austria.",
+      "appearances": [
+        {
+          "edition": "mil-1802",
+          "sections": [
+            "Letter I"
+          ]
+        },
+        {
+          "edition": "lon-1817",
+          "sections": [
+            "Letter I"
+          ]
+        }
+      ],
+      "related_characters": [
+        "JO",
+        "MO"
+      ],
+      "links": [
+        {
+          "label": "GeoNames",
+          "url": "https://www.geonames.org/3164603/venice.html"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Venice"
+        }
+      ]
+    },
+    {
+      "id": "CE",
+      "name": "Colli Euganei",
+      "type": "hills",
+      "lat": 45.3,
+      "lon": 11.7,
+      "role": "Jacopo's retreat",
+      "description": "The Euganean Hills near Padua, where Jacopo retreats after leaving Venice. In the Bolognese edition the scenery of letter III, with its five streams and small lake, is placed here. The marker shows the approximate centre of the area.",
+      "appearances": [
+        {
+          "edition": "bolo-1798",
+          "sections": [
+            "Letter I"
+          ]
+        },
+        {
+          "edition": "mil-1802",
+          "sections": [
+            "Letter I"
+          ]
+        },
+        {
+          "edition": "lon-1817",
+          "sections": [
+            "Letter I"
+          ]
+        }
+      ],
+      "related_characters": [
+        "JO"
+      ],
+      "links": [
+        {
+          "label": "GeoNames",
+          "url": "https://www.geonames.org/3177329/colli-euganei.html"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Euganean_Hills"
+        }
+      ]
+    },
+    {
+      "id": "PD",
+      "name": "Padova",
+      "type": "city",
+      "lat": 45.4064,
+      "lon": 11.8768,
+      "role": "Post office and meeting place",
+      "description": "In the Bolognese edition Michele takes Jacopo's letters to the post office in Padua. In the 1802 and 1817 editions Padua is where Lorenzo met Signor T.",
+      "appearances": [
+        {
+          "edition": "bolo-1798",
+          "sections": [
+            "Letter III"
+          ]
+        },
+        {
+          "edition": "mil-1802",
+          "sections": [
+            "Letter V"
+          ]
+        },
+        {
+          "edition": "lon-1817",
+          "sections": [
+            "Letter V"
+          ]
+        }
+      ],
+      "related_characters": [
+        "MI",
+        "LA",
+        "ST"
+      ],
+      "links": [
+        {
+          "label": "GeoNames",
+          "url": "https://www.geonames.org/3171728/padova.html"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Padua"
+        }
+      ]
+    },
+    {
+      "id": "RO",
+      "name": "Roma",
+      "type": "city",
+      "lat": 41.9028,
+      "lon": 12.4964,
+      "role": "Odoardo's native city",
+      "description": "Odoardo's native city, where he could have become a great painter. It is named in letter V of the Bolognese edition.",
+      "appearances": [
+        {
+          "edition": "bolo-1798",
+          "sections": [
+            "Letter V"
+          ]
+        }
+      ],
+      "related_characters": [
+        "OD"
+      ],
+      "links": [
+        {
+          "label": "GeoNames",
+          "url": "https://www.geonames.org/3169070/rome.html"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Rome"
+        }
+      ]
+    },
+    {
+      "id": "IT",
+      "name": "Italia",
+      "type": "country",
+      "lat": 42.8,
+      "lon": 12.6,
+      "role": "Jacopo's homeland",
+      "description": "Jacopo's homeland, invoked with grief and indignation as a land betrayed and trampled underfoot by foreign powers. The marker is placed at the approximate centre of the country.",
+      "appearances": [
+        {
+          "edition": "mil-1802",
+          "sections": [
+            "Letter II"
+          ]
+        },
+        {
+          "edition": "lon-1817",
+          "sections": [
+            "Letter II"
+          ]
+        }
+      ],
+      "related_characters": [
+        "JO"
+      ],
+      "links": [
+        {
+          "label": "GeoNames",
+          "url": "https://www.geonames.org/3175395/italian-republic.html"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Italy"
+        }
+      ]
+    },
+    {
+      "id": "BO",
+      "name": "Bologna",
+      "type": "city",
+      "lat": 44.4949,
+      "lon": 11.3426,
+      "role": "Place of an earlier edition",
+      "description": "In the editor's notice of the 1802 edition, Bologna is where the first of the earlier editions, in two small volumes, was printed. The editor disowns it.",
+      "appearances": [
+        {
+          "edition": "mil-1802",
+          "sections": [
+            "Editor's notice"
+          ]
+        }
+      ],
+      "related_characters": [],
+      "links": [
+        {
+          "label": "GeoNames",
+          "url": "https://www.geonames.org/3181928/bologna.html"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Bologna"
+        }
+      ]
+    },
+    {
+      "id": "TO",
+      "name": "Torino",
+      "type": "city",
+      "lat": 45.0703,
+      "lon": 7.6869,
+      "role": "Place of an earlier edition",
+      "description": "In the editor's notice of the 1802 edition, Turin is where the most recent of the earlier editions was printed. The editor disowns it.",
+      "appearances": [
+        {
+          "edition": "mil-1802",
+          "sections": [
+            "Editor's notice"
+          ]
+        }
+      ],
+      "related_characters": [],
+      "links": [
+        {
+          "label": "GeoNames",
+          "url": "https://www.geonames.org/3165524/turin.html"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Turin"
+        }
+      ]
+    },
+    {
+      "id": "MIL",
+      "name": "Milano",
+      "type": "city",
+      "lat": 45.4642,
+      "lon": 9.19,
+      "role": "Dateline of the editor's notice",
+      "description": "The place given in the dateline of the editor's notice of the 1802 edition: 'Milano, ottobre 1802'.",
+      "appearances": [
+        {
+          "edition": "mil-1802",
+          "sections": [
+            "Editor's notice (dateline)"
+          ]
+        }
+      ],
+      "related_characters": [],
+      "links": [
+        {
+          "label": "GeoNames",
+          "url": "https://www.geonames.org/3173435/milan.html"
+        },
+        {
+          "label": "Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Milan"
+        }
+      ]
+    }
+  ]
+}
