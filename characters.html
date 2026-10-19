@@ -4,13 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="DC.title" content="OpenOrtis" />
+  <meta name="DC.title" content="Ortis Letters" />
   <meta name="DC.creator" content="Ilaria De Dominicis" />
   <meta name="DC.subject" content="Digital Humanities, Cultural Heritage, Digital Edition" />
   <meta name="DC.description" content="A digital edition about The Last Letters of Jacopo Ortis by Ugo Foscolo" />
   <meta name="DC.publisher" content="Alma Mater Studiorum- University of Bologna" />
   <meta name="DC.rights"
-    content="All the images and resources taken from external sources are solely used for study purposes. No commercial use is intended. OpenOrtis © 2026" />
+    content="All the images and resources taken from external sources are solely used for study purposes. No commercial use is intended. Ortis Letters © 2026" />
   <meta name="DC.identifier" content="" />
   <meta name="DC.type" scheme="DCTERMS.DCMIType" content="InteractiveResource" />
   <meta name="DC.language" scheme="DCTERMS.RFC3066" content="en" />
@@ -29,14 +29,17 @@
 <body>
   <header class="hero small">
     <div class="hero-inner">
-      <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="#">Edition</a><a href="characters.html"
-          aria-current="page">People</a><a href="places.html">Places</a><a href="documentation.html">Documentation</a>
+      <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="edition.html">Edition</a><a
+          href="characters.html" aria-current="page">People</a><a href="places.html">Places</a><a
+          href="documentation.html">Documentation</a>
       </nav>
       <h1>People</h1>
-      <p class="sub">Characters and figures named in the editions</p>
+      <p class="sub">The Characters and figures named in the editions.</p>
     </div>
   </header>
   <main class="explore">
+    <p>Click on each edition to see the added and deleted characters throughout the revisions, and how they relate to
+      each other.</p>
     <section id="graphwrap">
       <div class="filters" id="filters" role="group" aria-label="Filter by edition"></div>
       <div class="viz"><svg id="graph" role="img"
@@ -152,7 +155,7 @@
               )))
               : null,
             (c.links && c.links.length)
-              ? section('Authority records', linkList(c.links))
+              ? section('External Links and Authority Records', linkList(c.links))
               : null
           ].filter(Boolean)
         );

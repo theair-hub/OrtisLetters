@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-----------------  Dublin Core ------------------------>
+  <link rel="schema.DC" href="https://purl.org/dc/elements/1.1/" />
+  <link rel="schema.DCTERMS" href="https://purl.org/dc/terms/" />
+
+  <meta name="DC.title" content="Ortis Letters" />
+  <meta name="DC.creator" content="Ilaria De Dominicis" />
+  <meta name="DC.subject" content="Digital Humanities, Cultural Heritage, Digital Edition" />
+  <meta name="DC.description" content="A digital edition about The Last Letters of Jacopo Ortis by Ugo Foscolo" />
+  <meta name="DC.publisher" content="Alma Mater Studiorum- University of Bologna" />
+  <meta name="DC.rights"
+    content="All the images and resources taken from external sources are solely used for study purposes. No commercial use is intended. Ortis Letters © 2026" />
+  <meta name="DC.identifier" content="" />
+  <meta name="DC.type" scheme="DCTERMS.DCMIType" content="InteractiveResource" />
+  <meta name="DC.language" scheme="DCTERMS.RFC3066" content="en" />
+  <meta name="DCTERMS.created" content="2026" />
+  <meta name="DCTERMS.issued" content="2026" />
+
+  <link rel="icon" type="image/png" href="img/Logo-Ortis.png">
+
+  <title>Edition &ndash; Digital Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Karla:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="hero small">
+    <div class="hero-inner">
+      <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="edition.html"
+          aria-current="page">Edition</a><a href="characters.html">People</a><a href="places.html">Places</a><a
+          href="documentation.html">Documentation</a></nav>
+      <h1>Edition</h1>
+      <p class="sub">Three editions, with their variants</p>
+    </div>
+  </header>
+  <div class="ed-switch" id="ed-switch" role="group" aria-label="Choose an edition">
+    <button type="button" data-ed="bolo-1798" aria-pressed="true">Bologna 1798</button>
+    <button type="button" data-ed="mil-1802" aria-pressed="false">Milan 1802</button>
+    <button type="button" data-ed="lon-1817" aria-pressed="false">London 1817</button>
+  </div>
+  <main id="ed-root" aria-live="polite">
+    <p class="note-err">Loading the edition&hellip;</p>
+  </main>
+  <footer>&copy; 2026 Ortis Letters Digital Edition. <br> Project developed for the course of <a
+      href=https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti/insegnamento/2025/478841>Digital
+      scholarly editing: theory, methods and practice</a> at the University of Bologna.</footer>
+  <script src="js\edition.js"></script>
+</body>
+
+</html>

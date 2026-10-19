@@ -7,7 +7,7 @@
     <teiHeader xml:lang="en">
         <fileDesc>
             <titleStmt>
-                <title>Ultime lettere di Jacopo Ortis (Edizione milanese, 1802)</title>
+                <title>Ultime lettere di Jacopo Ortis (Edizione milanese, Genio Tipografico, 1802) by Ugo Foscolo, taken from Giovanni Gambarin's National Edition (1970)</title>
                 <author>
                     <persName ref="#UF">
                         <forename>Ugo</forename>
@@ -16,7 +16,7 @@
                 </author>
             </titleStmt>
             <editionStmt>
-                <edition>Prototype digital edition - <date when="2026-10">October, 2026</date>
+                <edition>Prototype digital edition - <date when="2026">2026</date>
                 </edition>
                 <respStmt>
                     <resp>Annotated by</resp>
@@ -27,7 +27,7 @@
                 </respStmt>
             </editionStmt>
             <extent>
-                <measure unit="kB" quantity="15">About 15 kB</measure>
+                <measure unit="kB" quantity="29">About 29 kB</measure>
             </extent>
             <publicationStmt>
                 <publisher>
@@ -35,11 +35,11 @@
                     di Bologna</foreign></publisher>
                 <pubPlace>
                     <placeName key="Bologna" sameAs="https://www.geonames.org/3181928">Bologna</placeName>
-                    <date when="2026-10">October, 2026</date>
+                    <date when="2026">2026</date>
                 </pubPlace>
                 <availability status="free">
                     <licence target="https://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC </licence>
-                    <p>OpenOrtis is a project created for the course of
+                    <p>Ortis Letters is a project created for the course of
 
                 Digital Scholarly Editing: Theory, Methods and Practice
 
@@ -50,7 +50,7 @@
             <notesStmt>
                 <note>This is an XML/TEI document made for the exam of Digital Scholarly Editing:
                     Theory, Methods and Practice. It transcribes the Milanese edition of 1802
-                    (witness M), limited to the editor's notice, the dedication and letters 1-5 of
+                    (witness M) and its variants, limited to the editor's notice, the dedication and letters 1-5 of
                     the first part.
                 </note>
             </notesStmt>

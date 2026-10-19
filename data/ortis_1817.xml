@@ -16,7 +16,7 @@
                 </author>
             </titleStmt>
             <editionStmt>
-                <edition>Prototype digital edition- <date when="2026-09">September, 2026</date>
+                <edition>Prototype digital edition- <date when="2026">2026</date>
                 </edition>
                 <respStmt>
                     <resp>Annotated by</resp>
@@ -27,7 +27,7 @@
                 </respStmt>
             </editionStmt>
             <extent>
-                <measure unit="kB" quantity="123">About 123 kB</measure>
+                <measure unit="kB" quantity="34">About 34 kB</measure>
             </extent>
             <publicationStmt>
                 <publisher>
@@ -35,11 +35,11 @@
                     di Bologna</foreign></publisher>
                 <pubPlace>
                     <placeName key="Bologna" sameAs="https://www.geonames.org/3181928">Bologna</placeName>
-                    <date when="2026-09">September, 2026</date>
+                    <date when="2026">2026</date>
                 </pubPlace>
                 <availability status="free">
                     <licence target="https://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC </licence>
-                    <p>OpenOrtis is a project created for the course of
+                    <p>Ortis Letters is a project created for the course of
 
                 Digital Scholarly Editing: Theory, Methods and Practice
 
@@ -48,8 +48,7 @@
                 </availability>
             </publicationStmt>
             <notesStmt>
-                <note>This is an XML/TEI document made for the exam of Digital Scholarly Editing:
-                    Theory, Methods and Practice.
+                <note>This XML/TEI document was created for the Digital Scholarly Editing: Theory, Methods and Practice exam. The print source for the edition is Giovanni Gambarin’s National Edition (1970), while the digital text was retrieved from Biblioteca Italiana. The edition transcribes Letters I–V of the London edition of The Last Letters of Jacopo Ortis. The critical apparatus was transcribed manually, and the sigla identify the editions used for comparison: Genio Tipografico (Gt), Zurich (Z), and London (L).
                 </note>
             </notesStmt>
             <sourceDesc>
@@ -95,7 +94,7 @@
                     <witness xml:id="L">
                         <date>1817</date>
                         <msDesc type="print">
-                            <msIdentifier><settlement>London</settlement><idno>Foscolo, U. 1817. Ultime Lettere di Jacopo Ortis.John Murray. London. </idno>
+                            <msIdentifier><settlement>London</settlement><idno>Foscolo, U. 1817. Ultime Lettere di Jacopo Ortis. John Murray. London. </idno>
                             </msIdentifier>
                         </msDesc>
                     </witness>
@@ -106,7 +105,7 @@
             <samplingDecl>
                 <p>All paratextual materials from the printed source not attributable to the author
                     of the work have been added in the present digital version following the
-                    parallel segmentation apparatus.</p>
+                    parallel segmentation apparatus. Only letters I-V are transcribed.</p>
             </samplingDecl>
             <editorialDecl>
                 <correction method="silent" status="medium">
@@ -292,16 +291,13 @@
                     </signed>
                 </closer>
             </div1>
-            <!-- NB: In L a questa dedica segue la NOTIZIA. In Z, prima di questa dedica, si legge
-            l'AVVISO
-            DELLO STAMPATORE.-->
             <div1 type="part">
                 <head>
                     <hi rend="italic">PARTE PRIMA</hi>
                 </head>
                 <div2 type="epistola" n="1">
                     <app type="addition">
-                        <lem wit="#L #Gt"></lem>  <!-- omessa in L e Gt -->
+                        <lem wit="#L #Gt"></lem>  <!-- omittis in L e Gt -->
                         <rdg wit="#Z">Libert&#xE0; va cercando; ch'&#xE8; s&#xEC; cara <lb />Come sa chi per lei
                             vita rifiuta. <lb /> DANTE</rdg>  <!-- presente in Z -->
                     </app>

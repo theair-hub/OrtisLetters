@@ -4,13 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="DC.title" content="OpenOrtis" />
+  <meta name="DC.title" content="Ortis Letters" />
   <meta name="DC.creator" content="Ilaria De Dominicis" />
   <meta name="DC.subject" content="Digital Humanities, Cultural Heritage, Digital Edition" />
   <meta name="DC.description" content="A digital edition about The Last Letters of Jacopo Ortis by Ugo Foscolo" />
   <meta name="DC.publisher" content="Alma Mater Studiorum- University of Bologna" />
   <meta name="DC.rights"
-    content="All the images and resources taken from external sources are solely used for study purposes. No commercial use is intended. OpenOrtis © 2026" />
+    content="All the images and resources taken from external sources are solely used for study purposes. No commercial use is intended. Ortis Letters © 2026" />
   <meta name="DC.identifier" content="" />
   <meta name="DC.type" scheme="DCTERMS.DCMIType" content="InteractiveResource" />
   <meta name="DC.language" scheme="DCTERMS.RFC3066" content="en" />
@@ -30,7 +30,7 @@
 <body>
   <header class="hero small">
     <div class="hero-inner">
-      <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="#">Edition</a><a
+      <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="edition.html">Edition</a><a
           href="characters.html">People</a><a href="places.html" aria-current="page">Places</a><a
           href="documentation.html">Documentation</a></nav>
       <h1>Places</h1>
@@ -38,6 +38,9 @@
     </div>
   </header>
   <main class="explore">
+    <p>Click on the editions and explore which places where mentioned in each one of them, while seeing what changed
+      throughout the
+      revisions.</p>
     <section id="mapwrap">
       <div class="filters" id="filters" role="group" aria-label="Filter by edition"></div>
       <div class="viz">
@@ -117,7 +120,7 @@
               )))
               : null,
             (p.links && p.links.length)
-              ? section('Authority records', linkList(p.links))
+              ? section('External links and Authority Records', linkList(p.links))
               : null
           ].filter(Boolean)
         );

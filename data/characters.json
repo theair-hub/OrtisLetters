@@ -22,7 +22,7 @@
       "name": "Jacopo Ortis",
       "type": "character",
       "role": "Protagonist and letter writer",
-      "description": "A young Venetian who leaves his native city and retreats to the Euganean Hills. He writes the letters that make up the book and gives it its title in every edition. In the Milan 1802 editor's notice he is the 'Ortis' whose life, the editor claims, earlier editions had turned into a novel.",
+      "description": "A young Venetian who leaves his native city and retreats to the Euganean Hills. He is a young Italian patriot who struggles with political disillusionment, unrequited love, and a profound sense of despair. Disappointed by the loss of his country’s freedom and unable to be with the woman he loves, Teresa, Jacopo becomes increasingly isolated. His character embodies the Romantic ideals of passion, individual freedom, and the conflict between personal feelings and historical circumstances.",
       "appearances": [
         {
           "edition": "bolo-1798",
@@ -57,7 +57,7 @@
       "name": "Lorenzo Alderani",
       "type": "character",
       "role": "Recipient of the letters; fictional editor",
-      "description": "Jacopo's friend and the addressee of his letters. In the 1802 and 1817 editions he also speaks as editor: he signs the address to the reader, as 'Lorenzo A***' in 1802, and he is the one who met Signor T. in Padua.",
+      "description": "Lorenzo Alderani is Jacopo Ortis’s closest friend and the recipient of his letters. After Jacopo’s death, Lorenzo collects and publishes his correspondence, providing the narrative framework of the novel. Although he is not the main protagonist, he plays a crucial role as the editor and mediator of Jacopo’s story, allowing readers to discover his thoughts, emotions, and inner struggles through his letters.",
       "appearances": [
         {
           "edition": "bolo-1798",
@@ -91,7 +91,7 @@
       "name": "Teresa",
       "type": "character",
       "role": "Young woman loved by Jacopo",
-      "description": "The young woman Jacopo loves. In the Bolognese edition she is first introduced, in letter IV, as the friend of the young man met by the lake, and she appears with Odoardo and her little daughter Giovannina. She is not named in the transcribed sections of the 1802 and 1817 editions, where her father, Signor T., appears instead.",
+      "description": "Teresa is the young woman Jacopo Ortis falls deeply in love with. Although she reciprocates his feelings, she is engaged to Odoardo, a man chosen for her by her father. Torn between her love for Jacopo and her family obligations, Teresa embodies the conflict between personal desires and social conventions. Her relationship with Jacopo is central to the novel’s tragic development, intensifying his emotional suffering and sense of hopelessness.",
       "appearances": [
         {
           "edition": "bolo-1798",
@@ -108,7 +108,7 @@
       "name": "Odoardo",
       "type": "character",
       "role": "Teresa's companion; a painter",
-      "description": "Teresa's companion. Letter V of the Bolognese edition traces his life story: the only son of a rich family, destined by his devout mother for a religious education, he turns instead to drawing and could have become a great painter in Rome, his native city.",
+      "description": "Odoardo is Teresa’s fiancé, chosen by her father as a suitable husband. He represents rationality, social respectability, and the conventional values of the society in which the characters live. Unlike Jacopo, he is portrayed as controlled and pragmatic rather than passionate and impulsive. His engagement to Teresa becomes one of the main obstacles to Jacopo and Teresa’s love, contributing to the novel’s tragic development.",
       "appearances": [
         {
           "edition": "bolo-1798",
@@ -127,7 +127,7 @@
       "name": "Giovannina",
       "type": "character",
       "role": "Teresa's little daughter",
-      "description": "Teresa's little daughter, the only child left to her from her marriage. She is mentioned only in one reading of the Bolognese edition (witness A), in letter IV.",
+      "description": "Teresa's little daughter, the only child left to her from her marriage.",
       "appearances": [
         {
           "edition": "bolo-1798",

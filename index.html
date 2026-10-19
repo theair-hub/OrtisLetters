@@ -5,110 +5,232 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-----------------  Dublin Core ------------------------>
-    <link rel="schema.DC" href="https://purl.org/dc/elements/1.1/" />
-    <link rel="schema.DCTERMS" href="https://purl.org/dc/terms/" />
+    <!-- Dublin Core -->
+    <link rel="schema.DC" href="https://purl.org/dc/elements/1.1/">
+    <link rel="schema.DCTERMS" href="https://purl.org/dc/terms/">
 
-    <meta name="DC.title" content="OpenOrtis" />
-    <meta name="DC.creator" content="Ilaria De Dominicis" />
-    <meta name="DC.subject" content="Digital Humanities, Cultural Heritage, Digital Edition" />
-    <meta name="DC.description" content="A digital edition about The Last Letters of Jacopo Ortis by Ugo Foscolo" />
-    <meta name="DC.publisher" content="Alma Mater Studiorum- University of Bologna" />
+    <meta name="DC.title" content="Ortis Letters">
+    <meta name="DC.creator" content="Ilaria De Dominicis">
+    <meta name="DC.subject" content="Digital Humanities, Cultural Heritage, Digital Edition">
+    <meta name="DC.description" content="A digital edition about The Last Letters of Jacopo Ortis by Ugo Foscolo">
+    <meta name="DC.publisher" content="Alma Mater Studiorum - University of Bologna">
     <meta name="DC.rights"
-        content="All the images and resources taken from external sources are solely used for study purposes. No commercial use is intended. OpenOrtis © 2026" />
-    <meta name="DC.identifier" content="" />
-    <meta name="DC.type" scheme="DCTERMS.DCMIType" content="InteractiveResource" />
-    <meta name="DC.language" scheme="DCTERMS.RFC3066" content="en" />
-    <meta name="DCTERMS.created" content="2026" />
-    <meta name="DCTERMS.issued" content="2026" />
+        content="All the images and resources taken from external sources are solely used for study purposes. No commercial use is intended. Ortis Letters © 2026">
+    <meta name="DC.type" scheme="DCTERMS.DCMIType" content="InteractiveResource">
+    <meta name="DC.language" scheme="DCTERMS.RFC3066" content="en">
+    <meta name="DCTERMS.created" content="2026">
+    <meta name="DCTERMS.issued" content="2026">
 
-    <title>Ortis LettersDigital Edition</title>
+    <title>Ortis Letters Digital Edition</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Karla:wght@400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css\style.css">
+
+    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="img/Logo-Ortis.png">
 </head>
 
 <body>
+
     <header class="hero">
         <div class="hero-inner">
-            <nav class="nav" aria-label="Main"><a href="index.html" aria-current="page">Home</a><a
-                    href="#">Edition</a><a href="characters.html">People</a><a href="places.html">Places</a><a
-                    href="documentation.html">Documentation</a></nav>
+
+            <nav class="nav" aria-label="Main navigation">
+                <a href="index.html" aria-current="page">Home</a>
+                <a href="edition.html">Edition</a>
+                <a href="characters.html">People</a>
+                <a href="places.html">Places</a>
+                <a href="documentation.html">Documentation</a>
+            </nav>
+
             <h1>Ortis Letters Digital Edition</h1>
-            <p class="sub">The prototype for the digital edition of the "Ultime Lettere di Jacopo Ortis" ("Last Letters
-                of Jacopo Ortis") following Giovanni Gambarin's National Edition (1970).</p>
+
+            <p class="sub">
+                The prototype for the digital edition of the
+                "Ultime Lettere di Jacopo Ortis" ("Last Letters of Jacopo Ortis"),
+                following Giovanni Gambarin's National Edition (1970).
+            </p>
+
         </div>
     </header>
+
     <main>
-        <p class="intro">The editorial history of <i>The Last Letters of Jacopo Ortis</i> runs parallel to the life of
-            its
-            author Ugo Foscolo. Tracing and comparing the different versions of the work helps us understand Foscolo’s
-            editorial
-            choices, which reflect the evolution of his personal experiences and circumstances.
-            <br>Read and compare the different versions of the work here.
+
+        <p class="intro">
+            The editorial history of <i>The Last Letters of Jacopo Ortis</i>
+            runs parallel to the life of its author, Ugo Foscolo.
+            Tracing and comparing the different versions of the work helps us
+            understand Foscolo’s editorial choices, which reflect the evolution
+            of his personal experiences and circumstances.
+            <br>
+            Explore the different stages of the work, from unpublished drafts
+            to published editions, including both authorised and unauthorised versions.
         </p>
+
         <section class="editions">
-            <h2>The Editions</h2>
+
+            <h2>Drafts and Editions</h2>
+
             <div class="grid">
+
+                <!-- Bolognese Draft, 1798 -->
                 <a class="card" href="#">
-                    <div class="img"><img src="img/ed-bolo-1798.png" alt="Bologna, 1798" loading="lazy"></div>
+                    <div class="img">
+                        <img src="img/ed-bolo-1798.png" alt="Bologna, 1798" loading="lazy">
+                    </div>
+
                     <div class="txt">
+                        <div class="tags">
+                            <span class="tag unpublished">Unpublished</span>
+                            <span class="tag authorised">Authorised</span>
+                        </div>
+
                         <h3>Bolognese Draft, 1798</h3>
-                        <p>The edition of a draft that was never published, and later modified by Angelo Sassoli.
+
+                        <p>
+                            The edition of an authorial draft that was never
+                            published; later modified by Angelo Sassoli.
                         </p>
                     </div>
                 </a>
+
+                <!-- Vera Storia, 1799 -->
                 <a class="card" href="#">
-                    <div class="img"><img src="img/vera-sto-1799.png" alt="Vera, Sto 1799" loading="lazy"></div>
+                    <div class="img">
+                        <img src="img/vera-sto-1799.png" alt="Vera Storia, 1799" loading="lazy">
+                    </div>
+
                     <div class="txt">
-                        <h3><i>Vera Storia di Due Amanti Infelici ossia Le Ultime Lettere di Jacopo Ortis</i>, 1799</h3>
-                        <p>The first published edition of the work, not approved by Ugo Foscolo, with Angelo Sassoli's
-                            additions. </p>
+                        <div class="tags">
+                            <span class="tag published">Published</span>
+                            <span class="tag unauthorised">Unauthorised</span>
+                        </div>
+
+                        <h3>
+                            <i>Vera Storia di Due Amanti Infelici ossia
+                                Le Ultime Lettere di Jacopo Ortis</i>, 1799
+                        </h3>
+
+                        <p>
+                            The first published edition of the work, not
+                            approved by Ugo Foscolo, with Angelo Sassoli's additions.
+                        </p>
                     </div>
                 </a>
+
+                <!-- Goethe's Draft, 1801 -->
                 <a class="card" href="#">
-                    <div class="img"><img src="img/goethe-ed-mil-1801.png" alt="Goethe, Milan 1801" loading="lazy">
+                    <div class="img">
+                        <img src="img/goethe-ed-mil-1801.png" alt="Goethe's Draft, Milan, 1801" loading="lazy">
                     </div>
+
                     <div class="txt">
+                        <div class="tags">
+                            <span class="tag unpublished">Unpublished</span>
+                            <span class="tag authorised">Authorised</span>
+                        </div>
+
                         <h3>Goethe's Draft, Milan, 1801</h3>
-                        <p>A draft, the only known version of this edition that was never published but gifted to
-                            Goethe.</p>
-                    </div>
-                </a>
-                <a class="card" href="#">
-                    <div class="img"><img src="img/ed-mil-1802.png" alt="Milan, 1802" loading="lazy"></div>
-                    <div class="txt">
-                        <h3><i>Ultime Lettere di Jacopo Ortis</i>, Genio Tipografico, Milan, 1802</h3>
-                        <p>The Editio Princeps, the first published edition of the work formally approved by Ugo
-                            Foscolo.
+
+                        <p>
+                            The only surviving copy of this unpublished edition,
+                            which was gifted to Goethe.
                         </p>
                     </div>
                 </a>
+
+                <!-- Milan, 1802 -->
                 <a class="card" href="#">
-                    <div class="img"><img src="img/zurigo-1816.png" alt="Zurich, 1816" loading="lazy"></div>
+                    <div class="img">
+                        <img src="img/ed-mil-1802.png" alt="Milan, 1802" loading="lazy">
+                    </div>
+
                     <div class="txt">
-                        <h3><i>Ultime Lettere di Jacopo Ortis</i>, Orell and Füssli, Zurich, 1816</h3>
-                        <p>The second published edition of the work, published in Zurich but 'London' on the frontespice
-                            for censorship reasons.</p>
+                        <div class="tags">
+                            <span class="tag published">Published</span>
+                            <span class="tag authorised">Authorised</span>
+                        </div>
+
+                        <h3>
+                            <i>Ultime Lettere di Jacopo Ortis</i>,
+                            Genio Tipografico, Milan, 1802
+                        </h3>
+
+                        <p>
+                            The editio princeps, the first published edition
+                            of the work formally approved by Ugo Foscolo.
+                        </p>
                     </div>
                 </a>
+
+                <!-- Zurich, 1816 -->
                 <a class="card" href="#">
-                    <div class="img"><img src="img/lon-1817.png" alt="London, 1817" loading="lazy"></div>
+                    <div class="img">
+                        <img src="img/zurigo-1816.png" alt="Zurich, 1816" loading="lazy">
+                    </div>
+
                     <div class="txt">
-                        <h3><i>Ultime Lettere di Jacopo Ortis</i>, John Murray, London, 1817</h3>
-                        <p>The last published edition of the work, issued in London.</p>
+                        <div class="tags">
+                            <span class="tag published">Published</span>
+                            <span class="tag authorised">Authorised</span>
+                        </div>
+
+                        <h3>
+                            <i>Ultime Lettere di Jacopo Ortis</i>,
+                            Orell and Füssli, Zurich, 1816
+                        </h3>
+
+                        <p>
+                            The second published edition of the work, printed
+                            in Zurich but bearing 'London' on the frontispiece
+                            for censorship reasons.
+                        </p>
                     </div>
                 </a>
+
+                <!-- London, 1817 -->
+                <a class="card" href="#">
+                    <div class="img">
+                        <img src="img/lon-1817.png" alt="London, 1817" loading="lazy">
+                    </div>
+
+                    <div class="txt">
+                        <div class="tags">
+                            <span class="tag published">Published</span>
+                            <span class="tag authorised">Authorised</span>
+                        </div>
+
+                        <h3>
+                            <i>Ultime Lettere di Jacopo Ortis</i>,
+                            John Murray, London, 1817
+                        </h3>
+
+                        <p>
+                            The last published edition of the work before
+                            the author's death, issued in London.
+                        </p>
+                    </div>
+                </a>
+
             </div>
         </section>
+
     </main>
-    <footer>&copy; 2026 Ortis Letters Digital Edition. <br> Project developed for the course of <a
-            href=https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti/insegnamento/2025/478841>Digital
-            scholarly editing: theory, methods and practice</a> at the University of Bologna.</footer>
+
+    <footer>
+        &copy; 2026 Ortis Letters Digital Edition.
+        <br>
+        Project developed for the course of
+        <a
+            href="https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti/insegnamento/2025/478841">
+            Digital Scholarly Editing: Theory, Methods and Practice
+        </a>
+        at the University of Bologna.
+    </footer>
+
 </body>
 
 </html>

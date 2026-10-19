@@ -7,7 +7,7 @@
     <teiHeader xml:lang="en">
         <fileDesc>
             <titleStmt>
-                <title>Ultime Lettere di Jacopo Ortis [Prima edizione bolognese] [1798] tratto dall'EN di Giovanni Gambarin, 1970.</title>
+                <title>Ultime Lettere di Jacopo Ortis [Prima edizione bolognese] [1798] from Giovanni Gambarin's National Edition, 1970.</title>
                 <author>
                     <persName ref="#UF">
                         <forename>Ugo</forename>
@@ -27,7 +27,7 @@
                 </respStmt>
             </editionStmt>
             <extent>
-                <measure unit="kB" quantity="20">About 20 kB</measure>
+                <measure unit="kB" quantity="26">About 26 kB</measure>
             </extent>
             <publicationStmt>
                 <publisher>
@@ -39,7 +39,7 @@
                 </pubPlace>
                 <availability status="free">
                     <licence target="https://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC </licence>
-                    <p>OpenOrtis is a project created for the course of
+                    <p>Ortis Letters is a project created for the course of
 
                 Digital Scholarly Editing: Theory, Methods and Practice
 
@@ -48,9 +48,7 @@
                 </availability>
             </publicationStmt>
             <notesStmt>
-                <note>This is an XML/TEI document made for the exam of Digital Scholarly Editing:
-                    Theory, Methods and Practice. It transcribes the Bolognese edition of the
-                    novel (witnesses A, B, C), limited to letters I-V of the first part.
+                <note>This XML/TEI document was created for the Digital Scholarly Editing: Theory, Methods and Practice exam. It transcribes the Bolognese edition of The Last Letters of Jacopo Ortis, covering Letters I–V of Part One and including witnesses A, B, and C. This edition was published under the title "Vera storia di Due Amanti Infelici ossia Ultime Lettere di Jacopo Ortis", and its publication was unauthorised. The print source for this edition is Giovanni Gambarin’s National Edition (1970). Both the transcription and the critical apparatus were prepared manually.
                 </note>
             </notesStmt>
             <sourceDesc>
@@ -62,21 +60,21 @@
                 </bibl>
 
                 <listWit>
-                    <witness xml:id="A"> <!-- prima edizione bolognese 1799 censurata per l'arrivo degli austriaci, pubblicata-->
+                    <witness xml:id="A"> <!-- first edition dated 1799, censured for the arrival of the Austrians, published with no authorization -->
                         <date>1799</date>
                         <msDesc type="print">
                             <msIdentifier><settlement>Bologna</settlement><idno>Foscolo, U. 1799. Vera Storia di Due Amanti Infelici ossia Ultime Lettere di Jacopo Ortis. First edition.</idno>
                             </msIdentifier>
                         </msDesc>
                     </witness>
-                    <witness xml:id="B"> <!-- seconda edizione 1799, in realtà pubblicata nel 1800, con stesso frontespizio della A e stessa data -->
+                    <witness xml:id="B"> <!-- second edition dated 1799, but published in 1800 with no authorization , with the same title page as A and the same date  -->
                         <date>1799</date>
                         <msDesc type="print">
                             <msIdentifier><settlement>Bologna</settlement><idno>Foscolo, U. 1799. Vera Storia di Due Amanti Infelici ossia Ultime Lettere di Jacopo Ortis. Second edition.</idno>
                             </msIdentifier>
                         </msDesc>
                     </witness>
-                    <witness xml:id="C"> <!-- terza edizione datata 1801 -->
+                    <witness xml:id="C"> <!-- third edition dated 1801, published with no authorization -->
                         <date>1801</date>
                         <msDesc type="print">
                             <msIdentifier><settlement>Bologna</settlement><idno>Foscolo, U. 1801. Vera Storia di Due Amanti Infelici ossia Ultime Lettere di Jacopo Ortis. Third edition.</idno>
@@ -88,7 +86,9 @@
         </fileDesc>
         <encodingDesc>
             <samplingDecl>
-                <p>Only letters I-V are transcribed.</p>
+                <p>All paratextual materials from the printed source not attributable to the author
+                    of the work have been added in the present digital version following the
+                    parallel segmentation apparatus. Only letters I-V are transcribed.</p>
             </samplingDecl>
             <editorialDecl>
                 <correction method="silent" status="medium">
