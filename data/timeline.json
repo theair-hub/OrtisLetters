@@ -1,0 +1,206 @@
+{
+  "types": {
+    "life": "Life",
+    "work": "Works",
+    "edition": "Editions of the Ortis"
+  },
+  "events": [
+    {
+      "id": "ev-birth",
+      "year": 1778,
+      "date": "6 February 1778",
+      "type": "life",
+      "title": "Born on Zakynthos",
+      "place": "Zakynthos (Zante)",
+      "description": "Niccolò Foscolo is born on the island of Zakynthos, then part of the Republic of Venice, to Andrea Foscolo, a Venetian physician, and Diamantina Spathis, who is Greek. He will later take the name Ugo."
+    },
+    {
+      "id": "ev-father",
+      "year": 1788,
+      "date": "October 1788",
+      "type": "life",
+      "title": "His father dies",
+      "place": "Spalato (Split)",
+      "description": "After the early death of his father, the family’s finances collapse. Foscolo, who had begun his studies in the seminary of Spalato, goes back to Zakynthos with his mother’s family."
+    },
+    {
+      "id": "ev-venice",
+      "year": 1792,
+      "date": "1792",
+      "type": "life",
+      "title": "Moves to Venice",
+      "place": "Venezia",
+      "places": [
+        "VE"
+      ],
+      "description": "His mother settles in Venice and Foscolo joins her. He studies and becomes involved in the literary and political life of the city."
+    },
+    {
+      "id": "ev-tieste",
+      "year": 1797,
+      "date": "1797",
+      "type": "work",
+      "title": "Tieste staged in Venice",
+      "place": "Venezia",
+      "places": [
+        "VE"
+      ],
+      "description": "His tragedy Tieste is performed in Venice, one of his first public successes."
+    },
+    {
+      "id": "ev-campoformio",
+      "year": 1797,
+      "date": "October 1797",
+      "type": "life",
+      "title": "Treaty of Campoformio",
+      "place": "Venezia",
+      "places": [
+        "VE"
+      ],
+      "description": "Napoleon cedes Venice to Austria. Disillusioned, Foscolo leaves the city for Milan. The same disillusion is the background of Jacopo Ortis, who flees Venice to the Euganean Hills."
+    },
+    {
+      "id": "ev-bolo1798",
+      "year": 1798,
+      "date": "1798",
+      "type": "edition",
+      "title": "Ortis, Bologna edition",
+      "place": "Bologna",
+      "places": [
+        "BO"
+      ],
+      "edition": "bolo-1798",
+      "image": "img/ed-bolo-1798.png",
+      "description": "The first printed edition of the Ortis comes out in Bologna, printed by Marsigli. Foscolo, who had left Bologna, later disowned it."
+    },
+    {
+      "id": "ev-vera1799",
+      "year": 1799,
+      "date": "1799",
+      "type": "edition",
+      "title": "Vera storia di due amanti infelici",
+      "place": "",
+      "image": "img/vera-sto-1799.png",
+      "description": "[To be completed] Edition of the Ortis known by the title Vera storia di due amanti infelici."
+    },
+    {
+      "id": "ev-goethe1801",
+      "year": 1801,
+      "date": "1801",
+      "type": "edition",
+      "title": "Milan edition (Goethe’s copy)",
+      "place": "Milano",
+      "places": [
+        "MIL"
+      ],
+      "image": "img/goethe-ed-mil-1801.png",
+      "description": "[To be completed] Milan edition of 1801, in the copy that belonged to Goethe."
+    },
+    {
+      "id": "ev-mil1802",
+      "year": 1802,
+      "date": "October 1802",
+      "type": "edition",
+      "title": "Ortis, Milan edition (Genio Tipografico)",
+      "place": "Milano",
+      "places": [
+        "MIL",
+        "BO",
+        "TO"
+      ],
+      "edition": "mil-1802",
+      "image": "img/ed-mil-1802.png",
+      "description": "The Milan edition of 1802. In the editor’s notice, the editor disowns the earlier editions, printed in Bologna and Turin, and says that only this one is authentic."
+    },
+    {
+      "id": "ev-france",
+      "year": 1804,
+      "date": "1804–1806",
+      "type": "life",
+      "title": "Service in France",
+      "place": "France",
+      "description": "Foscolo serves with the Italian troops sent to France for the planned invasion of England. In these years he has a daughter, Floriana, with the Englishwoman Mary (Fanny) Hamilton. In 1806 he returns to Italy."
+    },
+    {
+      "id": "ev-sepolcri",
+      "year": 1807,
+      "date": "1807",
+      "type": "work",
+      "title": "Dei Sepolcri",
+      "place": "Milano",
+      "places": [
+        "MIL"
+      ],
+      "description": "The poem Dei Sepolcri establishes his reputation as a poet."
+    },
+    {
+      "id": "ev-pavia",
+      "year": 1809,
+      "date": "1808–1809",
+      "type": "work",
+      "title": "Chair of eloquence at Pavia",
+      "place": "Pavia",
+      "description": "Foscolo is appointed to the chair of Italian eloquence at the University of Pavia and gives his inaugural lecture in 1809. The chair is abolished within months."
+    },
+    {
+      "id": "ev-exile",
+      "year": 1815,
+      "date": "31 March 1815",
+      "type": "life",
+      "title": "Flight from Milan",
+      "place": "Milano",
+      "places": [
+        "MIL"
+      ],
+      "description": "To avoid taking the oath of allegiance to the Austrian emperor, Foscolo leaves Milan. After a few weeks in Switzerland he settles in Zurich and Hottingen at the end of May."
+    },
+    {
+      "id": "ev-zurich1816",
+      "year": 1816,
+      "date": "1816",
+      "type": "edition",
+      "title": "Ortis, Zurich edition",
+      "place": "Zurigo",
+      "image": "img/zurigo-1816.png",
+      "description": "The third edition of the Ortis is published in Switzerland by the publisher Füssli of Zurich, with additions written in exile."
+    },
+    {
+      "id": "ev-london",
+      "year": 1816,
+      "date": "July–September 1816",
+      "type": "life",
+      "title": "Arrival in London",
+      "place": "Londra",
+      "description": "Foscolo leaves Zurich on 27 July 1816 and, after a stop in Basel, reaches London, where he is welcomed by liberal circles and by the Italian exiles."
+    },
+    {
+      "id": "ev-lon1817",
+      "year": 1817,
+      "date": "1817",
+      "type": "edition",
+      "title": "Ortis, London edition (Murray)",
+      "place": "Londra",
+      "edition": "lon-1817",
+      "image": "img/lon-1817.png",
+      "description": "The Ortis is printed in London by the publisher John Murray, in two volumes."
+    },
+    {
+      "id": "ev-death",
+      "year": 1827,
+      "date": "10 September 1827",
+      "type": "life",
+      "title": "Dies at Turnham Green",
+      "place": "Turnham Green (London)",
+      "description": "Foscolo dies of dropsy at Turnham Green, near London, and is buried there."
+    },
+    {
+      "id": "ev-santacroce",
+      "year": 1871,
+      "date": "1871",
+      "type": "life",
+      "title": "Remains moved to Santa Croce",
+      "place": "Firenze",
+      "description": "His remains are brought to Florence and placed in the Basilica of Santa Croce, among the great Italians."
+    }
+  ]
+}

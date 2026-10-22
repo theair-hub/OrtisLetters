@@ -4,14 +4,15 @@
    and must match the "edition" ids used in characters.json and places.json. */
 (() => {
   const EDITIONS = {
-    'bolo-1798': { label: 'Bologna 1798', xml: 'data/ortis_bolognese.xml' },
-    'mil-1802': { label: 'Milan 1802', xml: 'data/ortis_milanese_1802.xml' },
-    'lon-1817': { label: 'London 1817', xml: 'data/ortis_1817.xml' }
+    'bolo-1798': { label: 'Bologna 1798', xml: 'data/ortis_bolognese.xml', title: 'Ultime Lettere di Jacopo Ortis [Prima edizione bolognese] [1798]', author: 'Source: "Edizione nazionale delle opere di Ugo Foscolo: Ultime lettere di Jacopo Ortis." Ed. critica a cura di Giovanni Gambarin. 1970', about: '' },
+    'mil-1802': { label: 'Milan 1802', xml: 'data/ortis_milanese_1802.xml', title: 'Ultime Lettere di Jacopo Ortis, Tratte dagli autografi [1802]', author: 'Source: "Edizione nazionale delle opere di Ugo Foscolo: Ultime lettere di Jacopo Ortis." Ed. critica a cura di Giovanni Gambarin. 1970', about: '' },
+    'lon-1817': { label: 'London 1817', xml: 'data/ortis_1817.xml', title: 'Ultime Lettere di Jacopo Ortis, Tratte dagli autografi [1817]', author: 'Source: "Edizione nazionale delle opere di Ugo Foscolo: Ultime lettere di Jacopo Ortis." Ed. critica a cura di Giovanni Gambarin. 1970', about: '' },
   };
   const DEFAULT = 'bolo-1798';
   const XSL = 'data/edition.xsl';
   const CHARACTERS_JSON = 'data/characters.json';
   const PLACES_JSON = 'data/places.json';
+  const EXPLORE = 'explore.html';
 
   const root = document.getElementById('ed-root');
   const switcher = document.getElementById('ed-switch');
@@ -164,6 +165,7 @@
       node.querySelectorAll('a.ent[data-id]').forEach((a) => {
         a.setAttribute('aria-haspopup', 'dialog');
         a.setAttribute('aria-expanded', 'false');
+        a.setAttribute('href', EXPLORE + '#' + a.dataset.id);   // e.g. explore.html#JO or explore.html#PD
       });
     }
     function applyWitness(p) {
@@ -378,6 +380,20 @@
       if (item) { e.preventDefault(); goToText(item.dataset.n); return; }
       const toc = e.target.closest('.ed-toc a');
       if (toc) { e.preventDefault(); jumpTo(toc.hash.slice(1)); return; }
+      const fn = e.target.closest('a.fn-ref, a.fn-back');
+      if (fn) {
+        e.preventDefault();
+        const scope = fn.closest('.pane-body') || box, n = fn.dataset.fn;
+        const target = fn.classList.contains('fn-ref')
+          ? scope.querySelector('.fn[data-n="' + n + '"]')
+          : scope.querySelector('a.fn-ref[data-fn="' + n + '"]');
+        if (target) {
+          target.scrollIntoView({ block: 'center', behavior: 'smooth' });
+          target.classList.add('flash');
+          setTimeout(() => target.classList.remove('flash'), 1800);
+        }
+        return;
+      }
       const ent = e.target.closest('a.ent[data-id]');
       if (ent) {
         if (e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1) return;   // let the link open normally
@@ -413,6 +429,17 @@
     return processor;
   }
 
+
+  function customize(id, box) {
+    const ed = EDITIONS[id];
+    const t = box.querySelector('.ed-title');
+    if (t && ed.title) t.textContent = ed.title;
+    const a = box.querySelector('.ed-author');
+    if (a && ed.author !== undefined) { if (ed.author) a.textContent = ed.author; else a.remove(); }
+    const body = box.querySelector('.ed-about-body');
+    if (body && ed.about) body.innerHTML = ed.about;
+  }
+
   async function show(id, push) {
     if (!EDITIONS[id]) id = DEFAULT;
     currentEd = id;
@@ -424,6 +451,7 @@
       const frag = proc.transformToFragment(xml, document);
       root.replaceChildren(frag);
       initEdition(root.firstElementChild);
+      customize(id, root.firstElementChild);
       document.title = EDITIONS[id].label + ' \u2013 Digital Edition';
       if (push) history.pushState({ ed: id }, '', '?ed=' + id);
     } catch (err) {

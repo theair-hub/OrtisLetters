@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="img/Logo-Ortis.png">
+  <title>Explore &ndash; Digital Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Karla:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="hero small">
+    <div class="hero-inner">
+      <nav class="nav" aria-label="Main"><a href="index.html">Home</a><a href="edition.html">Edition</a><a
+          href="explore.html" aria-current="page">Explore</a><a href="documentation.html">Documentation</a></nav>
+      <h1>Explore</h1>
+      <p class="sub">People, places and the author&rsquo;s life</p>
+    </div>
+  </header>
+
+  <div class="ex-tabs" role="tablist" aria-label="Explore">
+    <button type="button" role="tab" id="tab-people" aria-controls="panel-people" aria-selected="true">People</button>
+    <button type="button" role="tab" id="tab-places" aria-controls="panel-places" aria-selected="false"
+      tabindex="-1">Places</button>
+    <button type="button" role="tab" id="tab-author" aria-controls="panel-author" aria-selected="false"
+      tabindex="-1">Author</button>
+  </div>
+
+  <main>
+    <!-- PEOPLE -->
+    <div id="panel-people" role="tabpanel" aria-labelledby="tab-people">
+      <div class="explore">
+        <section id="p-graphwrap">
+          <div class="filters" id="p-filters" role="group" aria-label="Filter by edition"></div>
+          <div class="viz"><svg id="graph" role="img"
+              aria-label="Network graph of the people and their relationships. Select a person for details."></svg>
+          </div>
+          <p class="legend"><span><i class="sage"></i>Character</span><span><i class="rose"></i>Mentioned
+              figure</span><span>Select a node to read about it; drag to rearrange.</span></p>
+        </section>
+        <aside class="panel" id="p-panel" aria-live="polite"></aside>
+      </div>
+      <section class="roster">
+        <h2>All people</h2>
+        <div class="roster-grid" id="p-roster"></div>
+      </section>
+    </div>
+
+    <!-- PLACES -->
+    <div id="panel-places" role="tabpanel" aria-labelledby="tab-places" hidden>
+      <div class="explore">
+        <section id="l-mapwrap">
+          <div class="filters" id="l-filters" role="group" aria-label="Filter by edition"></div>
+          <div class="viz">
+            <div id="map" role="region" aria-label="Interactive map of the places named in the editions"></div>
+          </div>
+          <p class="legend"><span><i class="sage"></i>City</span><span><i class="dashed"></i>Area (approximate centre
+              shown)</span><span>Select a marker or a name below.</span></p>
+        </section>
+        <aside class="panel" id="l-panel" aria-live="polite"></aside>
+      </div>
+      <section class="roster">
+        <h2>All places</h2>
+        <div class="roster-grid" id="l-roster"></div>
+      </section>
+    </div>
+
+    <!-- AUTHOR -->
+    <div id="panel-author" role="tabpanel" aria-labelledby="tab-author" hidden>
+      <section class="author" id="a-wrap">
+        <div class="author-intro">
+          <h2>Ugo Foscolo (1778&ndash;1827)</h2>
+          <p>Follow his life, and the editions of the <em>Ortis</em> as they appear. Select an entry to open it.</p>
+          <div class="filters" id="a-filters" role="group" aria-label="Filter the timeline"></div>
+        </div>
+        <div class="tl-wrap">
+          <div class="tl-line" aria-hidden="true"><span id="a-progress"></span></div>
+          <ol class="tl" id="a-list"></ol>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 Ortis Letters Digital Edition.
+    <br>
+    Project developed for the course of
+    <a
+      href="https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti/insegnamento/2025/478841">
+      Digital Scholarly Editing: Theory, Methods and Practice
+    </a>
+    at the University of Bologna.
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="js/explore.js"></script>
+  <script src="js/explore-page.js"></script>
+</body>
+
+</html>

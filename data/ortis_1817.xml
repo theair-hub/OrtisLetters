@@ -16,7 +16,7 @@
                 </author>
             </titleStmt>
             <editionStmt>
-                <edition>Prototype digital edition- <date when="2026">2026</date>
+                <edition>Ortis Letters Digital Edition (Prototype) - <date when="2026">2026</date>
                 </edition>
                 <respStmt>
                     <resp>Annotated by</resp>
@@ -77,24 +77,22 @@
 
                 <listWit>
                     <witness xml:id="Gt"> <!-- Genio Tipografico-->
-                        <date>1802</date>
                         <msDesc type="print">
-                            <msIdentifier><settlement>Milan</settlement><idno>Foscolo, U. 1802. Ultime Lettere di Jacopo Ortis. Genio Tipografico. Milan.</idno>
+                            <msIdentifier><idno>Genio Tipografico [Milan 1802] </idno>
                             </msIdentifier>
                         </msDesc>
                     </witness>
                     <witness xml:id="Z"> <!-- Edizione Zurighese-->
-                        <date>1816</date>
                         <msDesc type="print">
-                            <msIdentifier><settlement>Zurich</settlement><idno>Foscolo, U. 1816. Ultime Lettere di Jacopo Ortis. Orell and Füssli. Zurich.</idno>
+                            <msIdentifier><idno>Edizione Zurighese ["London 1814" but Zurich, Orell and Füssli, 1816] </idno>
                             </msIdentifier>
                         </msDesc>
                     </witness> <!--
             Edizione Londinese. Testo base-->
                     <witness xml:id="L">
-                        <date>1817</date>
+
                         <msDesc type="print">
-                            <msIdentifier><settlement>London</settlement><idno>Foscolo, U. 1817. Ultime Lettere di Jacopo Ortis. John Murray. London. </idno>
+                            <msIdentifier><idno>Edizione Londinese [John Murray, 1817] </idno>
                             </msIdentifier>
                         </msDesc>
                     </witness>

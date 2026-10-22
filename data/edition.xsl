@@ -181,7 +181,7 @@ type of variation
         <label><input type="checkbox" id="tg-sync" checked="checked" /> Synchronise scrolling</label>
         <!-- list of readings offered by each window; read by the script -->
         <select id="wit-source" hidden="hidden" aria-hidden="true" tabindex="-1">
-          <option value="">Edited text (lemma)</option>
+          <option value="">Base text (Lem)</option>
           <xsl:for-each select="tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:listWit/tei:witness">
             <option value="{@xml:id}">
               <xsl:value-of select="@xml:id" />
@@ -235,6 +235,7 @@ type of variation
         <xsl:call-template name="sec-label" />
       </h2>
       <xsl:apply-templates />
+      <xsl:call-template name="footnotes" />
     </section>
   </xsl:template>
 
@@ -254,7 +255,7 @@ type of variation
 
   <xsl:template name="sec-label">
     <xsl:choose>
-      <xsl:when test="@type='frontespizio'">Title page</xsl:when>
+      <xsl:when test="@type='frontespizio'">Frontespiece</xsl:when>
       <xsl:when test="@type='avviso'">Editor&#x2019;s notice</xsl:when>
       <xsl:when test="@type='dedica'">Address to the reader</xsl:when>
       <xsl:when test="@type='epistola'">
@@ -305,12 +306,78 @@ type of variation
   <xsl:template match="tei:p"><p>
       <xsl:apply-templates />
     </p></xsl:template>
+  <!-- emphasis: <emph rend="italic"> is shown in italics -->
+  <xsl:template match="tei:emph"><span class="emph emph-{@rend}">
+      <xsl:apply-templates />
+    </span></xsl:template>
+
+  <!-- notes inside a paragraph (e.g. place="bottom"): a small marker in the text, the note itself
+       is printed at the end of the section (see "footnotes") -->
+  <xsl:template match="tei:note[ancestor::tei:p]">
+    <xsl:variable name="n"><xsl:number level="any" from="tei:body" count="tei:note[ancestor::tei:p]" /></xsl:variable>
+    <sup
+      class="fn-mark">
+      <a class="fn-ref" id="fnref-{$n}" href="#fn-{$n}" data-fn="{$n}">
+        <xsl:attribute name="aria-label">Note <xsl:value-of select="$n" />: <xsl:call-template
+            name="note-label" /></xsl:attribute>
+        <xsl:value-of select="$n" />
+      </a>
+    </sup>
+  </xsl:template>
+
+  <!-- notes between paragraphs: a block -->
   <xsl:template match="tei:note">
     <aside class="ed-note">
-      <span class="ed-note-label">Editorial note</span>
+      <span class="ed-note-label">
+        <xsl:call-template name="note-label" />
+      </span>
       <xsl:text> </xsl:text>
       <xsl:apply-templates />
     </aside>
+  </xsl:template>
+
+  <!-- who wrote the note: @resp ("#UF", with or without a leading space) is looked up in the
+  header;
+       the author of the work gives "Author's note" -->
+  <xsl:template name="note-label">
+    <xsl:variable name="resp" select="substring-after(normalize-space(@resp),'#')" />
+    <xsl:variable
+      name="author"
+      select="substring-after(normalize-space(/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:author/tei:persName/@ref),'#')" />
+    <xsl:variable
+      name="name" select="normalize-space(key('ent',$resp)/tei:persName)" />
+    <xsl:choose>
+      <xsl:when test="$resp != '' and $resp = $author">Author&#x2019;s note</xsl:when>
+      <xsl:otherwise>Editorial note</xsl:otherwise>
+    </xsl:choose>
+    <xsl:if test="$name != ''"><xsl:text> (</xsl:text><xsl:value-of
+        select="$name" /><xsl:text>)</xsl:text></xsl:if>
+  </xsl:template>
+
+  <!-- the notes of a section (context node: the section) -->
+  <xsl:template name="footnotes">
+    <xsl:if test=".//tei:note[ancestor::tei:p]">
+      <aside class="ed-footnotes" aria-label="Notes">
+        <xsl:for-each select=".//tei:note[ancestor::tei:p]">
+          <xsl:variable name="n"><xsl:number level="any" from="tei:body"
+              count="tei:note[ancestor::tei:p]" /></xsl:variable>
+          <p class="fn" id="fn-{$n}"
+            data-n="{$n}">
+            <span class="fn-n">
+              <xsl:value-of select="$n" />
+            </span>
+            <span class="fn-label">
+              <xsl:call-template name="note-label" />
+            </span>
+            <xsl:text> </xsl:text>
+            <xsl:apply-templates />
+            <xsl:text> </xsl:text>
+            <a class="fn-back" href="#fnref-{$n}" data-fn="{$n}" aria-label="Back to the text">
+    &#x21A9;</a>
+          </p>
+        </xsl:for-each>
+      </aside>
+    </xsl:if>
   </xsl:template>
   <xsl:template match="tei:hi"><span class="hi hi-{@rend}">
       <xsl:apply-templates />
@@ -361,14 +428,13 @@ type of variation
       name="tag">
       <xsl:choose>
         <xsl:when
-          test="parent::tei:div1 or parent::tei:div2 or parent::tei:div3 or tei:lem/tei:p or tei:rdg/tei:p">
-    div</xsl:when>
-        <xsl:otherwise>span</xsl:otherwise>
+          test="parent::tei:div1 or parent::tei:div2 or parent::tei:div3 or tei:lem/tei:p or tei:rdg/tei:p"><xsl:text>div</xsl:text></xsl:when>
+        <xsl:otherwise><xsl:text>span</xsl:text></xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
     <xsl:element
-      name="{$tag}">
-      <xsl:attribute name="class">app<xsl:if test="$tag='div'"> app-block</xsl:if></xsl:attribute>
+      name="{normalize-space($tag)}">
+      <xsl:attribute name="class">app<xsl:if test="normalize-space($tag)='div'"> app-block</xsl:if></xsl:attribute>
       <xsl:attribute
         name="id">app-<xsl:value-of select="$n" /></xsl:attribute>
       <xsl:attribute name="data-n"><xsl:value-of
@@ -376,10 +442,10 @@ type of variation
       <xsl:attribute name="data-type"><xsl:value-of select="@type" /></xsl:attribute>
       <xsl:apply-templates
         select="tei:lem|tei:rdg" mode="reading">
-        <xsl:with-param name="tag" select="$tag" />
+        <xsl:with-param name="tag" select="normalize-space($tag)" />
       </xsl:apply-templates>
-      <button type="button"
-        class="app-mark">
+      <button
+        type="button" class="app-mark">
         <xsl:attribute name="aria-label">Variant <xsl:value-of select="$n" />: <xsl:call-template
             name="type-label">
             <xsl:with-param name="base" select="true()" />
@@ -392,7 +458,7 @@ type of variation
 
   <xsl:template match="tei:lem|tei:rdg" mode="reading">
     <xsl:param name="tag" />
-    <xsl:element name="{$tag}">
+    <xsl:element name="{normalize-space($tag)}">
       <xsl:attribute name="class">reading <xsl:value-of select="local-name()" /></xsl:attribute>
       <xsl:attribute
         name="data-wit"><xsl:text> </xsl:text><xsl:value-of
