@@ -1,17 +1,109 @@
 /* Explore page: three tabs (People, Places, Author) on one page.
-   Needs js/explore.js (helpers), d3, leaflet and the data in data/*.json.
+   Needs d3, leaflet and the data in data/*.json.
    Addresses: explore.html#people | #places | #author | #JO (a person) | #PD (a place) | #ev-london (a timeline event). */
+
+/* ---------------------------------------------------------------- shared helpers */
+/* Shared helpers for characters.html and places.html */
+const Explore = (() => {
+  const el = (tag, attrs, ...kids) => {
+    const n = document.createElement(tag);
+    if (typeof attrs === 'string') attrs = { class: attrs };                                   // el('div','box') also works
+    else if (attrs instanceof Node || Array.isArray(attrs)) { kids.unshift(attrs); attrs = null; }   // el('div',child) also works
+    for (const [k, v] of Object.entries(attrs || {})) {
+      if (v == null || v === false) continue;
+      if (k === 'class') n.className = v;
+      else if (k.startsWith('on')) n.addEventListener(k.slice(2), v);
+      else n.setAttribute(k, v === true ? '' : v);
+    }
+    for (const kid of kids.flat(Infinity)) {
+      if (kid == null || kid === false || kid === '') continue;                                   // empty parts are ignored
+      n.append(kid.nodeType ? kid : document.createTextNode(String(kid)));
+    }
+    return n;
+  };
+  // replaces the content of a container with the given parts: null, false, '' and empty lists are ignored,
+  // nested lists and fragments are fine
+  const fill = (container, ...parts) => {
+    container.replaceChildren(...parts.flat(Infinity)
+      .filter(x => x != null && x !== false && x !== '')
+      .map(x => x.nodeType ? x : document.createTextNode(String(x))));
+  };
+  const loadJSON = async url => {
+    const r = await fetch(url);
+    if (!r.ok) throw new Error(url + ' (' + r.status + ')');
+    return r.json();
+  };
+  const showError = (container, err) => {
+    container.replaceChildren(el('div', { class: 'note-err' },
+      el('p', {}, 'The data could not be loaded (' + err.message + ').'),
+      el('p', {}, 'Browsers block ', el('code', {}, 'fetch()'), ' on files opened directly from disk. Serve the site through a web server, for example by running ', el('code', {}, 'python3 -m http.server'), ' in the site folder and opening ', el('code', {}, 'http://localhost:8000'), '.')));
+  };
+  // edition filter buttons; onChange(editionIdOrNull)
+  const editionFilter = (container, editions, onChange) => {
+    const btns = [];
+    const make = (id, label) => {
+      const b = el('button', {
+        type: 'button', 'aria-pressed': id === null ? 'true' : 'false', onclick: () => {
+          btns.forEach(x => x.b.setAttribute('aria-pressed', x.id === id ? 'true' : 'false')); onChange(id);
+        }
+      }, label);
+      btns.push({ id, b }); container.append(b);
+    };
+    make(null, 'All editions');
+    for (const [id, e] of Object.entries(editions)) make(id, e.label);
+  };
+  const appearances = (list, editions) => {
+    const items = (list || []).map(a => {
+      const ed = (editions && editions[a.edition]) || { label: a.edition };
+      const name = ed.url ? el('a', { href: ed.url }, ed.label) : el('strong', {}, ed.label);
+      return el('li', {}, name, (a.sections && a.sections.length) ? ': ' + a.sections.join('; ') : '');
+    });
+    return items.length ? el('ul', {}, items) : null;
+  };
+  // a titled block; returns null when there is nothing to show, so empty sections never appear
+  const section = (title, node) => {
+    if (node == null || node === false) return null;
+    const f = document.createDocumentFragment();
+    f.append(el('h3', {}, title), node);
+    return f;
+  };
+  const linkList = links => {
+    const ok = (links || []).filter(l => l && l.url);
+    return ok.length ? el('ul', {}, ok.map(l => el('li', {}, el('a', { href: l.url, target: '_blank', rel: 'noopener' }, l.label || l.url)))) : null;
+  };
+  return { el, fill, loadJSON, showError, editionFilter, appearances, section, linkList };
+})();
+
+/* ---------------------------------------------------------------- application */
 window.ExploreApp = {};
 
-async function initPeople() {
-  const { el, loadJSON, showError, editionFilter, appearances, section, linkList } = Explore;
+// runs one module; if it fails the reason is shown where the module should be (and in the console)
+async function safely(fn, containerId, what) {
+  try { await fn(); }
+  catch (e) {
+    console.error(what + ':', e);
+    const box = document.getElementById(containerId);
+    if (box) {
+      const msg = document.createElement('div');
+      msg.className = 'note-err';
+      msg.textContent = 'The ' + what + ' could not be shown (' + e.message + ').';
+      box.replaceChildren(msg);
+    }
+  }
+}
+
+async function initPeople() { return safely(buildPeople, 'p-graphwrap', 'graph'); }
+async function buildPeople() {
+  const { el, fill, loadJSON, showError, editionFilter, appearances, section, linkList } = Explore;
   const wrap = document.getElementById('p-graphwrap'), panel = document.getElementById('p-panel');
   let data; const places = {};
   try { data = await loadJSON('data/characters.json'); } catch (e) { showError(wrap, e); return; }
   try { (await loadJSON('data/places.json')).places.forEach(p => places[p.id] = p); } catch (e) { }
 
+  data.characters = data.characters || []; data.editions = data.editions || {};
   const byId = Object.fromEntries(data.characters.map(c => [c.id, c]));
-  const edges = data.relations.map(r => ({ ...r }));
+  // a relation that mentions an unknown person is skipped (d3 would stop with an error)
+  const edges = (data.relations || []).map(r => ({ ...r })).filter(r => byId[r.source] && byId[r.target]);
   const deg = {}; edges.forEach(e => { deg[e.source] = (deg[e.source] || 0) + 1; deg[e.target] = (deg[e.target] || 0) + 1; });
   const W = 800, H = 560;
   const nodes = data.characters.map(c => ({ id: c.id, r: Math.min(30, 13 + 3 * (deg[c.id] || 0)) }));
@@ -23,7 +115,7 @@ async function initPeople() {
   const node = svg.append('g').selectAll('g').data(nodes).join('g')
     .attr('class', d => 'node ' + byId[d.id].type)
     .attr('tabindex', 0).attr('role', 'button')
-    .attr('aria-label', d => byId[d.id].name + ', ' + byId[d.id].role)
+    .attr('aria-label', d => [byId[d.id].name, byId[d.id].role].filter(Boolean).join(', '))
     .on('click', (ev, d) => select(d.id))
     .on('keydown', (ev, d) => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); select(d.id); } });
   node.append('circle').attr('r', d => d.r);
@@ -48,7 +140,7 @@ async function initPeople() {
     .on('drag', (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
     .on('end', (ev, d) => { if (!ev.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }));
 
-  const inEd = (id) => !activeEd || byId[id].appearances.some(a => a.edition === activeEd);
+  const inEd = (id) => !activeEd || (byId[id].appearances || []).some(a => a.edition === activeEd);
   const ends = e => [e.source.id || e.source, e.target.id || e.target];
   const paint = () => {
     const nb = new Set(selected ? [selected] : []);
@@ -65,22 +157,22 @@ async function initPeople() {
   function select(id) {
     const c = byId[id]; if (!c) return; selected = id;
     if (window.__setHash) window.__setHash(id);
-    const conns = edges.filter(e => ends(e).includes(id)).map(e => {
-      const [a, b] = ends(e); const other = a === id ? b : a;
-      const text = a === id ? e.label : e.label; return { other, label: e.label, out: a === id };
-    });
+    const conns = edges.filter(e => ends(e).includes(id))
+      .map(e => { const [a, b] = ends(e); return { other: a === id ? b : a, label: e.label || '' }; })
+      .filter(k => byId[k.other]);
     const relPlaces = (c.related_places || []).filter(p => places[p]);
-    panel.replaceChildren(
-      ...[
-        el('h2', {}, c.name),
-        el('div', { class: 'chips' }, el('span', { class: 'chip' }, c.type === 'character' ? 'Character' : 'Mentioned figure'), el('span', { class: 'chip' }, c.role)),
-        el('p', {}, c.description),
-        section('Where it appears', appearances(c.appearances, data.editions)),
-        conns.length ? section('Connections', el('ul', {}, conns.map(k => el('li', {},
-          el('button', { class: 'inline', type: 'button', onclick: () => select(k.other) }, byId[k.other].name),
-          ' — ', k.out ? k.label : k.label)))) : null,
-        relPlaces.length ? section('Places', el('ul', {}, relPlaces.map(p => el('li', {}, el('a', { href: '#' + p }, places[p].name))))) : null,
-        (c.links && c.links.length) ? section('Authority records', linkList(c.links)) : null].filter(Boolean)
+    fill(panel,
+      el('h2', {}, c.name || id),
+      el('div', { class: 'chips' },
+        el('span', { class: 'chip' }, c.type === 'character' ? 'Character' : 'Mentioned figure'),
+        c.role ? el('span', { class: 'chip' }, c.role) : null),
+      c.description ? el('p', {}, c.description) : null,
+      section('Where it appears', appearances(c.appearances, data.editions)),
+      conns.length ? section('Connections', el('ul', {}, conns.map(k => el('li', {},
+        el('button', { class: 'inline', type: 'button', onclick: () => select(k.other) }, byId[k.other].name),
+        k.label ? ' \u2014 ' + k.label : null)))) : null,
+      relPlaces.length ? section('Places', el('ul', {}, relPlaces.map(p => el('li', {}, el('a', { href: '#' + p }, places[p].name))))) : null,
+      section('Authority records', linkList(c.links))
     );
     paint();
   }
@@ -90,21 +182,25 @@ async function initPeople() {
   data.characters.forEach(c => roster.append(el('button', { type: 'button', onclick: () => { select(c.id); panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); } }, c.name, el('small', {}, c.role))));
   window.ExploreApp.people = { select, byId };
   const start = location.hash.slice(1);
-  select(byId[start] ? start : 'JO');
+  select(byId[start] ? start : (byId.JO ? 'JO' : (data.characters[0] || {}).id));
 }
 
-async function initPlaces() {
-  const { el, loadJSON, showError, editionFilter, appearances, section, linkList } = Explore;
+async function initPlaces() { return safely(buildPlaces, 'l-mapwrap', 'map'); }
+async function buildPlaces() {
+  const { el, fill, loadJSON, showError, editionFilter, appearances, section, linkList } = Explore;
   const wrap = document.getElementById('l-mapwrap'), panel = document.getElementById('l-panel');
   let data; const chars = {};
   try { data = await loadJSON('data/places.json'); } catch (e) { showError(wrap, e); return; }
   try { (await loadJSON('data/characters.json')).characters.forEach(c => chars[c.id] = c); } catch (e) { }
 
+  data.places = data.places || []; data.editions = data.editions || {};
   const byId = Object.fromEntries(data.places.map(p => [p.id, p]));
+  const places = data.places.filter(p => Number.isFinite(+p.lat) && Number.isFinite(+p.lon));   // a place without coordinates is listed but not drawn
   const TYPE = { city: 'City', hills: 'Hills', country: 'Country' };
   const SAGE = '#8FA69B', SLATE = '#6D8794', INK = '#2E3A3F';
-  const map = L.map('map', { zoomControl: true, scrollWheelZoom: false });
-  map.on('click', () => { });
+  if (typeof L === 'undefined') throw new Error('Leaflet did not load: check the Leaflet <link> and <script> tags in explore.html');
+  const mapEl = document.getElementById('map');
+  const map = L.map(mapEl, { zoomControl: true, scrollWheelZoom: false }).setView([43.5, 11.5], 6);   // a view is set at once, so the tiles always appear
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -112,21 +208,29 @@ async function initPlaces() {
 
   const style = (p, sel) => ({ radius: sel ? 13 : 9, color: sel ? INK : SLATE, weight: sel ? 2.5 : 1.5, fillColor: sel ? SLATE : SAGE, fillOpacity: p.type === 'city' ? .9 : .35, dashArray: p.type === 'city' ? null : '4 3' });
   const markers = {}; let selected = null, activeEd = null;
-  data.places.forEach(p => {
-    const m = L.circleMarker([p.lat, p.lon], style(p, false)).bindTooltip(p.name, { direction: 'top', offset: [0, -8] }).addTo(map);
+  places.forEach(p => {
+    const m = L.circleMarker([+p.lat, +p.lon], style(p, false)).bindTooltip(p.name || p.id, { direction: 'top', offset: [0, -8] }).addTo(map);
     m.on('click', () => select(p.id)); markers[p.id] = m;
   });
-  const inEd = p => !activeEd || p.appearances.some(a => a.edition === activeEd);
+  const inEd = p => !activeEd || (p.appearances || []).some(a => a.edition === activeEd);
   const refit = () => {
-    const vis = data.places.filter(inEd).map(p => [p.lat, p.lon]);
+    map.invalidateSize();
+    const vis = places.filter(inEd).map(p => [+p.lat, +p.lon]);
     if (vis.length > 1) map.fitBounds(vis, { padding: [50, 50] }); else if (vis.length) map.setView(vis[0], 9);
   };
+  // a map created in a hidden tab has no size: whenever its box gets a size (tab shown, window resized) it is redrawn
+  let sized = false;
+  if ('ResizeObserver' in window) new ResizeObserver(() => {
+    if (!mapEl.offsetWidth) return;
+    map.invalidateSize();
+    if (!sized) { sized = true; refit(); }
+  }).observe(mapEl);
   const paint = () => {
-    data.places.forEach(p => {
-      const on = inEd(p);
-      if (on && !map.hasLayer(markers[p.id])) markers[p.id].addTo(map);
-      if (!on && map.hasLayer(markers[p.id])) map.removeLayer(markers[p.id]);
-      markers[p.id].setStyle(style(p, p.id === selected));
+    places.forEach(p => {
+      const on = inEd(p), m = markers[p.id];
+      if (on && !map.hasLayer(m)) m.addTo(map);
+      if (!on && map.hasLayer(m)) map.removeLayer(m);
+      m.setStyle(style(p, p.id === selected));
     });
     if (selected && markers[selected] && map.hasLayer(markers[selected])) markers[selected].bringToFront();
   };
@@ -135,16 +239,18 @@ async function initPlaces() {
     const p = byId[id]; if (!p) return; selected = id;
     if (window.__setHash) window.__setHash(id);
     const rel = (p.related_characters || []).filter(c => chars[c]);
-    panel.replaceChildren(...[
-      el('h2', {}, p.name),
-      el('div', { class: 'chips' }, el('span', { class: 'chip' }, TYPE[p.type] || p.type), el('span', { class: 'chip' }, p.role)),
-      el('p', {}, p.description),
+    fill(panel,
+      el('h2', {}, p.name || id),
+      el('div', { class: 'chips' },
+        (TYPE[p.type] || p.type) ? el('span', { class: 'chip' }, TYPE[p.type] || p.type) : null,
+        p.role ? el('span', { class: 'chip' }, p.role) : null),
+      p.description ? el('p', {}, p.description) : null,
       section('Where it appears', appearances(p.appearances, data.editions)),
       rel.length ? section('Related people', el('ul', {}, rel.map(c => el('li', {}, el('a', { href: '#' + c }, chars[c].name))))) : null,
-      (p.links && p.links.length) ? section('Authority records', linkList(p.links)) : null].filter(Boolean)
+      section('Authority records', linkList(p.links))
     );
     paint();
-    if (pan && map.hasLayer(markers[id])) map.panTo([p.lat, p.lon]);
+    if (pan && markers[id] && map.hasLayer(markers[id])) map.panTo([+p.lat, +p.lon]);
   }
 
   editionFilter(document.getElementById('l-filters'), data.editions, id => { activeEd = id; paint(); refit(); });
@@ -153,7 +259,7 @@ async function initPlaces() {
   refit();
   window.ExploreApp.places = { select, byId, map, refit };
   const start = location.hash.slice(1);
-  select(byId[start] ? start : data.places[0].id);
+  select(byId[start] ? start : (data.places[0] || {}).id);
 }
 
 /* ---------------------------------------------------------------- Author: vertical timeline */
@@ -181,7 +287,7 @@ async function initAuthor() {
     item.body.hidden = !open;
     item.li.classList.toggle('open', open);
   }
-  data.events.forEach((e) => {
+  (data.events || []).forEach((e) => {
     const li = el('li', 'tl-item type-' + e.type);
     li.id = e.id;
     li.dataset.type = e.type;
@@ -240,7 +346,7 @@ async function initAuthor() {
     filters.append(b);
   };
   makeBtn('', 'Everything');
-  Object.entries(data.types).forEach(([id, label]) => makeBtn(id, label));
+  Object.entries(data.types || {}).forEach(([id, label]) => makeBtn(id, label));
 
   /* reveal on scroll, and the coloured part of the line */
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -302,6 +408,8 @@ async function initAuthor() {
     });
     if (focus) tabs[NAMES.indexOf(name)].focus();
     if (name === 'places') {
+      await new Promise((r) => requestAnimationFrame(r));       // let the browser lay the tab out before the map measures it
+      if (!window.ExploreApp.places) placesReady = null;        // the first attempt failed: try again
       await ensurePlaces();
       const a = window.ExploreApp.places;
       if (a) { a.map.invalidateSize(); a.refit(); }
@@ -310,7 +418,8 @@ async function initAuthor() {
   }
 
   async function route() {
-    const h = decodeURIComponent(location.hash.slice(1));
+    let h = '';
+    try { h = decodeURIComponent(location.hash.slice(1)); } catch (e) { /* a malformed address is treated as empty */ }
     await idsReady;
     if (NAMES.includes(h)) { await showTab(h); return; }
     if (placeIds.has(h)) { await showTab('places'); const a = window.ExploreApp.places; if (a) a.select(h, true); return; }
@@ -330,6 +439,6 @@ async function initAuthor() {
       showTab(NAMES[next], true);
     });
   });
-  window.addEventListener('hashchange', route);
-  route().then(() => { window.__setHash = (id) => history.replaceState(null, '', '#' + id); });
+  window.addEventListener('hashchange', () => route().catch(console.error));
+  route().catch(console.error).then(() => { window.__setHash = (id) => history.replaceState(null, '', '#' + id); });
 })();

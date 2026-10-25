@@ -236,12 +236,32 @@ a {
 
 /* Documentation */
 .doc {
-  max-width: 1000px;
+  max-width: 1120px;
   margin: 56px auto 96px;
   padding: 0 24px;
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 220px minmax(0, 1fr);
   gap: 56px
+}
+
+.doc article {
+  min-width: 0
+}
+
+.doc table {
+  width: 100%;
+  font-size: .88rem
+}
+
+.doc th,
+.doc td {
+  padding: 6px 8px;
+  overflow-wrap: anywhere
+}
+
+.doc th:first-child,
+.doc td:first-child {
+  white-space: nowrap
 }
 
 .toc {
@@ -1755,4 +1775,118 @@ a.ent[aria-expanded="true"] {
   .tl-chev {
     transition: none
   }
+}
+
+/* documentation: figures, lists, code */
+.doc figure {
+  float: right;
+  clear: right;
+  width: 300px;
+  margin: 4px 0 12px 28px
+}
+
+.doc figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  cursor: zoom-in
+}
+
+.doc figcaption {
+  margin-top: 6px;
+  font-size: .85rem;
+  line-height: 1.4;
+  color: var(--soft)
+}
+
+
+.doc h3 {
+  font: 500 1.35rem var(--serif);
+  margin: 26px 0 8px
+}
+
+.doc ul {
+  max-width: 62ch;
+  padding-left: 1.3em;
+  margin-bottom: 14px;
+  color: #3e4b50
+}
+
+.doc li {
+  margin-bottom: 6px
+}
+
+.doc pre {
+  max-width: 62ch;
+  overflow-x: auto;
+  margin: 0 0 14px;
+  padding: 14px 16px;
+  background: var(--mist);
+  border-radius: 3px;
+  font-size: .88rem
+}
+
+.doc code {
+  font-family: ui-monospace, Consolas, monospace
+}
+
+@media (max-width: 600px) {
+  .doc figure {
+    float: none;
+    width: 260px;
+    margin: 0 0 16px
+  }
+}
+
+/* enlarged image */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(46, 58, 63, .82);
+  cursor: zoom-out
+}
+
+.lightbox[hidden] {
+  display: none
+}
+
+.lightbox figure {
+  margin: 0;
+  max-width: 100%;
+  text-align: center
+}
+
+.lightbox img {
+  max-width: min(92vw, 900px);
+  max-height: 80vh;
+  border-radius: 3px;
+  background: var(--paper);
+  cursor: default
+}
+
+.lightbox figcaption {
+  margin-top: 10px;
+  color: #fff;
+  font-size: .95rem
+}
+
+.lb-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
+  background: none;
+  border: 0;
+  cursor: pointer
 }

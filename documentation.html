@@ -36,80 +36,603 @@
     </div>
   </header>
   <main class="doc">
-    <aside class="toc" aria-label="Sections"><strong>On this page</strong><a href="#introduction">Introduction</a><a
-        href="#principles">Editorial principles</a><a href="#transcription">Transcription conventions</a><a
-        href="#encoding">Encoding</a><a href="#bibliography">Bibliography</a><a href="#credits">Credits and citation</a>
+    <aside class="toc" aria-label="Sections">
+      <strong>On this page</strong>
+      <a href="#introduction">Introduction</a>
+      <a href="#principles">Editorial principles</a>
+      <a href="#witnesses">Witnesses and their relations</a>
+      <a href="#bologna">The Bologna edition</a>
+      <a href="#milan">The Milan edition</a>
+      <a href="#london">The London edition</a>
+      <a href="#encoding">Encoding</a>
+      <a href="#website">Website</a>
+      <a href="#bibliography">Bibliography</a>
+      <a href="#disclaimer">Disclaimer</a>
+      <a href="#credits">Credits and citation</a>
     </aside>
+
     <article>
+
       <section id="introduction">
         <h2>Introduction</h2>
-        <p>
-          <strong>Ortis Letters</strong> is a digital edition prototype of Ugo Foscolo's
-          <em>Ultime lettere di Jacopo Ortis</em>
-          (<em>Last Letters of Jacopo Ortis</em>).
-          The project explores the textual history of the novel and presents its
-          different witnesses through a digital scholarly edition.
-        </p>
-
-        <p>
-          The edition is based on the <strong>national edition edited by Giovanni Gambarin</strong>
-          (1970)<sup class="cite"> [<a href="#ref-1">1</a>]</sup>
-          and allows users to explore and compare different textual witnesses and their variants.
-        </p>
-
-        <p>
-          Print critical editions of the novel already exist, first and foremost Gambarin's own
-          National Edition, which remains the standard scholarly reference. However, no openly
-          available, machine-readable, multi-witness digital edition currently collates the
-          <em>Ortis</em>'s three authorized printings for computational or pedagogical reuse: as of
-          its last update, Patrick Sahle's
-          <a href="https://v3.digitale-edition.de/" target="_blank" rel="noopener noreferrer">Catalogue
-            of Digital Scholarly Editions</a> lists no comparable resource for the novel. Existing
-          digital transcriptions, such as those hosted by
-          <a href="https://it.wikisource.org/wiki/Pagina_principale" target="_blank"
-            rel="noopener noreferrer">Wikisource</a> and the
-          <a href="http://www.bibliotecaitaliana.it/" target="_blank" rel="noopener noreferrer">Biblioteca
-            Italiana</a>, offer accessible plain-text versions of the work, but do not encode textual
-          variants, do not distinguish between witnesses, and are not structured for computational
-          analysis. OpenOrtis was conceived to address precisely this gap, providing an open dataset
-          of the novel's textual variation in a structured, reusable form.
-        </p>
-        <p>
-          The project was conceived not as a definitive edition but as a <em>secondary digital
-            surrogate</em>, in the sense proposed by Peter Shillingsburg<sup class="cite"> [<a
-              href="#ref-14">14</a>]</sup>: a digital representation that stands at an
-          interpretive remove from the primary material, valuable for being accessible anywhere,
-          searchable, and open to further analysis, rather than for being authoritative or final.
-          Following Shillingsburg's principles of modularity and durability, the transcribed text is
-          treated as a stable foundation on which critical enhancement can be built over time, without
-          altering the underlying encoding itself.
-        </p>
+        <p><em>Ortis Letters</em> is a prototype of a digital scholarly edition of <a
+            href="https://en.wikipedia.org/wiki/Ugo_Foscolo" target="_blank" rel="noopener">Ugo Foscolo</a>’s epistolary
+          novel <a href="https://en.wikipedia.org/wiki/The_Last_Letters_of_Jacopo_Ortis" target="_blank"
+            rel="noopener"><em>Ultime lettere di Jacopo Ortis</em></a> (<em>The Last Letters of Jacopo Ortis</em>). The
+          novel did not reach its definitive form in a single act of publication: between 1798 and 1817 it passed
+          through a series of printed versions, some supervised by the author and others issued without his consent,
+          which differ from one another in text and extent. The edition sets out to make this textual history
+          visible. It encodes the opening of three key editions, namely the editor’s notice or address to the reader and
+          the first five letters, and presents their witnesses so that they can be compared directly on the <a
+            href="edition.html">Edition</a> page.</p>
+        <p>Alongside the text, the website allows readers to explore the characters and places named in the variants (<a
+            href="explore.html#people">People</a> and <a href="explore.html#places">Places</a>) and to follow the
+          author’s life on an interactive timeline, on which the editions appear as they were published (<a
+            href="explore.html#author">Author</a>).</p>
+        <p>The text is based on the National Edition by Giovanni Gambarin (<a href="#bib-gambarin1970">1970</a>), which
+          prints the novel in its three versions of 1798, 1802 and 1817 and remains the standard scholarly reference.
+          The choice and the organisation of the editions follow Gambarin’s; the project is therefore a reproduction of
+          his work, enriched by the possibility of interacting with the text and of exploring the novel on several
+          levels.</p>
+        <p>To the best of my knowledge, no openly available, machine-readable, multi-witness digital edition collates
+          the printings of the <em>Ortis</em> for computational or pedagogical reuse: at the time of its last update,
+          Patrick Sahle’s <em>Catalogue of Digital Scholarly Editions</em> (<a href="#bib-sahle">Sahle n.d.</a>) lists
+          no comparable resource for the novel. Existing digital transcriptions, such as those hosted by Wikisource (<a
+            href="#bib-wikisource">Wikisource n.d.</a>) and the Biblioteca Italiana (<a href="#bib-foscolo2004">Foscolo
+            2004</a>), offer accessible plain-text versions of the work, but they do not encode textual variants and are
+          not structured for computational analysis. <em>Ortis Letters</em> was conceived to address this gap, as an
+          extendible model that provides the textual variation of the novel in a structured and reusable form.
+          Research on the author is also supported by institutions such as the Centro di Ricerca Interuniversitario
+          Foscolo (<a href="#bib-crif">CRIF n.d.</a>).</p>
       </section>
+
       <section id="principles">
         <h2>Editorial principles</h2>
-        <p>Write your text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua.</p>
+        <p>Gambarin explains that his edition follows a criterion proposed
+          by Ugo Foscolo's scholar and collector <a
+            href="https://www.treccani.it/enciclopedia/domenico-bianchini_(Dizionario-Biografico)/">Domenico
+            Bianchini</a>, according to which an edition of the <em>Ortis</em>
+          that meets the needs of "scholars should
+          present separately the editions to which Foscolo attended directly" (<a href="#bib-gambarin1970">Gambarin
+            1970</a>,
+          LXXIX). These are:</p>
+        <ul>
+          <li>the Bologna edition of 1798, begun under Foscolo’s care and later published without his authorisation
+            under the title <em>Vera storia di due amanti infelici</em> (<a href="#bologna">see below</a>);</li>
+          <li>the Milan edition of 1802, the <em>editio princeps</em> authorised by Foscolo (<a href="#milan">see
+              below</a>);</li>
+          <li>the London edition of 1817, which also incorporates the version published in Zurich in 1816 (<a
+              href="#london">see below</a>).</li>
+        </ul>
+        <p>This digital edition follows the same principle, for clarity and for consistency with the scholarly
+          literature. Each edition is therefore encoded as a separate text, with its own base text (the <em>lemma</em>)
+          and its own set of <em>witnesses</em>, that is, the other printed versions that are collated with it and
+          recorded as variants.</p>
       </section>
-      <section id="transcription">
-        <h2>Transcription conventions</h2>
-        <p>Write your text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua.</p>
+
+      <section id="witnesses">
+        <h2>Witnesses and their relations</h2>
+        <p>The relations between the three editions are easier to follow when their witnesses are placed on a single
+          diagram (Fig. 1 and Table 1). The upper lane shows the Bologna edition: Foscolo’s unfinished text
+          (<em>lem</em>), the unauthorised <em>Vera storia</em> (A) and its two reprints (B and C). The central lane
+          shows the Milan edition, in which the revision of the copy sent to Goethe (M) leads to the <em>editio
+            princeps</em> of 1802 (I), collated with the reprints that Foscolo saw and approved (II and III). The lower
+          lane shows the London edition, whose witnesses are the 1802 print (Gt), the Zurich print of 1816 (Z) and the
+          base text of 1817 (L).</p>
+        <p>The three files share some of their witnesses, which is why the same sigla recur: witness I of the Milan file
+          is the Genio Tipografico print that appears as Gt in the London file, and Z and L are collated in the Milan
+          apparatus as well.</p>
+
+        <figure id="fig-relations" style="float:none;width:100%;margin:26px 0;overflow-x:auto">
+          <svg viewBox="0 0 960 440" role="img" aria-labelledby="rel-title rel-desc"
+            style="width:100%;min-width:780px;height:auto">
+            <title id="rel-title">Relations between the witnesses of the Bologna, Milan and London editions</title>
+            <desc id="rel-desc">Three horizontal lanes. Bologna: Foscolo’s draft (lem) is continued by Angelo Sassoli in
+              the unauthorised edition A, followed by the reprints B and C. Milan: the revision of the Goethe copy M
+              leads to the 1802 edition I, collated with the editions II and III. London: Gt, which is the same edition
+              as I, then Z, which is included in L. A dashed arrow leads from the Bologna draft to M, a dotted line
+              joins I to Gt.</desc>
+            <style>
+              .band {
+                fill: var(--mist);
+                opacity: .55
+              }
+
+              .lane {
+                font: 500 11px var(--sans);
+                letter-spacing: .12em;
+                fill: var(--slate)
+              }
+
+              .nd rect {
+                fill: var(--paper);
+                stroke: var(--sage);
+                stroke-width: 1.5
+              }
+
+              .nd.base rect {
+                stroke: var(--ink);
+                stroke-width: 2.4
+              }
+
+              .nd text {
+                text-anchor: middle;
+                fill: var(--ink)
+              }
+
+              .nd .s {
+                font: 600 15px var(--sans)
+              }
+
+              .nd .d {
+                font: 11px var(--sans);
+                fill: var(--soft)
+              }
+
+              .ar {
+                fill: none;
+                stroke: var(--slate);
+                stroke-width: 1.6;
+                marker-end: url(#rel-ah)
+              }
+
+              .ar.dash {
+                stroke-dasharray: 6 4
+              }
+
+              .ar.dot {
+                stroke-dasharray: 2 4;
+                marker-end: none
+              }
+
+              .al {
+                font: italic 11px var(--sans);
+                fill: var(--soft);
+                text-anchor: middle
+              }
+
+              .al.l {
+                text-anchor: start
+              }
+
+              .grp {
+                fill: none;
+                stroke: var(--slate);
+                stroke-dasharray: 5 4;
+                stroke-width: 1.2
+              }
+            </style>
+            <defs>
+              <marker id="rel-ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                <path d="M0 0 L10 5 L0 10 z" fill="var(--slate)" />
+              </marker>
+            </defs>
+
+            <rect class="band" x="10" y="34" width="940" height="120" rx="4" />
+            <rect class="band" x="10" y="174" width="940" height="120" rx="4" />
+            <rect class="band" x="10" y="314" width="940" height="120" rx="4" />
+            <text class="lane" x="24" y="54">BOLOGNA EDITION · base text and witnesses A, B, C</text>
+            <text class="lane" x="24" y="194">MILAN EDITION · witnesses M, I, II, III (Z and L are also collated)</text>
+            <text class="lane" x="24" y="334">LONDON EDITION · witnesses Gt, Z, L</text>
+
+            <!-- Bologna -->
+            <g class="nd base">
+              <rect x="62" y="86" width="96" height="44" rx="3" /><text class="s" x="110" y="106">lem</text><text
+                class="d" x="110" y="122">draft 1798</text>
+            </g>
+            <g class="nd">
+              <rect x="222" y="86" width="96" height="44" rx="3" /><text class="s" x="270" y="106">A</text><text
+                class="d" x="270" y="122">1799</text>
+            </g>
+            <g class="nd">
+              <rect x="382" y="86" width="96" height="44" rx="3" /><text class="s" x="430" y="106">B</text><text
+                class="d" x="430" y="122">1799 (1800)</text>
+            </g>
+            <g class="nd">
+              <rect x="542" y="86" width="96" height="44" rx="3" /><text class="s" x="590" y="106">C</text><text
+                class="d" x="590" y="122">1801</text>
+            </g>
+            <path class="ar" d="M160 108 L220 108" /><text class="al" x="190" y="100">Sassoli</text>
+            <path class="ar" d="M320 108 L380 108" /><text class="al" x="350" y="100">reprint</text>
+            <path class="ar" d="M480 108 L540 108" /><text class="al" x="510" y="100">reprint</text>
+
+            <!-- Milan -->
+            <g class="nd base">
+              <rect x="382" y="226" width="96" height="44" rx="3" /><text class="s" x="430" y="246">M</text><text
+                class="d" x="430" y="262">1801 (Goethe)</text>
+            </g>
+            <g class="nd">
+              <rect x="542" y="226" width="96" height="44" rx="3" /><text class="s" x="590" y="246">I</text><text
+                class="d" x="590" y="262">1802</text>
+            </g>
+            <rect class="grp" x="702" y="214" width="244" height="68" rx="4" />
+            <text class="al" x="824" y="209">seen and approved by Foscolo</text>
+            <g class="nd">
+              <rect x="718" y="226" width="96" height="44" rx="3" /><text class="s" x="766" y="246">II</text><text
+                class="d" x="766" y="262">Mantovana</text>
+            </g>
+            <g class="nd">
+              <rect x="834" y="226" width="96" height="44" rx="3" /><text class="s" x="882" y="246">III</text><text
+                class="d" x="882" y="262">Nobile</text>
+            </g>
+            <path class="ar" d="M480 248 L540 248" /><text class="al" x="510" y="240">published</text>
+            <path class="ar dash" d="M640 248 L700 248" /><text class="al" x="670" y="240">collated</text>
+
+            <!-- bridge from Bologna to Milan -->
+            <path class="ar dash" d="M110 130 C110 215 240 248 380 248" />
+            <text class="al" x="270" y="268">revised by Foscolo</text>
+
+            <!-- London -->
+            <g class="nd">
+              <rect x="542" y="366" width="96" height="44" rx="3" /><text class="s" x="590" y="386">Gt</text><text
+                class="d" x="590" y="402">1802</text>
+            </g>
+            <g class="nd">
+              <rect x="662" y="366" width="96" height="44" rx="3" /><text class="s" x="710" y="386">Z</text><text
+                class="d" x="710" y="402">1816</text>
+            </g>
+            <g class="nd base">
+              <rect x="842" y="366" width="96" height="44" rx="3" /><text class="s" x="890" y="386">L</text><text
+                class="d" x="890" y="402">1817</text>
+            </g>
+            <path class="ar dot" d="M590 272 L590 364" /><text class="al l" x="600" y="322">same edition as I</text>
+            <path class="ar" d="M760 388 L840 388" /><text class="al" x="800" y="380">included in</text>
+          </svg>
+          <figcaption>Fig. 1. Relations between the witnesses. Thick outline: base text of each edition. Solid arrow:
+            continuation, reprint or publication; dashed arrow: revision or collation; dotted line: the same printed
+            edition appearing in two files. The diagram does not claim a stemma in the strict sense: it shows the
+            editorial relations described in the text.</figcaption>
+        </figure>
+
+        <div style="overflow-x:auto">
+          <table class="witness-table">
+            <caption>Table 1. The witnesses (sources: <a href="#bib-gambarin1970">Gambarin 1970</a>; descriptions in the
+              headers of the XML files).</caption>
+            <thead>
+              <tr>
+                <th>Siglum</th>
+                <th>Edition</th>
+                <th>Date</th>
+                <th>Place and printer</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>lem</td>
+                <td>Bolognese draft (Foscolo’s first 138 pages)</td>
+                <td>1798</td>
+                <td>Bologna, Marsigli</td>
+                <td>Printing interrupted; never published in this form</td>
+              </tr>
+              <tr>
+                <td>A</td>
+                <td><em>Vera storia di due amanti infelici</em></td>
+                <td>1799</td>
+                <td>Bologna, Marsigli</td>
+                <td>Unauthorised; continued by Sassoli</td>
+              </tr>
+              <tr>
+                <td>B</td>
+                <td><em>Vera storia</em>, second edition</td>
+                <td>1799 (issued 1800)</td>
+                <td>Bologna</td>
+                <td>Unauthorised reprint</td>
+              </tr>
+              <tr>
+                <td>C</td>
+                <td><em>Vera storia</em>, third edition</td>
+                <td>1801</td>
+                <td>Bologna</td>
+                <td>Unauthorised reprint</td>
+              </tr>
+              <tr>
+                <td>M</td>
+                <td>Copy for Goethe (Mainardi project)</td>
+                <td>1801</td>
+                <td>Milan</td>
+                <td>Foscolo’s revision; project abandoned</td>
+              </tr>
+              <tr>
+                <td>I (Gt)</td>
+                <td><em>Ultime lettere di Jacopo Ortis</em>, <em>editio princeps</em></td>
+                <td>1802</td>
+                <td>Milan, Genio Tipografico</td>
+                <td>First edition authorised by Foscolo</td>
+              </tr>
+              <tr>
+                <td>II</td>
+                <td>“Mantovana” reprint</td>
+                <td>1802</td>
+                <td>Milan</td>
+                <td>Famous reprint recognized by Foscolo</td>
+              </tr>
+              <tr>
+                <td>III</td>
+                <td>Agnello Nobile reprint</td>
+                <td>1802 (imprint: London, 1803)</td>
+                <td>Milan, Agnello Nobile</td>
+                <td>Famous reprint recognized by Foscolo</td>
+              </tr>
+              <tr>
+                <td>Z</td>
+                <td>Zurich edition</td>
+                <td>1816 (imprint: London, 1814)</td>
+                <td>Zurich, Orell Füssli</td>
+                <td>Incorporated in L</td>
+              </tr>
+              <tr>
+                <td>L</td>
+                <td>London edition</td>
+                <td>1817</td>
+                <td>London, John Murray</td>
+                <td>Base text of the London edition</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
+
+      <section id="bologna">
+        <h2>The Bologna edition (1798–1801)</h2>
+
+        <h3>Foscolo’s draft (1798)</h3>
+        <figure id="ed-bolo-1798">
+          <img src="img/ed-bolo-1798.png" alt="Title page of the Bolognese draft of Ultime lettere di Jacopo Ortis">
+          <figcaption>Fig. 2. Title page of the Bolognese draft, begun in 1798 but never published in its original form.
+          </figcaption>
+        </figure>
+        <p>In 1798, during his stay in Bologna, Foscolo agreed with the printer
+          Iacopo Marsigli to print the very first edition of <em>Ultime lettere di Jacopo Ortis</em>, and printing began
+          towards the end of
+          that year. The arrangement did not survive the political and military events of the following months: Foscolo
+          enlisted as a volunteer in the Mobile National Guard of Bologna, which kept him away from the city for several
+          months, and he could therefore not supervise the printing to its end (Gambarin <a
+            href="#bib-gambarin1970">1970</a>, XIX). The episode can be followed on the <a
+            href="explore.html#ev-bolo1798">timeline</a>.</p>
+        <p>Marsigli, unwilling to lose the sheets that had already been printed, turned to <a
+            href="https://data.bnf.fr/14518267/angelo_sassoli/" target="_blank" rel="noopener">Angelo Sassoli</a>, a
+          Bolognese jurist, to bring the work to an end (Terzoli <a href="#bib-terzoli2004">2004</a>). The part written
+          by Foscolo extends over the first 138 pages. This portion, which was never published in this form, is the base
+          text of the Bologna edition and the lemma of its apparatus. Gambarin (<a href="#bib-gambarin1970">1970</a>)
+          transcribes it together with the later variants introduced by Marsigli and written by Sassoli, which are
+          recorded here as witnesses.</p>
+
+        <h3><em>Vera storia di due amanti infelici</em> (1799–1801)</h3>
+        <figure id="vera-sto-1799">
+          <img src="img/vera-sto-1799.png"
+            alt="Title page of Vera storia di due amanti infelici ossia Ultime lettere di Jacopo Ortis">
+          <figcaption>Fig. 3. Title page of <em>Vera storia di due amanti infelici ossia Ultime lettere di Jacopo
+              Ortis</em> (1799).</figcaption>
+        </figure>
+        <p>The novel reached print in 1799 under a new title, <em>Vera storia di due amanti infelici ossia Ultime
+            lettere di Jacopo Ortis</em> (witness A). It was published
+          without Foscolo’s authorisation and with the continuation written by Sassoli. After the arrival of the
+          Austrian forces in Bologna in the summer of 1799, the text was also reworked for the new political situation,
+          with cuts, additions and notes, so that its revolutionary and anti-Christian ideas would not prevent the
+          circulation of the book (Terzoli <a href="#bib-terzoli2004">2004</a>).</p>
+        <p>Two reprints followed. The second edition (witness B) carries
+          the same title page and the same date as the first but was in fact issued in 1800; the third (witness C) is
+          dated 1801. The reprints appear to have been set from earlier
+          copies with further, often rough, modifications, and they contain additional textual differences (Gambarin <a
+            href="#bib-gambarin1970">1970</a>). Comparing the three witnesses makes it possible to separate Foscolo’s
+          own writing from the changes introduced by the unauthorised printings.</p>
+      </section>
+
+      <section id="milan">
+        <h2>The Milan edition (1802)</h2>
+
+        <h3>The Mainardi project and the copy sent to Goethe (witness M)</h3>
+        <figure id="goethe-ed-mil-1801">
+          <img src="img/goethe-ed-mil-1801.png" alt="Copy of the Mainardi edition associated with Goethe">
+          <figcaption>Fig. 4. Surviving copy of the first part of the novel, associated with the Mainardi printing
+            project and sent to Goethe.</figcaption>
+        </figure>
+        <p>After the publication of the <em>Vera storia</em>, Foscolo resumed work on the novel and began to prepare a
+          new edition with the Milanese printer Mainardi, but the project was soon abandoned after disagreements between
+          the author and the printer. A surviving copy of the first part, associated with it, was sent to <a
+            href="https://en.wikipedia.org/wiki/Johann_Wolfgang_von_Goethe" target="_blank" rel="noopener">Johann
+            Wolfgang von Goethe</a>; it is designated M in this edition and dated 1801.</p>
+        <p>Witness M stands between the early Bolognese text and the authorised edition of 1802: it documents Foscolo’s
+          revision of the novel before its publication by the Genio Tipografico. See also the <a
+            href="explore.html#ev-goethe1801">timeline</a>.</p>
+
+        <h3><em>Editio princeps</em> (Genio Tipografico, 1802), witness I</h3>
+        <figure id="ed-mil-1802">
+          <img src="img/ed-mil-1802.png" alt="Title page of the 1802 Milan edition of Ultime lettere di Jacopo Ortis">
+          <figcaption>Fig. 5. Title page of <em>Ultime lettere di Jacopo Ortis</em>, published in Milan by the Genio
+            Tipografico in 1802.</figcaption>
+        </figure>
+        <p>The first edition authorised by Foscolo appeared in Milan in 1802 from the press of the Genio Tipografico
+          (witness I), and its editor’s notice is dated Milan, October
+          1802. In the notice the editor, who presents himself as the depositary of the autographs, disowns every
+          edition that differs from this one. The edition marks a decisive
+          stage in the history of the novel, following the interrupted Bologna printing and the unauthorised version of
+          1799. See the <a href="explore.html#ev-mil1802">timeline</a>.</p>
+
+        <h3>Further witnesses: II, III, Z and L</h3>
+        <p>The Milan apparatus collates four further witnesses. Witness II is the edition that Foscolo himself called
+          the “Mantovana”, and witness III the Milan edition published by Agnello Nobile; both belong to the prints that
+          Foscolo saw and approved (Gambarin <a href="#bib-gambarin1970">1970</a>). Z and L, the Zurich and London
+          editions of 1816 and 1817, are discussed below. Their presence allows the Milan text to be read against both
+          its predecessors and the later forms of the novel.</p>
+      </section>
+
+      <section id="london">
+        <h2>The London edition (1817)</h2>
+        <p>In 1815 Foscolo left Milan rather than take an oath of allegiance to the Austrian authorities, and went into
+          exile (<a href="explore.html#ev-exile">timeline</a>). The last two stages of the history of the novel belong
+          to this period: the Zurich edition of 1816 and the London edition of 1817. The London file collates the text
+          of 1817 (L) with the Genio Tipografico print of 1802 (Gt, witness I in the Milan file) and with the Zurich
+          edition (Z), in order to trace the changes introduced in the last stage of the publication history.</p>
+
+        <h3>The Zurich edition (1816), witness Z</h3>
+        <figure id="zurigo-1816">
+          <img src="img/zurigo-1816.png" alt="Title page of the Zurich edition of Ultime lettere di Jacopo Ortis, 1816">
+          <figcaption>Fig. 6. Title page of the Zurich edition, printed by Orell Füssli in 1816 under a false London
+            imprint dated 1814.</figcaption>
+        </figure>
+        <p>Witness Z was printed in Zurich by <a href="https://en.wikipedia.org/wiki/Orell_F%C3%BCssli" target="_blank"
+            rel="noopener">Orell Füssli</a> in 1816, although its title
+          page gives London as the place of publication
+          and 1814 as the dates, to avoid any cases of censorship. The edition directly precedes, and is
+          incorporated in, the London publication of 1817. See the <a href="explore.html#ev-zurich1816">timeline</a>.
+        </p>
+
+        <h3>The London edition (1817), witness L</h3>
+        <figure id="lon-1817">
+          <img src="img/lon-1817.png" alt="Title page of the London edition of Ultime lettere di Jacopo Ortis, 1817">
+          <figcaption>Fig. 7. Title page of the London edition of <em>Ultime lettere di Jacopo Ortis</em>, published by
+            John Murray in 1817.</figcaption>
+        </figure>
+        <p>Witness L was published in London by <a href="https://en.wikipedia.org/wiki/John_Murray_(publishing_house)"
+            target="_blank" rel="noopener">John Murray</a> in 1817. It is
+          the last edition included in this comparison and the base text of the London file: read against Gt and Z, it
+          makes visible the revisions that distinguish the final text from its predecessors. See the <a
+            href="explore.html#ev-lon1817">timeline</a>.</p>
+      </section>
+
       <section id="encoding">
         <h2>Encoding</h2>
-        <p>Write your text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua.</p>
+        <p>Each edition is transcribed in its own XML file, encoded according to the TEI P5 Guidelines (<a
+            href="#bib-tei">TEI Consortium n.d.</a>); for the general workflow of a TEI edition see Burghart (<a
+            href="#bib-burghart2017">2017</a>). The running text and the apparatus were transcribed by hand from
+          Gambarin (<a href="#bib-gambarin1970">1970</a>). The header of each file describes the witnesses
+          (<code>listWit</code>), the sources, the editorial choices, and the people and places named in the text
+          (<code>listPerson</code> and <code>listPlace</code>), which are linked to external authority records where
+          possible.</p>
+        <p>The variants are recorded with the <em>parallel segmentation</em> method. Every point of variation is an
+          <code>&lt;app&gt;</code> that contains a lemma (<code>&lt;lem&gt;</code>) and one or more readings
+          (<code>&lt;rdg&gt;</code>), each of them assigned to its witnesses through <code>@wit</code>. In addition,
+          every entry carries a <code>@type</code> that describes the kind of change: punctuation, capitalisation,
+          orthographic, morphological, lexical, word order, addition, omission, rewriting, layout, paratext, or a
+          combination of these (<code>mixed</code>, with the components listed in <code>@subtype</code>). The website
+          uses this type to label the variants and to filter them.
+        </p>
+        <pre><code>&lt;app type="orthographic"&gt;
+  &lt;lem wit="II M Z L"&gt;sacrificio&lt;/lem&gt;
+  &lt;rdg wit="III"&gt;sagrificio&lt;/rdg&gt;
+&lt;/app&gt;</code></pre>
+        <p>People and places are tagged with <code>&lt;persName ref="#JO"&gt;</code> and
+          <code>&lt;placeName ref="#PD"&gt;</code>, where the reference points to the entry in the header; the same
+          identifiers are used in the data files that feed the <a href="explore.html#people">People</a> and <a
+            href="explore.html#places">Places</a> tabs. Author’s notes are encoded with
+          <code>&lt;note resp="#UF"&gt;</code> and italics with <code>&lt;emph rend="italic"&gt;</code>.
+        </p>
+        <p>The editorial principles are declared in the header of each file: original spellings and quotation marks are
+          retained; end-of-line hyphens are removed and the words rejoined; page breaks are not recorded. A stylesheet
+          (XSLT) turns the XML into the page that
+          readers see. The XML files, the stylesheet and the scripts are available on <a
+            href="https://github.com/theair-hub/OrtisLetters" target="_blank" rel="noopener">GitHub</a>.</p>
       </section>
+
+      <section id="website">
+        <h2>Website</h2>
+        <p>The website is designed around three activities: reading, comparing and exploring. The <a
+            href="edition.html">Edition</a> page shows the text of one edition at a time (<a
+            href="edition.html?ed=bolo-1798">Bologna 1798</a>, <a href="edition.html?ed=mil-1802">Milan 1802</a>, <a
+            href="edition.html?ed=lon-1817">London 1817</a>) and lets readers open up to four windows side by side, each
+          showing a different witness, with synchronised scrolling. The numbered markers in the text open the
+          corresponding entry of the apparatus in a panel on the right, and variants can be filtered by type. The people
+          and places named in the text open a small window with a short description and a link to the Explore page.</p>
+        <p>The <a href="explore.html">Explore</a> page has three tabs. <a href="explore.html#people">People</a> shows a
+          graph of the relations between the characters and the figures mentioned in the text; <a
+            href="explore.html#places">Places</a> shows the places on an interactive map; <a
+            href="explore.html#author">Author</a> is a vertical timeline of Foscolo’s life, in which the editions of the
+          <em>Ortis</em> appear as they were published and can be opened from there. The descriptions of people, places
+          and events are stored in separate data files, so that they can be extended without changing the code.
+        </p>
+        <p>The intended users are scholars of Foscolo and of textual criticism, students of digital humanities and
+          digital editing, and curious readers who want to see how a famous text changed over time. Digital editions can
+          also address machines as well as human readers (Baillot and Busch <a href="#bib-baillot2021">2021</a>), and
+          for this reason the data behind the pages are kept open and structured. The design is deliberately simple,
+          with muted colours, and the pages can be used with the keyboard.</p>
+      </section>
+
       <section id="bibliography">
         <h2>Bibliography</h2>
-        <p>Write your text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua.</p>
+        <h3>Primary sources</h3>
+        <ul class="biblio">
+          <li id="bib-foscolo2004">Foscolo, Ugo. 2004. <em>Ultime lettere di Jacopo Ortis</em>. Roma: Biblioteca
+            Italiana. <a href="http://www.bibliotecaitaliana.it/scheda/bibit001627" target="_blank"
+              rel="noopener">http://www.bibliotecaitaliana.it/scheda/bibit001627</a>.</li>
+          <li id="bib-gambarin1970">Gambarin, Giovanni, ed. 1970. <em>Ultime lettere di Jacopo Ortis nelle tre lezioni
+              del 1798, 1802, 1817</em>. By Ugo Foscolo. Edizione nazionale delle opere di Ugo Foscolo 4. Firenze: Le
+            Monnier.</li>
+          <li id="bib-terzoli2012">Terzoli, Maria Antonietta, ed. 2012. <em>Ultime lettere di Jacopo Ortis</em>. By Ugo
+            Foscolo. Roma: Carocci.</li>
+        </ul>
+
+        <h3>Secondary sources</h3>
+        <ul class="biblio">
+          <li id="bib-gentili1978">Gentili, Sandro. 1978. <em>I codici autobiografici di Ugo Foscolo</em>. Roma:
+            Bulzoni.</li>
+          <li id="bib-nicoletti1978">Nicoletti, Giuseppe. 1978. <em>Il “metodo” dell’“Ortis” e altri studi
+              foscoliani</em>. Firenze: La Nuova Italia.</li>
+          <li id="bib-scotti1997">Scotti, Mario. 1997. “Foscolo, Ugo.” In <em>Dizionario biografico degli italiani</em>,
+            vol. 49. Roma: Istituto della Enciclopedia Italiana. <a
+              href="https://www.treccani.it/enciclopedia/ugo-foscolo_(Dizionario-Biografico)/" target="_blank"
+              rel="noopener">https://www.treccani.it/enciclopedia/ugo-foscolo_(Dizionario-Biografico)/</a>.</li>
+          <li id="bib-terzoli2004">Terzoli, Maria Antonietta. 2004. <em>Le prime lettere di Jacopo Ortis: Un giallo
+              editoriale tra politica e censura</em>. Roma: Salerno Editrice.</li>
+        </ul>
+
+        <h3>Resources and further reading</h3>
+        <ul class="biblio">
+          <li id="bib-baillot2021">Baillot, Anne, and Anna Busch. 2021. “Editing for Man and Machine: Digital Scholarly
+            Editions and Their Users.” <em>Variants</em> 15–16: 175–87. <a
+              href="https://journals.openedition.org/variants/1220" target="_blank"
+              rel="noopener">https://journals.openedition.org/variants/1220</a>.</li>
+          <li id="bib-burghart2017">Burghart, Marjorie. 2017. <em>Creating a Digital Scholarly Edition with the Text
+              Encoding Initiative</em>. DEMM project, Erasmus+ Intellectual Output IO2. <a
+              href="https://ec.europa.eu/programmes/erasmus-plus/project-result-content/cfb03c8e-6765-477e-aa4d-e2b162f57068/IO2_Creating%20a%20digital%20edition%20with%20the%20TEI.pdf"
+              target="_blank"
+              rel="noopener">https://ec.europa.eu/programmes/erasmus-plus/project-result-content/cfb03c8e-6765-477e-aa4d-e2b162f57068/IO2_Creating%20a%20digital%20edition%20with%20the%20TEI.pdf</a>.
+          </li>
+          <li id="bib-crif">Centro di Ricerca Interuniversitario Foscolo (CRIF). n.d. Accessed October 2026. <a
+              href="https://www.centrofoscolo.org/" target="_blank" rel="noopener">https://www.centrofoscolo.org/</a>.
+          </li>
+          <li id="bib-dedominicis2026">De Dominicis, Ilaria. 2026. <em>Ortis Letters</em>. GitHub repository. <a
+              href="https://github.com/theair-hub/OrtisLetters" target="_blank"
+              rel="noopener">https://github.com/theair-hub/OrtisLetters</a>.</li>
+          <li id="bib-sahle">Sahle, Patrick. n.d. <em>Catalogue of Digital Scholarly Editions</em>. Accessed October
+            2026. <a href="https://dig-ed-cat.acdh.oeaw.ac.at/" target="_blank"
+              rel="noopener">https://dig-ed-cat.acdh.oeaw.ac.at/</a>.</li>
+          <li id="bib-tei">TEI Consortium. n.d. <em>TEI P5: Guidelines for Electronic Text Encoding and
+              Interchange</em>. Accessed October 2026. <a href="https://tei-c.org/guidelines/P5/" target="_blank"
+              rel="noopener">https://tei-c.org/guidelines/P5/</a>.</li>
+          <li id="bib-wikisource">Wikisource. n.d. Accessed October 2026. <a href="https://wikisource.org/"
+              target="_blank" rel="noopener">https://wikisource.org/</a>.</li>
+        </ul>
       </section>
+
+      <section id="disclaimer">
+        <h2>Disclaimer</h2>
+        <p>The source of the edition is Gambarin (<a href="#bib-gambarin1970">1970</a>), as stated above. Copyright law
+          allows a limited amount of text to be reproduced for study purposes, but not much more: for this reason only
+          the opening of each edition is transcribed, and the project makes no commercial use of it. The website and its
+          materials are released under a <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank"
+            rel="noopener">CC BY-NC 4.0</a> licence.</p>
+        <p>The text of the 1817 XML file, without the apparatus, is taken from the Biblioteca Italiana (<a
+            href="#bib-foscolo2004">Foscolo 2004</a>), which publishes it under a CC BY-NC licence. Everything else was
+          transcribed by hand. The website and its materials were produced with the help of Claude, an AI assistant.</p>
+        <p>If you would like to collaborate, the instructions are in the README of the project on <a
+            href="https://github.com/theair-hub/OrtisLetters" target="_blank" rel="noopener">GitHub</a>; you can also
+          write to <a href="mailto:ilaria.dedominicis2@studio.unibo.it">ilaria.dedominicis2@studio.unibo.it</a>.</p>
+      </section>
+
       <section id="credits">
         <h2>Credits and citation</h2>
-        <p>Write your text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua.</p>
+        <p><em>Ortis Letters</em> was created by Ilaria De Dominicis for the course <a
+            href="https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti/insegnamento/2025/478841"
+            target="_blank" rel="noopener">Digital Scholarly Editing: Theory, Methods and Practice</a> at the Alma Mater
+          Studiorum, University of Bologna.</p>
+        <p>To cite this edition: De Dominicis, Ilaria. 2026. <em>Ortis Letters: A Digital Edition Prototype of Ugo
+            Foscolo’s Ultime lettere di Jacopo Ortis</em>. Alma Mater Studiorum, University of Bologna. <a
+            href="https://github.com/theair-hub/OrtisLetters" target="_blank"
+            rel="noopener">https://github.com/theair-hub/OrtisLetters</a>.</p>
       </section>
+
     </article>
   </main>
   <footer>&copy; 2026 Ortis Letters Digital Edition. <br> Project developed for the course of <a
@@ -121,6 +644,45 @@
       if (e.isIntersecting) { links.forEach(l => l.classList.toggle('active', l.hash === '#' + e.target.id)); }
     }), { rootMargin: '-20% 0px -70% 0px' });
     document.querySelectorAll('.doc section').forEach(s => io.observe(s));
+    (function () {
+      var imgs = document.querySelectorAll('.doc figure img');
+      if (!imgs.length) return;
+      var box = document.createElement('div');
+      box.className = 'lightbox';
+      box.hidden = true;
+      box.setAttribute('role', 'dialog');
+      box.setAttribute('aria-modal', 'true');
+      box.setAttribute('aria-label', 'Enlarged image');
+      box.innerHTML = '<button type="button" class="lb-close" aria-label="Close">&times;</button><figure><img alt=""><figcaption></figcaption></figure>';
+      document.body.appendChild(box);
+      var big = box.querySelector('img'), cap = box.querySelector('figcaption'), closeBtn = box.querySelector('.lb-close'), last = null;
+      function open(img) {
+        last = img;
+        big.src = img.src;
+        big.alt = img.alt;
+        var c = img.closest('figure').querySelector('figcaption');
+        cap.textContent = c ? c.textContent : '';
+        box.hidden = false;
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+      function close() {
+        box.hidden = true;
+        document.body.style.overflow = '';
+        if (last) last.focus();
+      }
+      imgs.forEach(function (img) {
+        img.tabIndex = 0;
+        img.setAttribute('role', 'button');
+        img.setAttribute('aria-label', (img.alt || 'Image') + ' (click to enlarge)');
+        img.addEventListener('click', function () { open(img); });
+        img.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img); }
+        });
+      });
+      box.addEventListener('click', function (e) { if (e.target !== big) close(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !box.hidden) close(); });
+    })();
   </script>
 </body>
 

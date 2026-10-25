@@ -1,2 +1,53 @@
-# OrtisLetters
-A digital edition about Ugo Foscolo's "Ultime Lettere di Jacopo Ortis"
+# Ortis Letters
+
+A digital edition prototype of Ugo Foscolo's *Ultime lettere di Jacopo Ortis*: three TEI/XML editions with their variants, a page to explore people, places and the author's life, and the documentation. The text is based on Gambarin (1970). Licence: CC BY-NC 4.0.
+
+## Run it locally
+
+The pages load XML and JSON with `fetch()`, so open the site through a web server, not by double-clicking the files:
+
+- VS Code: open the project folder and use the *Live Server* extension, or
+- terminal, inside the project folder: `py -m http.server 8000` (Windows) or `python3 -m http.server 8000`, then open `http://localhost:8000`.
+
+## Files
+
+```
+index.html          home, with the cards of the editions
+edition.html        the edition viewer (one page, three editions: edition.html?ed=lon-1817)
+explore.html        People, Places and Author (timeline) in three tabs
+documentation.html  documentation
+css/style.css       all the styles
+js/edition.js       loads an XML file, applies data/edition.xsl, builds the viewer; EDITIONS list lives here
+js/explore-page.js  the Explore page: helpers and the three tabs (graph, map, timeline)
+data/               everything that can be edited without touching the code:
+  ortis_bolognese.xml, ortis_milanese_1802.xml, ortis_1817.xml    the three editions (TEI)
+  edition.xsl       XML -> web page (do not auto-format this file: it is whitespace-sensitive)
+  characters.json   people: text, relations, appearances
+  places.json       places: text, coordinates, appearances
+  timeline.json     events of the author's life and of the editions
+img/                title pages and logo
+```
+
+## Extend an edition (XML)
+
+1. **A new letter.** Copy a `<div2 type="epistola" n="5">` block in the XML, change `n`, and add the date line and the paragraphs. The table of contents, the numbering of the variants and the apparatus are generated automatically.
+2. **A variant.** Wrap the point of variation in `<app type="…"><lem wit="…">…</lem><rdg wit="…">…</rdg></app>`. The `wit` values are the `xml:id` of the witnesses listed in the header (`listWit`). Allowed `type` values: `punctuation`, `capitalisation`, `orthographic`, `morphological`, `lexical`, `syntactic`, `addition`, `omission`, `rewriting`, `layout`, `paratext`, `mixed` (with the parts in `subtype`, e.g. `lexical-omission`).
+3. **A new witness.** Add a `<witness xml:id="…">` to `listWit` in the header; it appears automatically in the window menus.
+4. **A new edition.** Add its XML to `data/`, then: add an entry to `EDITIONS` in `js/edition.js` (label, xml path, title, source line, about text), a button in `edition.html`, and a card in `index.html`.
+5. **Page texts.** The title, the source line and the "About this edition" text of each edition are written in `EDITIONS` in `js/edition.js`.
+
+## People and places
+
+Names in the XML are tagged `<persName ref="#JO">` and `<placeName ref="#PD">`. To add one:
+
+1. Add it to the header of the XML (`listPerson` or `listPlace`) with the same `xml:id`.
+2. Add it to `data/characters.json` or `data/places.json`:
+   - people: `id`, `name`, `type` (`character` or `mentioned`), `role`, `description`, `appearances` (edition ids with the sections where it appears), `related_places`, `links`; the lines of the graph are the `relations` at the end of the file;
+   - places: `id`, `name`, `type` (`city`, `hills`, `country`), `lat`, `lon`, `role`, `description`, `appearances`, `related_characters`, `links`.
+3. The ids of the editions in `appearances` are `bolo-1798`, `mil-1802` and `lon-1817`.
+
+The Author timeline works the same way: add an object to `data/timeline.json` (`id`, `year`, `date`, `type` = `life`, `work` or `edition`, `title`, `place`, `description`; optionally `places` with place ids, `edition` and `image`).
+
+## Contribute
+
+Fork the repository, change the files above, check the pages in the browser and open a pull request. Questions: ilaria.dedominicis2@studio.unibo.it
