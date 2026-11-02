@@ -91,8 +91,8 @@
                     parallel segmentation apparatus. Only letters I-V are transcribed.</p>
             </samplingDecl>
             <editorialDecl>
-                <correction method="silent" status="medium">
-                    <p>Medium level: on-screen check; original spellings (e.g. "jeri",
+                <correction method="silent" status="low">
+                    <p>Low level: on-screen check; original spellings (e.g. "jeri",
                         "sdrajo") have been retained.</p>
                 </correction>
                 <quotation marks="all">
@@ -113,7 +113,7 @@
                 <derivation type="original" />
                 <domain type="literary" />
                 <factuality type="mixed" />
-                <interaction type="partial" active="singular" passive="many" />
+                <interaction type="partial" active="singular" passive="single" />
                 <preparedness type="revised" />
                 <purpose type="entertain" degree="high" />
             </textDesc>
@@ -198,9 +198,59 @@
     </teiHeader>
     <text>
         <body>
-                        <div1 type="dedica">
-                <head>AVVISO A CHI LEGGE</head>
-                <note resp="#IDD">In this version of the book, this dedication is substituted with the AVVISO A CHI LEGGE, followed by the dedication LORENZO F. AL SENSIBILE LETTORE and the ANNOTAZIONI ALLA PRIMA PARTE DELLE ULTIME LETTERE DI JACOPO ORTIS, that are not reported in this prototype edition. For more information, please consult the source (Gambarin 1970, 3) .</note>
+            <div1 type="frontespizio"><app><lem><p>ULTIME LETTERE</p>
+                <p>DI</p>
+                <p>JACOPO ORTIS</p>
+                <p>... NATURAE CLAMAT AB IPSO</p>
+                <p>VOX TUMULO.</p>
+                <p>M.DCC.XCVIII.</p>
+                <p>ANNO VII.</p></lem>
+                <rdg wit="#A #B"><p>VERA STORIA</p>
+                <p>DI DUE</p>
+                <p>AMANTI INFELICI</p>
+                <p>OSSIA</p>
+                <p>ULTIME LETTERE</p>
+                <p>DI</p>
+                <p>JACOPO ORTIS</p>
+                <p>... NATURAE CLAMAT AB IPSO</p>
+                <p>VOX TUMULO.</p>
+                <p>EDIZIONE COR[R]ETTA</p>
+                <p>CON NOTE</p>
+                <p>PARTE PRIMA</p>
+                <p>M.DCC.IC.</p>
+                </rdg><rdg wit="#C"><p>VERA STORIA</p>
+                <p>DI DUE</p>
+                <p>AMANTI INFELICI</p>
+                <p>OSSIA</p>
+                <p>ULTIME LETTERE</p>
+                <p>DI</p>
+                <p>JACOPO ORTIS</p>
+                <p>... NATURAE CLAMAT AB IPSO</p>
+                <p>VOX TUMULO.</p>
+                <p>EDIZIONE CORRETTA</p>
+                <p>CON NOTE</p>
+                <p>PARTE PRIMA</p>
+                <p>M.DCCC.I.</p>
+                </rdg></app></div1>
+
+            <div1>
+                <div2>
+                    <app>
+                        <lem></lem>
+                        <rdg wit="#A #B #C"><p>...de l'amour la sénsible péinture</p>
+                    <p>Est pour allér au Cœur  la route la plus sûre</p>
+                    <p>Despréaux.</p></rdg>
+                    </app>
+                </div2>
+            </div1>
+  
+            <div1 type="dedica">
+                <head>AL LETTORE</head>
+                <p>Pubblicando queste lettere io tento di erigere un monumento alla virtù sconosciuta, e di consecrare su le memorie del mio amico quel pianto che mi si vieta di spargere su la sua sepoltura.</p>
+                <p>E tu, o Lettore, se uno non sei di coloro ch'esigono dagli altri quell'eroismo di cui non sono eglino stessi capaci, donerai, spero, una lagrima al giovanetto infelice dal quale potrai forse trarre esempio e conforto.</p>
+                <closer><signed><persName ref="#LA">LORENZO F.</persName></signed></closer>
+
+                <note resp="#IDD">In A, B and C, this initial dedication is substituted with the AVVISO A CHI LEGGE, followed by the dedication LORENZO F. / AL SENSIBILE LETTORE and the ANNOTAZIONI / ALLA PRIMA PARTE DELLE ULTIME LETTERE DI JACOPO ORTIS / INDISPENSABILMENTE / DA LEGGERSI, which are not reported in this prototype edition. For more information, please consult the source (Gambarin 1970, 3) .</note>
             </div1>
             <div1 type="part">
                 <div2 type="epistola" n="1">
@@ -210,7 +260,7 @@
                     <opener>
                         <dateline>Dai <placeName ref="#CE">colli Euganei</placeName>, 3 Settembre 1797</dateline>
                     </opener>
-                    <p>Sia dunque cos&#xEC;<app type="addition"><lem wit="B C"></lem><rdg wit="A">, mio Lorenzo</rdg></app>! io vivr&#xF2; lontano da quanto m'avea di pi&#xF9; caro, poich&#xE8; non ho saputo resistere a' tuoi consigli, <app type="rewriting"><lem wit="B C">e alle lagrime di <persName ref="#MO">mia madre</persName> che tremava per la mia vita in un paese ov'io caldo della divina passione di libert&#xE0; ho senza mia colpa congiurato con i ministri de' conquistatori. —</lem><rdg wit="A">ed alle lagrime di mia madre.</rdg></app> Eccovi dunque ubbiditi: ma da questo momento io m'avvolgo nella oscurit&#xE0; della mia solitudine, e nel manto della mia innocenza. L'uomo dabbene <app type="rewriting"><lem wit="B C">imbarazzandosi ne' pubblici affari non ritrarrebbe che danno per la sua patria, ed infamia per s&#xE8;. Quando e doveri e diritti stanno su la punta della spada, il forte scrive le leggi col sangue, ed esige il sacrificio della virt&#xF9;.</lem><rdg wit="A">a che deve imbarazzarsi nel tumulto delle societ&#xE0; rumorose? Non basta egli l'attendere alle pacifiche cure del domestico albergo? Qui almeno nessuno esige il sagrifizio della virt&#xF9;!</rdg></app> Se tu potessi volare su queste colline! Tu non se' gi&#xE0; di quelli, o <persName ref="#LA">Lorenzo</persName>, che mirano <app type="lexical"><lem wit="B C">la loro patria schiava, denudata, venduta,</lem><rdg wit="A">i loro amici denudati ed oppressi,</rdg></app> e non piangono d'ira. Involati all'aspetto <app type="lexical"><lem wit="B C">della scelleraggine, e</lem><rdg wit="A">di tanti mali, ed</rdg></app>  alle persecuzioni di coloro che <app type="rewriting"><lem wit="B C">mercanteggiano i popoli: — t'&#xE8;</lem><rdg wit="A">si fan gioco.... io fremo!— T'&#xE8;</rdg></app> caro l'ozio solitario della campagna: <app type="punctuation"><lem wit="B C">qui riderem della gloria : infelice</lem><rdg wit="A">qui riderem della gloria. Infelice</rdg></app> colui che non ha per oggetto delle sue azioni che quest'idolo vano! <app type="capitalisation"><lem wit="B C">egli</lem><rdg wit="A">Egli</rdg></app> non gusta il piacere <app type="orthographic"><lem wit="B C">di una</lem><rdg wit="A">d'una</rdg></app> vita mediocre e <app type="lexical"><lem wit="B C">pacifica,</lem><rdg wit="A">tranquilla;</rdg></app> non ringrazia i consigli dell'amico, non sente la soavit&#xE0; del pianto <app type="mixed" subtype="orthographic-punctuation"><lem wit="B C">secreto sparso su le disgrazie dell'uomo onesto, o sul sepolcro di due amanti fedeli. Vieni:</lem><rdg wit="A">segreto sparso sulle disgrazie dell'uomo onesto, o sul sepolcro di due amanti fedeli! Vieni:</rdg></app> oh! ch'io desidero l'impossibile. — Addio: saluta <app type="addition"><lem wit="B C"><persName ref="#MO">mia madre</persName>.</lem><rdg wit="A"><persName ref="#MO">mia madre....</persName> ah dio! mi pare ancora di essere presente alle sue lagrime in quell'istante crudele che mi divise da lei.... Tanti affanni! tanta tenerezza per me!.... povera <persName ref="#MO">mia madre</persName> — Addio di nuovo.</rdg></app></p>
+                    <p>Sia dunque cos&#xEC;<app type="addition"><lem wit="#B #C"></lem><rdg wit="#A">, mio Lorenzo</rdg></app>! io vivr&#xF2; lontano da quanto m'avea di pi&#xF9; caro, poich&#xE8; non ho saputo resistere a' tuoi consigli, <app type="rewriting"><lem wit="#B #C">e alle lagrime di <persName ref="#MO">mia madre</persName> che tremava per la mia vita in un paese ov'io caldo della divina passione di libert&#xE0; ho senza mia colpa congiurato con i ministri de' conquistatori. —</lem><rdg wit="#A">ed alle lagrime di mia madre.</rdg></app> Eccovi dunque ubbiditi: ma da questo momento io m'avvolgo nella oscurit&#xE0; della mia solitudine, e nel manto della mia innocenza. L'uomo dabbene <app type="rewriting"><lem wit="#B #C">imbarazzandosi ne' pubblici affari non ritrarrebbe che danno per la sua patria, ed infamia per s&#xE8;. Quando e doveri e diritti stanno su la punta della spada, il forte scrive le leggi col sangue, ed esige il sacrificio della virt&#xF9;.</lem><rdg wit="#A">a che deve imbarazzarsi nel tumulto delle societ&#xE0; rumorose? Non basta egli l'attendere alle pacifiche cure del domestico albergo? Qui almeno nessuno esige il sagrifizio della virt&#xF9;!</rdg></app> Se tu potessi volare su queste colline! Tu non se' gi&#xE0; di quelli, o <persName ref="#LA">Lorenzo</persName>, che mirano <app type="lexical"><lem wit="#B #C">la loro patria schiava, denudata, venduta,</lem><rdg wit="#A">i loro amici denudati ed oppressi,</rdg></app> e non piangono d'ira. Involati all'aspetto <app type="lexical"><lem wit="#B #C">della scelleraggine, e</lem><rdg wit="#A">di tanti mali, ed</rdg></app>  alle persecuzioni di coloro che <app type="rewriting"><lem wit="#B #C">mercanteggiano i popoli: — t'&#xE8;</lem><rdg wit="#A">si fan gioco.... io fremo!— T'&#xE8;</rdg></app> caro l'ozio solitario della campagna: <app type="punctuation"><lem wit="#B #C">qui riderem della gloria : infelice</lem><rdg wit="#A">qui riderem della gloria. Infelice</rdg></app> colui che non ha per oggetto delle sue azioni che quest'idolo vano! <app type="capitalisation"><lem wit="#B #C">egli</lem><rdg wit="#A">Egli</rdg></app> non gusta il piacere <app type="orthographic"><lem wit="#B #C">di una</lem><rdg wit="#A">d'una</rdg></app> vita mediocre e <app type="lexical"><lem wit="#B #C">pacifica,</lem><rdg wit="#A">tranquilla;</rdg></app> non ringrazia i consigli dell'amico, non sente la soavit&#xE0; del pianto <app type="mixed" subtype="orthographic-punctuation"><lem wit="#B #C">secreto sparso su le disgrazie dell'uomo onesto, o sul sepolcro di due amanti fedeli. Vieni:</lem><rdg wit="#A">segreto sparso sulle disgrazie dell'uomo onesto, o sul sepolcro di due amanti fedeli! Vieni:</rdg></app> oh! ch'io desidero l'impossibile. — Addio: saluta <app type="addition"><lem wit="#B #C"><persName ref="#MO">mia madre</persName>.</lem><rdg wit="#A"><persName ref="#MO">mia madre....</persName> ah dio! mi pare ancora di essere presente alle sue lagrime in quell'istante crudele che mi divise da lei.... Tanti affanni! tanta tenerezza per me!.... povera <persName ref="#MO">mia madre</persName> — Addio di nuovo.</rdg></app></p>
                 </div2>
                 <div2 type="epistola" n="2">
                     <head>
@@ -249,7 +299,7 @@
                     <opener>
                         <dateline>16, Settembre.</dateline>
                     </opener>
-                    <p><app type="rewriting"><lem wit="B C">Sai tu chi &#xE8; il giovane del quale ti ho gi&#xE0; parlato ? l'amico di <persName ref="#TE">Teresa</persName>. I venti</lem><rdg wit="A">Ho recapitato la tua lettera a Teresa N.... vedova di.... e ne ho fatta la conoscenza. Quante bellezze, o Lorenzo! quanta virt&#xF9;! Direbbesi ch'ella rinnova a queste colline lo spettacolo dell'et&#xE0; beata dell'oro. L'amabile Giovannina, l'unico pegno restatole del suo matrimonio, l'era dappresso.... oh! ch'egli &#xE8; dolce il vedersi pargoleggiare teneramente i figli d'intorno! — <lb /> « Ma sai tu chi &#xE8; il giovane del quale ti ho gi&#xE0; parlato? &#xC8; Odoardo, l'amico e il confidente di Teresa. I venti....</rdg></app> e le pioggie incominciano a vietare i passeggi, ed io passo le intere mezze giornate con <persName ref="#TE">Teresa</persName> e con <persName ref="#OD">Odoardo</persName>. — Beato colui che sente per tempo i danni della gran societa! egli si libera dal tumulto e dalla schiavit&#xF9; degli affari, e rinunzia di buon grado alle ricchezze e alla gloria. Io son debitore alla perfidia degli uomini del paradiso che mi sto preparando.</p>
+                    <p><app type="rewriting"><lem wit="#B #C">Sai tu chi &#xE8; il giovane del quale ti ho gi&#xE0; parlato ? l'amico di <persName ref="#TE">Teresa</persName>. I venti</lem><rdg wit="#A">Ho recapitato la tua lettera a Teresa N.... vedova di.... e ne ho fatta la conoscenza. Quante bellezze, o Lorenzo! quanta virt&#xF9;! Direbbesi ch'ella rinnova a queste colline lo spettacolo dell'et&#xE0; beata dell'oro. L'amabile Giovannina, l'unico pegno restatole del suo matrimonio, l'era dappresso.... oh! ch'egli &#xE8; dolce il vedersi pargoleggiare teneramente i figli d'intorno! — <lb /> « Ma sai tu chi &#xE8; il giovane del quale ti ho gi&#xE0; parlato? &#xC8; Odoardo, l'amico e il confidente di Teresa. I venti....</rdg></app> e le pioggie incominciano a vietare i passeggi, ed io passo le intere mezze giornate con <persName ref="#TE">Teresa</persName> e con <persName ref="#OD">Odoardo</persName>. — Beato colui che sente per tempo i danni della gran societa! egli si libera dal tumulto e dalla schiavit&#xF9; degli affari, e rinunzia di buon grado alle ricchezze e alla gloria. Io son debitore alla perfidia degli uomini del paradiso che mi sto preparando.</p>
                 </div2>
                 <div2 type="epistola" n="5">
                     <head>
@@ -258,7 +308,7 @@
                     <opener>
                         <dateline>19, Settembre.</dateline>
                     </opener>
-                    <p><persName ref="#OD">Odoardo</persName> nacque pittore. Unico figlio di ricca famiglia perd&#xE8; suo padre prima di poterlo suo conoscere. La divota sua mamma volle consecrarlo al Signore educandolo fra certi <app type="rewriting"><lem wit="B C">frati aspiranti alla eredit&#xE0; del nuovo servo di Dio.</lem><rdg wit="A">frati che aspiravano a formare di lui un nuovo servo di Dio.</rdg></app> Il giovanetto disgustato ed ozioso si mise a disegnare: mor&#xEC; frattanto sua madre: un frate malcontento lo persuase a cogliere questa opportunit&#xE0; per abbandonare la solitudine del monastero: <placeName ref="#RO">Roma</placeName> sua patria gli somministrava i mezzi di divenir grande nella pittura: dapprima si dedic&#xF2; tutto a quest'arte:— ma alcun passeggi di brigata, qualche cenetta, l'opera e mille distrazioni innocenti avevano rapito il giovane alla prima assiduit&#xE0;. <app type="addition"><lem wit="B C"> Per buona sorte conobbe <persName ref="#TE">Teresa</persName>; ed eccolo pi&#xF9; applicato, e meno stanco di prima.</lem><rdg wit="A">Si cambiarono intanto le sue circostanze , ed ei dovette viaggiare per mille luoghi a vicenda magnifici e barbari. — Per buona sorte conobbe a tempo Teresa; ed eccolo fermo, pi&#xF9; applicato....</rdg></app> </p>
+                    <p><persName ref="#OD">Odoardo</persName> nacque pittore. Unico figlio di ricca famiglia perd&#xE8; suo padre prima di poterlo suo conoscere. La divota sua mamma volle consecrarlo al Signore educandolo fra certi <app type="rewriting"><lem wit="#B #C">frati aspiranti alla eredit&#xE0; del nuovo servo di Dio.</lem><rdg wit="#A">frati che aspiravano a formare di lui un nuovo servo di Dio.</rdg></app> Il giovanetto disgustato ed ozioso si mise a disegnare: mor&#xEC; frattanto sua madre: un frate malcontento lo persuase a cogliere questa opportunit&#xE0; per abbandonare la solitudine del monastero: <placeName ref="#RO">Roma</placeName> sua patria gli somministrava i mezzi di divenir grande nella pittura: dapprima si dedic&#xF2; tutto a quest'arte:— ma alcun passeggi di brigata, qualche cenetta, l'opera e mille distrazioni innocenti avevano rapito il giovane alla prima assiduit&#xE0;. <app type="addition"><lem wit="#B #C"> Per buona sorte conobbe <persName ref="#TE">Teresa</persName>; ed eccolo pi&#xF9; applicato, e meno stanco di prima.</lem><rdg wit="#A">Si cambiarono intanto le sue circostanze , ed ei dovette viaggiare per mille luoghi a vicenda magnifici e barbari. — Per buona sorte conobbe a tempo Teresa; ed eccolo fermo, pi&#xF9; applicato....</rdg></app> </p>
                     <p>Osservo che <persName ref="#TE">Teresa</persName> lo guarda come una sua creatura; e lo ama di pi&#xF9; perch&#xE9; ella ha il merito di averlo ricondotto a retto sentiero dond'egli senz'avvedersene deviava.</p>
                     <p>Quand'io penso agli ostacoli che frappone la societ&#xE0; al genio ed al cuore dell'uomo, quand'io penso a mille accidenti che mi hanno pi&#xF9; volte gettato quasi in braccio al delitto.... io guardo il passato tremando, e mi rassicuro vedendomi in porto. Sovente mi prostro a ringraziar la natura che ci fa vincere la prepotenza delle circostanze, e c'insegna ad alzarci sopra la nostra educazione. Ma pochi nondimeno son gli uomini prediletti a questa fortuna.— O quanti si sono appressati al sepolcro sdegnando la vita, nella quale seguendo un corso opposto a quello che loro ha segnato la natura, hanno sentito tutti i mali dell'esistenza senza godere d'un solo bene! Quanti altri costretti a mascherare la loro anima generosa sotto governi licenziosi o tirannici, si sono abituati a cercare la gloria anche per mezzo della scelleraggine, simili que' conquistatori che s'innalzano un trofeo di cadaveri, e a que' principi che nuotano al trono per un mare di sangue.</p>
                 </div2>

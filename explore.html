@@ -36,40 +36,73 @@
   <main>
     <!-- PEOPLE -->
     <div id="panel-people" role="tabpanel" aria-labelledby="tab-people">
-      <div class="explore">
-        <section id="p-graphwrap">
+      <div class="explore-layout">
+
+        <aside class="explore-sidebar">
+          <h2>People</h2>
+
+          <input type="search" id="p-search" class="explore-search" placeholder="Search people..."
+            aria-label="Search people">
+
+          <div class="sidebar-label">Filter by edition</div>
           <div class="filters" id="p-filters" role="group" aria-label="Filter by edition"></div>
-          <div class="viz"><svg id="graph" role="img"
-              aria-label="Network graph of the people and their relationships. Select a person for details."></svg>
+
+          <div class="sidebar-label">Characters</div>
+          <div class="roster-grid" id="p-roster"></div>
+        </aside>
+
+        <section class="explore-stage" id="p-graphwrap">
+          <div class="viz">
+            <svg id="graph" role="img" aria-label="Network graph of people and their relationships">
+            </svg>
           </div>
-          <p class="legend"><span><i class="sage"></i>Character</span><span><i class="rose"></i>Mentioned
-              figure</span><span>Select a node to read about it; drag to rearrange.</span></p>
+
+          <p class="legend">
+            <span><i class="sage"></i>Character</span>
+            <span><i class="rose"></i>Mentioned figure</span>
+            <span>Select a node to explore its connections.</span>
+          </p>
         </section>
+
         <aside class="panel" id="p-panel" aria-live="polite"></aside>
+
       </div>
-      <section class="roster">
-        <h2>All people</h2>
-        <div class="roster-grid" id="p-roster"></div>
-      </section>
     </div>
 
     <!-- PLACES -->
     <div id="panel-places" role="tabpanel" aria-labelledby="tab-places" hidden>
-      <div class="explore">
-        <section id="l-mapwrap">
+
+      <div class="explore-layout">
+
+        <aside class="explore-sidebar">
+          <h2>Places</h2>
+
+          <input type="search" id="l-search" class="explore-search" placeholder="Search places..."
+            aria-label="Search places">
+
+          <div class="sidebar-label">Filter by edition</div>
           <div class="filters" id="l-filters" role="group" aria-label="Filter by edition"></div>
+
+          <div class="sidebar-label">Locations</div>
+          <div class="roster-grid" id="l-roster"></div>
+        </aside>
+
+        <section class="explore-stage" id="l-mapwrap">
           <div class="viz">
-            <div id="map" role="region" aria-label="Interactive map of the places named in the editions"></div>
+            <div id="map" role="region" aria-label="Interactive map of places named in the editions">
+            </div>
           </div>
-          <p class="legend"><span><i class="sage"></i>City</span><span><i class="dashed"></i>Area (approximate centre
-              shown)</span><span>Select a marker or a name below.</span></p>
+
+          <p class="legend">
+            <span><i class="sage"></i>City</span>
+            <span><i class="dashed"></i>Area (approximate centre)</span>
+            <span>Select a marker to explore a place.</span>
+          </p>
         </section>
+
         <aside class="panel" id="l-panel" aria-live="polite"></aside>
+
       </div>
-      <section class="roster">
-        <h2>All places</h2>
-        <div class="roster-grid" id="l-roster"></div>
-      </section>
     </div>
 
     <!-- AUTHOR -->

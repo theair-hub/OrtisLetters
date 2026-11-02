@@ -20,7 +20,7 @@ css/style.css       all the styles
 js/edition.js       loads an XML file, applies data/edition.xsl, builds the viewer; EDITIONS list lives here
 js/explore-page.js  the Explore page: helpers and the three tabs (graph, map, timeline)
 data/               everything that can be edited without touching the code:
-  ortis_bolognese.xml, ortis_milanese_1802.xml, ortis_1817.xml    the three editions (TEI)
+  ortis_1798.xml, ortis_1802.xml, ortis_1817.xml    the three editions (TEI)
   edition.xsl       XML -> web page (do not auto-format this file: it is whitespace-sensitive)
   characters.json   people: text, relations, appearances
   places.json       places: text, coordinates, appearances

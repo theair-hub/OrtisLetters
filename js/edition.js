@@ -4,8 +4,8 @@
    and must match the "edition" ids used in characters.json and places.json. */
 (() => {
   const EDITIONS = {
-    'bolo-1798': { label: 'Bologna 1798', xml: 'data/ortis_bolognese.xml', title: 'Ultime Lettere di Jacopo Ortis [Prima edizione bolognese] [1798]', author: 'Source: "Edizione nazionale delle opere di Ugo Foscolo: Ultime lettere di Jacopo Ortis." Ed. critica a cura di Giovanni Gambarin. 1970', about: '' },
-    'mil-1802': { label: 'Milan 1802', xml: 'data/ortis_milanese_1802.xml', title: 'Ultime Lettere di Jacopo Ortis, Tratte dagli autografi [1802]', author: 'Source: "Edizione nazionale delle opere di Ugo Foscolo: Ultime lettere di Jacopo Ortis." Ed. critica a cura di Giovanni Gambarin. 1970', about: '' },
+    'bolo-1798': { label: 'Bologna 1798', xml: 'data/ortis_1798.xml', title: 'Ultime Lettere di Jacopo Ortis [Prima edizione bolognese] [1798]', author: 'Source: "Edizione nazionale delle opere di Ugo Foscolo: Ultime lettere di Jacopo Ortis." Ed. critica a cura di Giovanni Gambarin. 1970', about: '' },
+    'mil-1802': { label: 'Milan 1802', xml: 'data/ortis_1802.xml', title: 'Ultime Lettere di Jacopo Ortis, Tratte dagli autografi [1802]', author: 'Source: "Edizione nazionale delle opere di Ugo Foscolo: Ultime lettere di Jacopo Ortis." Ed. critica a cura di Giovanni Gambarin. 1970', about: '' },
     'lon-1817': { label: 'London 1817', xml: 'data/ortis_1817.xml', title: 'Ultime Lettere di Jacopo Ortis, Tratte dagli autografi [1817]', author: 'Source: "Edizione nazionale delle opere di Ugo Foscolo: Ultime lettere di Jacopo Ortis." Ed. critica a cura di Giovanni Gambarin. 1970', about: '' },
   };
   const DEFAULT = 'bolo-1798';

@@ -48,7 +48,7 @@
                 </availability>
             </publicationStmt>
             <notesStmt>
-                <note>This XML/TEI document was created for the Digital Scholarly Editing: Theory, Methods and Practice exam. The print source for the edition is Giovanni Gambarin’s National Edition (1970), while the digital text was retrieved from Biblioteca Italiana (id: bibit001627). The edition transcribes Letters I–V of the London edition of The Last Letters of Jacopo Ortis. The critical apparatus was transcribed manually, and the sigla identify the editions used for comparison: Genio Tipografico (Gt), Zurich (Z), and London (L).
+                <note>This XML/TEI document was created for the Digital Scholarly Editing: Theory, Methods and Practice exam. The print source for the edition is Giovanni Gambarin’s National Edition (1970), while the digital text was retrieved from Biblioteca Italiana (id: bibit001627). The edition transcribes Letters I–V of the London edition of the Last Letters of Jacopo Ortis. The critical apparatus was transcribed manually, and the sigla identify the editions used for comparison: Genio Tipografico (Gt), Zurich (Z), and London (L).
                 </note>
             </notesStmt>
             <sourceDesc>
@@ -106,9 +106,9 @@
                     parallel segmentation apparatus. Only letters I-V are transcribed.</p>
             </samplingDecl>
             <editorialDecl>
-                <correction method="silent" status="medium">
-                    <p>Medium level: on-screen check with collation against the reference edition</p>
-                    <p>Editorial integrations found in the printed source (in square brackets) are encoded with supplied.</p>
+                <correction method="silent" status="low">
+                    <p>Low level: on-screen check; original spellings (e.g. "culto", "volontieri")
+                        have been retained.</p>
                 </correction>
                 <quotation marks="all">
                     <p>Quotation marks and direct speech symbols present in the printed source have
@@ -127,7 +127,7 @@
                 <derivation type="original" />
                 <domain type="literary" />
                 <factuality type="mixed" />
-                <interaction type="partial" active="singular" passive="many" />
+                <interaction type="partial" active="singular" passive="single" />
                 <preparedness type="revised" />
                 <purpose type="entertain" degree="high" />
             </textDesc>
