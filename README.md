@@ -1,6 +1,14 @@
 # Ortis Letters
 
-A digital edition prototype of Ugo Foscolo's *Ultime lettere di Jacopo Ortis*: three TEI/XML editions with their variants, a page to explore people, places and the author's life, and the documentation. The text is based on Gambarin (1970). Licence: CC BY-NC 4.0.
+A digital edition prototype of Ugo Foscolo's *Ultime lettere di Jacopo Ortis*: three TEI/XML editions with their variants, a page to explore people, places and the author's life, and the documentation. The text is based on Gambarin, Giovanni, ed. 1970. "Ultime lettere di Jacopo Ortis". By Ugo Foscolo. "Edizione nazionale delle opere di Ugo Foscolo 4". Firenze: Le Monnier.
+
+## Textual witnesses
+
+The diagram below illustrates the textual witnesses encoded in the three TEI/XML editions and their relationships.
+
+![Encoded textual witnesses](img/witnesses.png)
+
+*Figure 2. Overview of the textual witnesses encoded in the three XML files.*
 
 ## Run it locally
 
@@ -11,22 +19,9 @@ The pages load XML and JSON with `fetch()`, so open the site through a web serve
 
 ## Files
 
-```
-index.html          home, with the cards of the editions
-edition.html        the edition viewer (one page, three editions: edition.html?ed=lon-1817)
-explore.html        People, Places and Author (timeline) in three tabs
-documentation.html  documentation
-css/style.css       all the styles
-js/edition.js       loads an XML file, applies data/edition.xsl, builds the viewer; EDITIONS list lives here
-js/explore-page.js  the Explore page: helpers and the three tabs (graph, map, timeline)
-data/               everything that can be edited without touching the code:
-  ortis_1798.xml, ortis_1802.xml, ortis_1817.xml    the three editions (TEI)
-  edition.xsl       XML -> web page (do not auto-format this file: it is whitespace-sensitive)
-  characters.json   people: text, relations, appearances
-  places.json       places: text, coordinates, appearances
-  timeline.json     events of the author's life and of the editions
-img/                title pages and logo
-```
+![Project file structure](img/structure.png)
+
+*Figure 1. Structure of the Ortis Letters repository.*
 
 ## Extend an edition (XML)
 
@@ -48,6 +43,16 @@ Names in the XML are tagged `<persName ref="#JO">` and `<placeName ref="#PD">`. 
 
 The Author timeline works the same way: add an object to `data/timeline.json` (`id`, `year`, `date`, `type` = `life`, `work` or `edition`, `title`, `place`, `description`; optionally `places` with place ids, `edition` and `image`).
 
+## License
+
+The HTML pages, CSS, JSON, and JavaScript files are released under the MIT License.
+
+The apparatus in the three XML files encoding Giovanni Gambarin's text are subject to Italian copyright law (Law No. 633/1941). They are not covered by the MIT License. All rights remain with their respective copyright holders. 
+
 ## Contribute
 
 Fork the repository, change the files above, check the pages in the browser and open a pull request. Questions: ilaria.dedominicis2@studio.unibo.it
+
+## Cite 
+
+De Dominicis, I. (2026). Ortis Letters: The Prototype for a Digital Edition of Foscolo's Ultime lettere di Jacopo Ortis (Version 1.0.0) [Computer software]. GitHub. https://github.com/theair-hub/OrtisLetters 

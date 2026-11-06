@@ -437,7 +437,11 @@
     const a = box.querySelector('.ed-author');
     if (a && ed.author !== undefined) { if (ed.author) a.textContent = ed.author; else a.remove(); }
     const body = box.querySelector('.ed-about-body');
-    if (body && ed.about) body.innerHTML = ed.about;
+    if (body && ed.about) {
+      const extra = el('div', 'ed-about-extra');
+      extra.innerHTML = ed.about;
+      body.prepend(extra);
+    }
   }
 
   async function show(id, push) {

@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software or dataset, please cite it as below."
+title: "Ortis Letters: The prototype for a Digital Edition of Foscolo's Ultime lettere di Jacopo Ortis"
+type: software
+authors:
+  - given-names: Ilaria
+    family-names: De Dominicis
+    orcid: "https://orcid.org/0009-0008-2026-5889"
+    affiliation: "Alma Mater Studiorum - Università di Bologna"
+repository-code: "https://github.com/theair-hub/OrtisLetters"
+url: "https://github.com/theair-hub/OrtisLetters"
+license:
+  - MIT
+version: 1.0.0
+date-released: "2026"
+keywords:
+  - digital scholarly edition
+  - TEI/XML
+  - textual criticism
+  - Ugo Foscolo
+  - critical apparatus
+  - multi-witness collation
+  - digital humanities
+abstract: >-
+  This article presents Ortis Letters, a prototype digital scholarly edition of Ugo Foscolo's Ultime lettere di Jacopo Ortis, designed to support the comparison of its principal textual witnesses and the exploration of its editorial history. Developed within the framework of a Digital Humanities university course, the project addresses the lack of openly available, machine-readable resources documenting textual variation across the novel's major editions. The prototype encodes the opening sections of three principal editions (1798, 1802, and 1817) in TEI P5/XML, adopting a parallel-segmentation approach to represent textual variants through a structured critical apparatus. Named entities are linked to dedicated authority lists, while complementary JSON datasets support the exploration of characters, geographical locations, and Foscolo's biography. An interactive web interface, implemented through XSLT, JavaScript, and HTML, enables synoptic comparison of textual witnesses and the exploration of textual and contextual information. Although currently limited in scope and awaiting external scholarly evaluation, Ortis Letters provides an open, modular, and reusable model for digital scholarly editing, with potential applications in textual scholarship, computational research, and digital humanities education.

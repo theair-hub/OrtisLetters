@@ -13,7 +13,7 @@ type of variation
       one group of entries per section, the script shows the group of the section being read
     - people and places as links carrying data-id / data-kind, so the script can open a small window
 
-  The wit attributes may be written "#L #Gt" or "L Gt" (both occur in the three files);
+  The wit attributes may be written "#L #Gt" or "L Gt" (in case of any errors in the source XML);
   both forms are normalised here.
 -->
 <xsl:stylesheet version="1.0"
@@ -51,19 +51,20 @@ type of variation
         <xsl:call-template name="about" />
       </header>
 
-      <xsl:call-template name="controls" />
-
       <div class="ed-layout">
-        <nav class="toc ed-toc" aria-label="Sections">
-          <strong>Sections</strong>
-          <xsl:for-each
-            select="tei:text/tei:body//*[(self::tei:div1 and @type!='part') or self::tei:div2]">
-            <a>
-              <xsl:attribute name="href">#<xsl:call-template name="sec-id" /></xsl:attribute>
-              <xsl:call-template name="sec-label" />
-            </a>
-          </xsl:for-each>
-        </nav>
+        <div class="ed-side">
+          <xsl:call-template name="controls" />
+          <nav class="toc ed-toc" aria-label="Sections">
+            <strong>Sections</strong>
+            <xsl:for-each
+              select="tei:text/tei:body//*[(self::tei:div1 and @type!='part') or self::tei:div2]">
+              <a>
+                <xsl:attribute name="href">#<xsl:call-template name="sec-id" /></xsl:attribute>
+                <xsl:call-template name="sec-label" />
+              </a>
+            </xsl:for-each>
+          </nav>
+        </div>
         <div class="ed-text">
           <xsl:apply-templates select="tei:text/tei:body/*" />
         </div>

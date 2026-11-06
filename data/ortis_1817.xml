@@ -513,7 +513,10 @@
                             <rdg wit="#Gt">con quanta</rdg>
                         </app> passione
                         un vecchio lavoratore mi narrava stamattina la vita de' parrochi della villa
-                        viventi nella sua fanciullezza, e mi descriveva i danni della tempesta di trentasett'anni
+                        viventi nella sua fanciullezza, e mi descriveva i danni della tempesta di <app type="lexical">
+                            <lem wit="#Gt #Z">trentasett'anni</lem>
+                            <rdg wit="#L">trenta sett'anni</rdg>
+                        </app>
                         addietro, e i tempi dell'abbondanza, e quei della fame, <app type="rewriting">
                             <lem wit="#L #Z">rompendo il filo ogni tanto, ripigliandolo, e
                                 scusandosi
@@ -528,8 +531,8 @@
                         </app> il <persName
                             ref="#ST">signore T.</persName> che tu conoscesti a Padova. Mi disse che
                         spesso gli parlavi di me, e che jer l'altro <app type="orthographic">
-                            <lem wit="#Z">glien'hai</lem>
-                            <rdg wit="#L #Gt">glie n'hai</rdg>
+                            <lem wit="#Z #Gt">glien'hai</lem>
+                            <rdg wit="#L">glie n'hai</rdg>
                         </app>
                         scritto. Anche egli s'&#xE8; <app type="lexical">
                             <lem wit="#L #Z">ridotto</lem>
