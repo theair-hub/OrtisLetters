@@ -8,8 +8,6 @@ The diagram below illustrates the textual witnesses encoded in the three TEI/XML
 
 ![Encoded textual witnesses](img/witnesses.png)
 
-*Figure 2. Overview of the textual witnesses encoded in the three XML files.*
-
 ## Run it locally
 
 The pages load XML and JSON with `fetch()`, so open the site through a web server, not by double-clicking the files:
@@ -19,9 +17,10 @@ The pages load XML and JSON with `fetch()`, so open the site through a web serve
 
 ## Files
 
+Structure of the Ortis Letters repository. 
+
 ![Project file structure](img/structure.png)
 
-*Figure 1. Structure of the Ortis Letters repository.*
 
 ## Extend an edition (XML)
 
